@@ -38,6 +38,7 @@ a {
     clip-path: inset(50%); /*modern browsers, clip-path works inwards from each corner*/
     white-space: nowrap; /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
 }
+
 .container {
     max-width: 1240px;
     margin: 0 auto;
@@ -48,8 +49,8 @@ a {
     text-align: center;
 }
 .icon-logo img {
-    height: 62px;
     width: 66px;
+    height: 62px;
     margin-bottom: 5px;
 }
 .icon-logo p {
@@ -74,16 +75,17 @@ a {
     margin-right: 5px;
 }
 
-.section-row-y {
-    --section-row-y: 40px;
+.section-spacing {
+    padding: 90px 0;
 }
+
+
 .section-row {
     --section-row-x: 40px;
     display: flex;
     flex-wrap: wrap;
     margin-right: calc(-0.5 * var(--section-row-x));
     margin-left: calc(-0.5 * var(--section-row-x));
-    margin-top: calc(-1 * var(--section-row-y));
 }
 .section-row > * {
     flex-shrink: 0;
@@ -91,6 +93,12 @@ a {
     max-width: 100%;
     padding-right: calc(var(--section-row-x) * 0.5);
     padding-left: calc(var(--section-row-x) * 0.5);
+}
+.section-row-y {
+    --section-row-y: 40px;
+    margin-top: calc(-1 * var(--section-row-y));
+}
+.section-row-y > * {
     margin-top: var(--section-row-y);
 }
 .section-col-3 {
@@ -185,24 +193,29 @@ a {
     transition: color, background .2s;
 }
 .btn-lizing::before {
-    content: url("../media/icons/lizingBtnIcon.png");
+    content:"";
+    background-image: url("../media/icons/lizingBtnIcon.png");
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    display: inline-block;
     width: 24px;
     height: 24px;
     margin-right: 10px;
+
 }
 .btn-lizing:hover {
     background: var(--color-blue);
     color: white;
 }
 .btn-lizing:hover::before {
-    content: url("../media/icons/lizingBtnIcon-white.png");
+    background-image: url("../media/icons/lizingBtnIcon-white.png");
 }
 .btn-pagination {
     width: 100%;
     height: 60px;
     background: var(--color-blue);
     border-radius: 6px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 .btn-commercial-offer {
     background: #58BBDC;
@@ -234,6 +247,9 @@ a {
     line-height: 12px;
     color: #9B9B9B;
     top: -15px;
+}
+.header-phone--mobile {
+    display: none;
 }
 .header-phone a:hover {
     color: #08526C;
@@ -449,14 +465,11 @@ a {
 }
 
 
-.catalogue-list {
-    padding: 90px 0;
-}
 .catalogue-list__container {
     display: flex;
 }
 .catalogue-list__item {
-    width: 150px;
+    flex: 1;
     height: 130px;
     display: flex;
     flex-direction: column;
@@ -489,10 +502,10 @@ a {
     line-height: 21px;
     color: var(--color-blue);
     word-break: break-word;
+    margin-bottom: 35px;
 }
 .big-card__main {
     display: flex;
-    margin: 35px 0 20px;
 }
 .big-card__image {
     width: 350px;
@@ -508,14 +521,14 @@ a {
     flex: 1;
     max-width: 160px;
 }
+.big-card__info-item:not(:last-of-type) {
+    margin-bottom: 15px;
+}
 .big-card__info p {
     font-size: 12px;
     line-height: 14px;
     color: var(--color-card-grey-one);
     word-break: break-word;
-}
-.big-card__info p:not(:last-of-type) {
-    margin-bottom: 15px;
 }
 .big-card__info p span {
     display: block;
@@ -549,10 +562,10 @@ a {
     background: #58BBDC;
 }
 
-.about-company {
+
+.about-company__bg {
     background: var(--color-bg-one);
-    padding: 50px 0 66px;
-    margin: 90px 0;
+    padding: 50px 0 70px;
 }
 .about-company h6 {
     font-weight: 500;
@@ -641,9 +654,7 @@ a {
     background: #24B37F;
 }
 
-.why-us {
-    padding: 90px 0;
-}
+
 .why-us h6 {
     font-weight: 500;
     font-size: 18px;
@@ -686,6 +697,7 @@ a {
     padding: 30px 10px 40px;
 }
 
+
 .producers {
     background: #E9FBFE;
     padding: 50px 0 70px;
@@ -705,12 +717,10 @@ a {
     border-radius: 3px;
 }
 
-.news {
-    padding: 90px 0;
-}
+
 .news__row {
     --section-row-x: 30px;
-    --section-row-y: 30px;
+    --section-row-y: 35px;
 }
 .news__row-bottom {
     justify-content: center;
@@ -762,6 +772,7 @@ a {
     display: block;
 }
 
+
 .footer {
     background: #002E3F;
     padding: 30px 0 60px;
@@ -804,20 +815,28 @@ a {
     font-size: 14px;
     line-height: 17px;
     color: #FFFFFF;
+}
+.footer-menu__item ul li a {
     transition: color .2s;
 }
-.footer-menu__item ul li:hover {
+.footer-menu__item ul li a:hover {
     color: #58BBDC;
 }
 .footer-menu__item ul li:not(:last-of-type) {
     margin-bottom: 10px;
 }
 
+.footer-contacts svg {
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+}
 .footer-contacts span {
     font-size: 10px;
     line-height: 12px;
     color: #D9D9D9;
     margin:  0 0 5px 21px;
+    display: block;
 }
 .footer-contacts__phone {
     margin-bottom: 30px;
@@ -850,11 +869,6 @@ a {
     line-height: 24px;
     color: #FFFFFF;
     flex: 1;
-}
-.footer-contacts__address div svg {
-    width: 18px;
-    height: 18px;
-    margin-right: 5px;
 }
 
 .footer-bottom {
