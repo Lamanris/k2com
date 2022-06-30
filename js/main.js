@@ -14,7 +14,6 @@ if (headerBurger) {
 }
 
 
-
 // Dropdowns
 function toggleItemActive(e) {
     const parentItem = e.target.parentElement

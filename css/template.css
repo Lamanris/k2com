@@ -38,6 +38,12 @@ a {
     clip-path: inset(50%); /*modern browsers, clip-path works inwards from each corner*/
     white-space: nowrap; /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
 }
+.tippy-box[data-theme~='default-dropdown-theme'] {
+    background: none;
+}
+.tippy-box[data-theme~='default-dropdown-theme'] .tippy-content {
+    padding: 0;
+}
 
 .container {
     max-width: 1240px;
@@ -74,11 +80,6 @@ a {
 .phone-link svg {
     margin-right: 5px;
 }
-
-.section-spacing {
-    padding: 90px 0;
-}
-
 
 .section-row {
     --section-row-x: 40px;
@@ -160,6 +161,9 @@ a {
     width: 4px;
     background: #58BBDC;
     margin-right: 5px;
+}
+.section-spacing {
+    padding: 90px 0;
 }
 
 .btn {
@@ -244,12 +248,60 @@ a {
     margin-right: 35px;
     position: relative;
 }
-.header-region span {
+.header-region__span {
     position: absolute;
     font-size: 10px;
     line-height: 12px;
     color: #9B9B9B;
     top: -15px;
+}
+.header-region__preview {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #08526C;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.header-region__preview span {
+    margin: 0 6px 0 5px;
+}
+.header-region__preview svg:last-of-type {
+    margin-top: 3px;
+    transition: transform .2s;
+}
+.header-region__list {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 20px 20px 23px;
+    background: #FFFFFF;
+    border: 1px solid #F3F3F3;
+    box-shadow: 4px 4px 20px rgba(143, 143, 143, 0.15);
+    border-radius: 3px;
+    max-height: 400px;
+    width: 240px;
+    overflow: auto;
+}
+.header-region__list a {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #858585;
+    transition: color .2s;
+}
+.header-region__list a:hover {
+    color: #08526C;
+}
+.header-region__list a:not(:last-of-type) {
+    margin-bottom: 10px;
+}
+.header-region--active .header-region__list {
+    display: flex;
+}
+.header-region--active .header-region__preview svg:last-of-type {
+    transform: rotate(180deg);
 }
 .header-phone--mobile {
     display: none;
@@ -361,18 +413,54 @@ a {
     font-weight: 500;
     color: #08526C;
 }
-.header-menu__link-dropdown {
+.header-menu__link:not(:first-child) {
+    margin-left: 30px;
+}
+.header-menu__link-dropdown p {
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
-.header-menu__link-dropdown:after {
+.header-menu__link-dropdown p:after {
     content: url("../media/icons/dropdownArrowIcon.svg");
     width: 16px;
     height: 16px;
     margin-left: 1px;
+    transition: transform .2s;
 }
-.header-menu__link:not(:last-of-type) {
-    margin-right: 30px;
+.header-menu__link-dropdown__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    background: #FFFFFF;
+    border: 1px solid #F3F3F3;
+    box-shadow: 4px 4px 20px rgba(143, 143, 143, 0.15);
+    border-radius: 3px;
+    max-height: 200px;
+    width: 200px;
+    overflow: auto;
+}
+.header-menu__link-dropdown .header-menu__link-dropdown__list {
+    display: none;
+}
+.header-menu__link-dropdown__list a {
+    font-size: 14px;
+    line-height: 17px;
+    color: #858585;
+    text-transform: uppercase;
+}
+.header-menu__link-dropdown__list a:hover {
+    color: #08526C;
+}
+.header-menu__link-dropdown__list a:not(:last-child) {
+    margin-bottom: 10px;
+}
+.header-menu__link-dropdown--active p {
+    color: #08526C;
+}
+.header-menu__link-dropdown--active p:after {
+    transform: rotate(180deg);
 }
 
 
@@ -483,6 +571,10 @@ a {
     justify-content: flex-end;
     background: var(--color-blue-one);
     border: 1px solid var(--color-blue);
+    transition: box-shadow .2s;
+}
+.catalogue-list__item:hover {
+    box-shadow: 3px 3px 8px rgba(0, 108, 145, 0.4);
 }
 .catalogue-list__item p {
     font-weight: 500;
@@ -493,6 +585,9 @@ a {
 }
 .catalogue-list__item img {
     max-height: 63px;
+}
+.catalogue-list__item--active {
+    background: #08526C;
 }
 
 .big-card {

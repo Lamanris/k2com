@@ -94,14 +94,14 @@
         font-size: 14px;
         line-height: 17px;
     }
-    .header-menu__link-dropdown:after {
+    .header-menu__link-dropdown p:after {
         width: 14px;
         height: 14px;
         margin-left: 5px;
         margin-bottom: 5px;
     }
-    .header-menu__link:not(:last-of-type) {
-        margin-right: 20px;
+    .header-menu__link:not(:first-child) {
+        margin-left: 20px;
     }
 
 
