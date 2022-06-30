@@ -66,12 +66,9 @@
                         </a>
                         <button type="button" class="btn">Обратный звонок</button>
                     </div>
-                    <a class="header-phone--mobile" href="tel:+74951070700">
-                        <img src="media/icons/headerPhoneIcon.svg" alt="phone Icon">
-                    </a>
                 </div>
                 <div class="header-ask-search">
-                    <button type="button" class="btn">Задать вопрос</button>
+                    <button type="button" class="btn header__btn-ask">Задать вопрос</button>
                     <div class="header-search">
                         <label for="inputSearch" class="visually-hidden">Search</label>
                         <input type="text" placeholder="Поиск по сайту" name="search" id="inputSearch">
@@ -81,12 +78,18 @@
                         </svg>
                     </div>
                 </div>
+                <a class="header-phone--mobile" href="tel:+74951070700">
+                    <img src="media/icons/headerPhoneIcon.svg" alt="phone Icon">
+                </a>
+                <div class="header-burger">
+                    <img src="media/icons/burgerMenuIcon.svg" alt="burger menu">
+                </div>
             </div>
         </div>
         <hr>
         <div class="container">
             <div class="header-bottom">
-                <button type="button" class="btn">
+                <button type="button" class="btn header__btn-catalogue">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.125 6.375H19.875M4.125 18.375H19.875H4.125ZM4.125 12.375H19.875H4.125Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -103,6 +106,15 @@
                     <a href="#" class="header-menu__link header-menu__link--active">ЗАПЧАСТИ</a>
                     <a href="#" class="header-menu__link header-menu__link-dropdown">Контакты</a>
                 </nav>
+                <button type="button" class="btn header__btn-ask">Задать вопрос</button>
+                <div class="header-search">
+                    <label for="inputSearch" class="visually-hidden">Search</label>
+                    <input type="text" placeholder="Поиск по сайту" name="search" id="inputSearchBottom">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.25 11.25L14.25 14.25" stroke="#08526C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7.5 12.25C10.1234 12.25 12.25 10.1234 12.25 7.5C12.25 4.87665 10.1234 2.75 7.5 2.75C4.87665 2.75 2.75 4.87665 2.75 7.5C2.75 10.1234 4.87665 12.25 7.5 12.25Z" stroke="#08526C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
             </div>
         </div>
         <hr>
@@ -667,18 +679,26 @@
                 </div>
                 <div class="footer-menu">
                     <div class="footer-menu__item">
-                        <h5>О компании</h5>
-                        <ul>
-                            <li><a href="#">Сертификаты</a></li>
-                            <li><a href="#">Новости</a></li>
-                            <li><a href="#">Статьи</a></li>
-                            <li><a href="#">Наши партнеры</a></li>
-                            <li><a href="#">Контакты</a></li>
-                            <li><a href="#">Отзывы</a></li>
-                        </ul>
+                        <h5>
+                            О компании
+                            <img src="media/icons/dropdownArrowIcon-white.svg" alt="Dropdown Icon">
+                        </h5>
+                        <div class="footer-menu__item-list">
+                            <ul>
+                                <li><a href="#">Сертификаты</a></li>
+                                <li><a href="#">Новости</a></li>
+                                <li><a href="#">Статьи</a></li>
+                                <li><a href="#">Наши партнеры</a></li>
+                                <li><a href="#">Контакты</a></li>
+                                <li><a href="#">Отзывы</a></li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="footer-menu__item">
-                        <h5>Заказчику</h5>
+                        <h5>
+                            Заказчику
+                            <img src="media/icons/dropdownArrowIcon-white.svg" alt="Dropdown Icon">
+                        </h5>
                         <div class="footer-menu__item-list">
                             <ul>
                                 <li><a href="#">Доставка</a></li>
@@ -691,7 +711,10 @@
                         </div>
                     </div>
                     <div class="footer-menu__item">
-                        <h5>Спецтехника</h5>
+                        <h5>
+                            Спецтехника
+                            <img src="media/icons/dropdownArrowIcon-white.svg" alt="Dropdown Icon">
+                        </h5>
                         <div class="footer-menu__item-list">
                             <ul>
                                 <li><a href="#">Техника в наличии</a></li>
@@ -748,5 +771,6 @@
 
     <script src="libraries/swiper/swiper-bundle.min.js"></script>
     <script src="js/sliders.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
