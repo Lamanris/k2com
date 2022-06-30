@@ -489,7 +489,7 @@
         padding: 0;
         flex-direction: column;
     }
-    .map h2, .map-select {
+    .map h2 {
         max-width: 660px;
         padding: 0 20px;
         width: 100%;
@@ -501,12 +501,6 @@
     .map h2 {
         margin: 0 auto;
         padding-bottom: 30px;
-    }
-    .map-select {
-        margin: 15px auto;
-    }
-    .map select {
-        width: 100%;
     }
 
 
@@ -773,11 +767,8 @@
     .map__container {
         padding: 0;
     }
-    .map h2, .map-select {
-        padding: 0 10px;
-    }
     .map h2 {
-        padding-bottom: 30px;
+        padding: 0 10px 30px;
     }
 
 
