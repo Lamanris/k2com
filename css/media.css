@@ -50,8 +50,29 @@
     }
 
 
-    .header-top {
+    .header-top__wrap {
         height: 87px;
+    }
+    .header-reg-phone {
+        margin: 0 35px;
+    }
+    .header-region__span {
+        font-size: 9px;
+        line-height: 11px;
+        left: 21px;
+        top: -12px;
+    }
+    .header-region__preview {
+        font-size: 18px;
+        line-height: 21px;
+    }
+    .header-region__preview svg:first-of-type {
+        width: 16px;
+        height: 16px;
+    }
+    .header-region__preview svg:last-of-type {
+        width: 8px;
+        height: 8px;
     }
     .header-phone button {
         font-size: 14px;
@@ -78,7 +99,7 @@
     .header-search svg {
         right: 10px;
     }
-    .header-bottom {
+    .header-bottom__wrap {
         height: 75px;
     }
     .header__btn-catalogue {
@@ -286,6 +307,11 @@
         padding-top: 162px;
     }
     .header-top {
+        position: relative;
+        z-index: 6;
+        background: white;
+    }
+    .header-top__wrap {
         height: 95px;
     }
     .header-ask-search {
@@ -297,14 +323,14 @@
     .header-region {
         margin-right: 30px;
     }
-    .header-bottom {
+    .header-bottom__wrap {
         height: 65px;
         margin: 0 -12px;
     }
     .header-bottom .header-search, .header-bottom .header__btn-ask {
         display: flex;
     }
-    .header-bottom > * {
+    .header-bottom__wrap > * {
         flex: 1;
         margin: 0 12px;
     }
@@ -327,16 +353,8 @@
     .header__btn-catalogue svg:last-of-type {
         display: none;
     }
-
-
-
     .header-burger {
         display: block;
-    }
-    .header-top-container {
-        position: relative;
-        z-index: 6;
-        background: white;
     }
     .header hr:first-of-type {
         position: relative;
@@ -419,7 +437,6 @@
     .header-menu__link-collapse__list a:not(:first-child) {
         margin-top: 20px;
     }
-
     .header-burger__wrap .header__btn-ask {
         max-width: 320px;
         width: 100%;
@@ -429,7 +446,6 @@
         display: none;
         margin-left: 10px;
     }
-
     body.burger .header-burger__wrap {
         right: 0;
     }
@@ -718,9 +734,6 @@
     }
 
 
-    .header-top {
-        height: 95px;
-    }
     .header-logo {
         width: 60px;
     }
@@ -752,10 +765,10 @@
         display: block;
         margin-right: 22px;
     }
-    .header-bottom {
+    .header-bottom__wrap {
         margin: 0 -5px;
     }
-    .header-bottom > * {
+    .header-bottom__wrap > * {
         margin: 0 5px;
     }
     .header-bottom .header-search {
@@ -764,7 +777,6 @@
     .header__btn-catalogue span {
         margin: 0 0 0 5px;
     }
-
     .header-burger {
         margin: 0 0 0 auto;
     }
