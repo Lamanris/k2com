@@ -277,15 +277,19 @@
     }
 
 
+    .header {
+        position: fixed;
+        width: 100%;
+        z-index: 10;
+    }
+    .header-mobile-spacer {
+        padding-top: 162px;
+    }
     .header-top {
         height: 95px;
     }
     .header-ask-search {
         display: none;
-    }
-    .header-burger {
-        display: block;
-        margin-left: auto;
     }
     .header-reg-phone {
         margin: 0 0 0 37px;
@@ -322,6 +326,115 @@
     }
     .header__btn-catalogue svg:last-of-type {
         display: none;
+    }
+
+
+
+    .header-burger {
+        display: block;
+    }
+    .header-top-container {
+        position: relative;
+        z-index: 6;
+        background: white;
+    }
+    .header hr:first-of-type {
+        position: relative;
+        z-index: 6;
+    }
+    .header-burger__wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        background: #FFFFFF;
+        z-index: 5;
+        padding: 96px 0 40px;
+        -webkit-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+        overflow: auto;
+        min-height: 100vh;
+        max-height: 100vh;
+        margin: 0;
+    }
+    .header-burger__wrap .container {
+        width: 100%;
+    }
+    .header-burger__wrap .header-search {
+        margin: 10px 0 0;
+    }
+    .header-burger__wrap .header-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 45px 15px;
+        border-bottom: 1px solid #D9D9D9;
+    }
+    .header-menu__link {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .header-menu__link:not(:first-child) {
+        margin: 25px 0 0;
+    }
+    .header-menu__link-collapse {
+        max-height: 19px;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+    .header-menu__link-collapse p {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+    .header-menu__link-collapse p:after {
+        content: url("../media/icons/dropdownArrowIcon.svg");
+        width: 18px;
+        height: 18px;
+        margin-left: 5px;
+        transition: transform .2s;
+    }
+    .header-menu__link-collapse--active {
+        max-height: 1000px;
+    }
+    .header-menu__link-collapse--active p:after {
+        transform: rotate(180deg);
+    }
+    .header-menu__link-collapse__list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .header-menu__link-collapse__list a {
+        font-size: 14px;
+        line-height: 17px;
+        color: #858585;
+    }
+    .header-menu__link-collapse__list a:not(:first-child) {
+        margin-top: 20px;
+    }
+
+    .header-burger__wrap .header__btn-ask {
+        max-width: 320px;
+        width: 100%;
+        margin-top: 45px;
+    }
+    .header-burger__wrap .header-phone {
+        display: none;
+        margin-left: 10px;
+    }
+
+    body.burger .header-burger__wrap {
+        right: 0;
+    }
+    body.burger .header-burger {
+        background-image: url('../media/icons/burgerMenuIcon-opened.svg');
     }
 
 
@@ -639,7 +752,6 @@
         display: block;
         margin-right: 22px;
     }
-
     .header-bottom {
         margin: 0 -5px;
     }
@@ -651,6 +763,27 @@
     }
     .header__btn-catalogue span {
         margin: 0 0 0 5px;
+    }
+
+    .header-burger {
+        margin: 0 0 0 auto;
+    }
+    .header-burger__wrap .header-menu {
+        padding: 25px 20px;
+        margin: 0 -10px;
+    }
+    .header-burger__wrap .header-search {
+       display: none;
+    }
+    .header-burger__wrap .header__btn-ask {
+        margin: 25px 0;
+        max-width: 400px;
+    }
+    body.burger .header-phone--mobile {
+        display: none;
+    }
+    .header-burger__wrap .header-phone {
+        display: inline-block;
     }
 
 
@@ -769,6 +902,10 @@
     }
     .map h2 {
         padding: 0 10px 30px;
+    }
+    .map-wrap__item {
+        font-size: 7px;
+        line-height: 9px;
     }
 
 

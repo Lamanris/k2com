@@ -1,3 +1,42 @@
+// Dropdowns
+
+// Footer Accordion
+function toggleItemActive(e) {
+    const parentItem = e.target.parentElement
+    parentItem.classList.toggle('footer-menu__item--active')
+}
+function initFooterDropdown(x) {
+    const footerMenuItem = document.querySelectorAll('.footer-menu__item')
+    if (x.matches) {
+        footerMenuItem.forEach(el => {
+            const footerMenuItemTitle = el.querySelector('h5')
+            footerMenuItemTitle.addEventListener('click', toggleItemActive)
+        })
+    } else {
+        footerMenuItem.forEach(el => {
+            const footerMenuItemTitle = el.querySelector('h5')
+            footerMenuItemTitle.removeEventListener('click', toggleItemActive)
+        })
+    }
+}
+var smallDevice = window.matchMedia("(max-width: 660px)")
+initFooterDropdown(smallDevice) // Call listener function at run time
+smallDevice.addEventListener('change', initFooterDropdown) // Attach listener function on state changes
+
+
+// Header Accordion
+
+const headerMenuItem = document.querySelectorAll('.header-burger__wrap .header-menu__link-collapse')
+
+if (headerMenuItem.length > 0) {
+    headerMenuItem.forEach(el => {
+        const headerMenuItemTitle = el.querySelector('p')
+        headerMenuItemTitle.addEventListener('click', () => {
+            el.classList.toggle('header-menu__link-collapse--active')
+        })
+    })
+}
+
 tippy('.header-menu__link-dropdown', {
     interactive: true,
     trigger: 'click',
