@@ -83,7 +83,7 @@
                     <div class="header-ask-search">
                         <button type="button" class="btn header__btn-ask">Задать вопрос</button>
                         <div class="header-search">
-                            <label for="inputSearch" class="visually-hidden">Search</label>
+                            <label for="inputSearch" class="visually-hidden">Поиск</label>
                             <input type="text" placeholder="Поиск по сайту" name="search" id="inputSearch">
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.25 11.25L14.25 14.25" stroke="#08526C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -103,9 +103,7 @@
             <div class="container">
                 <div class="header-bottom__wrap">
                     <button type="button" class="btn header__btn-catalogue">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4.125 6.375H19.875M4.125 18.375H19.875H4.125ZM4.125 12.375H19.875H4.125Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                        <div class="header__btn-catalogue__icon"><span></span></div>
                         <span>Каталог техники</span>
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7.99999 9.98288C7.9111 9.98288 7.8251 9.96621 7.74199 9.93288C7.65844 9.89954 7.58888 9.8551 7.53333 9.79954L4.46666 6.73288C4.34444 6.61066 4.28333 6.4551 4.28333 6.26621C4.28333 6.07732 4.34444 5.92177 4.46666 5.79954C4.58888 5.67732 4.74444 5.61621 4.93333 5.61621C5.12221 5.61621 5.27777 5.67732 5.39999 5.79954L7.99999 8.39954L10.6 5.79954C10.7222 5.67732 10.8778 5.61621 11.0667 5.61621C11.2555 5.61621 11.4111 5.67732 11.5333 5.79954C11.6555 5.92177 11.7167 6.07732 11.7167 6.26621C11.7167 6.4551 11.6555 6.61066 11.5333 6.73288L8.46666 9.79954C8.39999 9.86621 8.32777 9.91332 8.24999 9.94088C8.17221 9.96888 8.08888 9.98288 7.99999 9.98288Z" fill="white"/>
@@ -158,7 +156,7 @@
                     </nav>
                     <button type="button" class="btn header__btn-ask">Задать вопрос</button>
                     <div class="header-search">
-                        <label for="inputSearch" class="visually-hidden">Search</label>
+                        <label for="inputSearchBottom" class="visually-hidden">Поиск</label>
                         <input type="text" placeholder="Поиск по сайту" name="search" id="inputSearchBottom">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M11.25 11.25L14.25 14.25" stroke="#08526C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -172,7 +170,7 @@
         <div class="header-burger__wrap">
             <div class="container">
                 <div class="header-search">
-                    <label for="inputSearch" class="visually-hidden">Search</label>
+                    <label for="inputSearchBurger" class="visually-hidden">Поиск</label>
                     <input type="text" placeholder="Поиск по сайту" name="search" id="inputSearchBurger">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M11.25 11.25L14.25 14.25" stroke="#08526C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -240,6 +238,113 @@
     </header>
     <div class="header-mobile-spacer"></div>
 
+    <div class="header-catalogue">
+        <div class="container">
+            <div class="header-catalogue__wrap">
+                <div class="header-catalogue__sidebar">
+                    <div class="header-catalogue__sidebar-wrap">
+                        <button type="button" class="header-catalogue__sidebar-btn header-catalogue__sidebar-btn--active">Автокраны</button>
+                        <button type="button" class="header-catalogue__sidebar-btn">Краны-подъемники</button>
+                        <button type="button" class="header-catalogue__sidebar-btn">Автомобили с КМУ</button>
+                        <button type="button" class="header-catalogue__sidebar-btn">Автовышки</button>
+                        <button type="button" class="header-catalogue__sidebar-btn">Седельные тягачи</button>
+                        <button type="button" class="header-catalogue__sidebar-btn">Вахтовые автобусы</button>
+                        <button type="button" class="header-catalogue__sidebar-btn">Автомастерские</button>
+                        <button type="button" class="header-catalogue__sidebar-btn">Запчаcти</button>
+                    </div>
+                </div>
+                <div class="header-catalogue__content">
+                    <div class="header-catalogue__cat">
+                        <div class="header-catalogue__item">
+                            <p>Марка:</p>
+                            <div class="header-catalogue__item-wrap">
+                                <a href="#">
+                                    <img src="media/headerCatalogue/headerCatalogueKamishin.png" alt="Камышин">
+                                </a>
+                                <a href="#">
+                                    <img src="media/headerCatalogue/headerCatalogueGalichanin.png" alt="Галичанин">
+                                </a>
+                                <a href="#">
+                                    <img src="media/headerCatalogue/headerCatalogueKlincy.png" alt="Клинцы">
+                                </a>
+                                <a href="#">
+                                    <img src="media/headerCatalogue/headerCataloguePalSany.png" alt="Palfinger & Sany">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="header-catalogue__item">
+                            <p>Грузоподъемность (т.):</p>
+                            <div class="header-catalogue__item-wrap">
+                                <a href="#">Автокраны 16 т.</a>
+                                <a href="#">Автокраны 20 т.</a>
+                                <a href="#">Автокраны 25 т.</a>
+                                <a href="#">Автокраны 27 т.</a>
+                                <a href="#">Автокраны 32 т.</a>
+                                <a href="#">Автокраны 35 т.</a>
+                                <a href="#">Автокраны 36 т.</a>
+                                <a href="#">Автокраны 40 т.</a>
+                            </div>
+                        </div>
+                        <div class="header-catalogue__item">
+                            <p>Длина стрелы (м.):</p>
+                            <div class="header-catalogue__item-wrap">
+                                <a href="#">19,0 м</a>
+                                <a href="#">19,0 м</a>
+                                <a href="#">19,0 м</a>
+                                <a href="#">19,0 м</a>
+                                <a href="#">19,0 м</a>
+                                <a href="#">19,0 м</a>
+                                <a href="#">19,0 м</a>
+                                <a href="#">19,0 м</a>
+                                <a href="#">19,0 м</a>
+                                <a href="#">19,0 м</a>
+                                <a href="#">19,0 м</a>
+                                <a href="#">19,0 м</a>
+                                <a href="#">19,0 м</a>
+                            </div>
+                        </div>
+                        <div class="header-catalogue__item">
+                            <p>Шасси:</p>
+                            <div class="header-catalogue__item-wrap">
+                                <a href="#">КамАЗ-43118</a>
+                                <a href="#">КамАЗ-43118</a>
+                                <a href="#">КамАЗ-43118</a>
+                                <a href="#">КамАЗ-43118</a>
+                                <a href="#">КамАЗ-43118</a>
+                                <a href="#">КамАЗ-43118</a>
+                                <a href="#">КамАЗ-43118</a>
+                            </div>
+                        </div>
+                        <div class="header-catalogue__item">
+                            <p>Колесная формула:</p>
+                            <div class="header-catalogue__item-wrap">
+                                <a href="#">4х2</a>
+                                <a href="#">4х2</a>
+                                <a href="#">4х2</a>
+                                <a href="#">4х2</a>
+                                <a href="#">8х4х4</a>
+                                <a href="#">4х2</a>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-more header-catalogue__cat-link">
+                            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="3" height="3" rx="1" fill="white"/>
+                                <rect y="5" width="3" height="3" rx="1" fill="white"/>
+                                <rect y="10" width="3" height="3" rx="1" fill="white"/>
+                                <rect x="5" width="3" height="3" rx="1" fill="white"/>
+                                <rect x="5" y="5" width="3" height="3" rx="1" fill="white"/>
+                                <rect x="5" y="10" width="3" height="3" rx="1" fill="white"/>
+                                <rect x="10" width="3" height="3" rx="1" fill="white"/>
+                                <rect x="10" y="5" width="3" height="3" rx="1" fill="white"/>
+                                <rect x="10" y="10" width="3" height="3" rx="1" fill="white"/>
+                            </svg>
+                            КАТАЛОГ АВТОКРАНОВ
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="breadcrumbs breadcrumbs-hidden">
         <div class="breadcrumbs__container container">
@@ -610,9 +715,11 @@
             <p>Оставьте заявку  и наш менеджер бесплатно Вас проконсультирует</p>
             <form action="#" class="form-banner__form">
                 <div class="form-banner__form-input">
+                    <label for="form-banner-name" class="visually-hidden">Имя</label>
                     <input type="text" name="form-banner-name" id="form-banner-name" placeholder="Ваше имя">
                 </div>
                 <div class="form-banner__form-input">
+                    <label for="form-banner-phone" class="visually-hidden">Номер</label>
                     <input type="text" name="form-banner-phone" id="form-banner-phone" placeholder="Номер телефона">
                 </div>
                 <button type="submit" class="btn btn-more form-banner__form-submit">Заказать звонок</button>

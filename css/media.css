@@ -347,10 +347,6 @@
         margin: 0 0 0 10px;
     }
     .header__btn-catalogue svg {
-        width: 18px;
-        height: 18px;
-    }
-    .header__btn-catalogue svg:last-of-type {
         display: none;
     }
     .header-burger {
