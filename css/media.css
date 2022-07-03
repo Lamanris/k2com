@@ -21,8 +21,6 @@
 
     .section-row {
         --section-row-x: 20px;
-    }
-    .section-row-y {
         --section-row-y: 30px;
     }
     .section-spacing {
@@ -287,7 +285,7 @@
         height: 52px;
     }
 
-    .section-row-y {
+    .section-row {
         --section-row-y: 25px;
     }
     .section-spacing {
@@ -536,9 +534,7 @@
     }
     .big-card__buttons {
         flex-direction: column;
-    }
-    .big-card__buttons > *:not(:last-of-type) {
-        margin-bottom: 20px;
+        --section-row-y: 20px;
     }
 
 
@@ -854,7 +850,7 @@
         font-size: 16px;
         line-height: 19px;
     }
-    .about-company .section-row-y {
+    .about-company .section-row {
         --section-row-y: 15px;
     }
 

@@ -31,7 +31,6 @@
     <link rel="stylesheet" href="css/media.css">
 </head>
 <body>
-
     <header class="header">
         <div class="header-top">
             <div class="container">
@@ -499,7 +498,7 @@
     <section class="special-offers">
         <div class="container">
             <h2 class="section-title">Спецпредложения</h2>
-            <div class="section-row section-row-y">
+            <div class="section-row">
                 <div class="section-col-sm-6">
                     <div class="big-card">
                         <h3>КС-55713-5К-1 «Клинцы»</h3>
@@ -534,7 +533,7 @@
                                 <a href="#" class="btn btn-more">Подробнее</a>
                             </div>
                             <div class="section-col-md-6">
-                                <button type="button" class="btn btn-lizing">
+                                <button type="button" class="btn btn-lizing" data-modal="modalLizing">
                                     Стоимость лизинга
                                 </button>
                             </div>
@@ -575,7 +574,7 @@
                                 <a href="#" class="btn btn-more">Подробнее</a>
                             </div>
                             <div class="section-col-md-6">
-                                <button type="button" class="btn btn-lizing">
+                                <button type="button" class="btn btn-lizing" data-modal="modalLizing">
                                     Стоимость лизинга
                                 </button>
                             </div>
@@ -616,7 +615,7 @@
                                 <a href="#" class="btn btn-more">Подробнее</a>
                             </div>
                             <div class="section-col-md-6">
-                                <button type="button" class="btn btn-lizing">
+                                <button type="button" class="btn btn-lizing" data-modal="modalLizing">
                                     Стоимость лизинга
                                 </button>
                             </div>
@@ -657,7 +656,7 @@
                                 <a href="#" class="btn btn-more">Подробнее</a>
                             </div>
                             <div class="section-col-md-6">
-                                <button type="button" class="btn btn-lizing">
+                                <button type="button" class="btn btn-lizing" data-modal="modalLizing">
                                     Стоимость лизинга
                                 </button>
                             </div>
@@ -693,7 +692,7 @@
         <div class="about-company__bg">
             <div class="container">
                 <h2 class="section-title">O Компании</h2>
-                <div class="section-row section-row-y">
+                <div class="section-row">
                     <div class="section-col-md-6">
                         <h6>Продажа грузоподъемной, дорожно-строительной и спецтехники в Москве от Официального дилера!</h6>
                         <p>Рынок грузоподъемной техники насчитывает более двухсот лет.
@@ -720,11 +719,18 @@
                 </div>
                 <div class="form-banner__form-input">
                     <label for="form-banner-phone" class="visually-hidden">Номер</label>
-                    <input type="text" name="form-banner-phone" id="form-banner-phone" placeholder="Номер телефона">
+                    <input type="text" name="form-banner-phone" id="form-banner-phone" placeholder="Номер телефона" data-input-phone="true">
                 </div>
                 <button type="submit" class="btn btn-more form-banner__form-submit">Заказать звонок</button>
                 <button type="button" class="btn btn-more btn-commercial-offer">Коммерческое предложение</button>
             </form>
+        </div>
+        <div class="form-banner__loader">
+            <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="form-banner__container-success">
+            <h2>спасибо! ваша заявка отправлена.</h2>
+            <p>Наш менеджер свяжется с Вами в ближайшее время</p>
         </div>
         <div class="form-banner-bg">
             <img src="media/about-company-img.png" alt="Background">
@@ -736,7 +742,7 @@
             <h2 class="section-title">Почему стоит выбрать нас</h2>
             <h6>Уверенная эксплуатация автомобильных кранов в любых условиях.</h6>
             <p>Одно из доминирующих преимуществ Российской техники заключается в идеальном сочетании подъемного механизма и шасси отечественных автомобилей. Оба завода обладают конструкторскими бюро, а при производстве используют только собственные разработки, не попадая под зависимость от импортных составляющих.  Купить автокран российского производства сегодня стремятся многие развивающиеся строительные организации. Техника, созданная для работы в сложных климатических условиях, имеет отличные эксплуатационные показатели.</p>
-            <div class="section-row section-row-y why-us__row">
+            <div class="section-row why-us__row">
                 <div class="section-col-md-3 section-col-sm-6">
                     <div class="why-us__item">
                         <div class="why-us__item-image">
@@ -777,7 +783,7 @@
     <section class="producers">
         <div class="container">
             <h2 class="section-title">Производители</h2>
-            <div class="section-row section-row-y producers__row">
+            <div class="section-row producers__row">
                 <div class="section-col-sm-3 section-col-6">
                     <div class="producers__item">
                         <img src="media/producers/producer1.png" alt="Камышин">
@@ -805,7 +811,7 @@
     <section class="news section-spacing">
         <div class="container">
             <h2 class="section-title">Новости</h2>
-            <div class="section-row section-row-y news__row">
+            <div class="section-row news__row">
                 <div class="section-col-sm-4">
                     <article class="news-card">
                         <div class="news-card__image">
@@ -1012,9 +1018,124 @@
     </footer>
 
 
-    <script src="js/main.js"></script>
+    <div class="modal modal-lizing" id="modalLizing">
+        <div class="modal-bg modal-exit"></div>
+        <div class="modal-container">
+            <h2 class="modal-title">Заявка на лизинг</h2>
+            <form action="#">
+                <div class="section-row modal__section-row">
+                    <div class="section-col-12">
+                        <div class="modal-input">
+                            <label for="modalLizingInputName">Фамилия Имя Отчество</label>
+                            <input class="modal-input__input" type="text" id="modalLizingInputName" name="modal-lizing-name" data-input-required="true">
+                        </div>
+                    </div>
+                    <div class="section-col-6">
+                        <div class="modal-input">
+                            <label for="modalLizingInputCompanyName">Название компании</label>
+                            <input class="modal-input__input" type="text" id="modalLizingInputCompanyName" name="modal-lizing-company-name" data-input-required="true">
+                        </div>
+                    </div>
+                    <div class="section-col-6">
+                        <div class="modal-input">
+                            <label for="modalLizingInputInn">ИНН (Ваш или компании)</label>
+                            <input class="modal-input__input" type="text" id="modalLizingInputInn" name="modal-lizing-inn" data-input-required="true" data-input-inn="true">
+                        </div>
+                    </div>
+                    <div class="section-col-12">
+                        <div class="modal-input">
+                            <label for="modalLizingInputMachine">Какую технику вы хотите взять в лизинг</label>
+                            <input class="modal-input__input" type="text" id="modalLizingInputMachine" name="modal-lizing-machine">
+                        </div>
+                    </div>
+                    <div class="section-col-6">
+                        <div class="modal-input modal-select">
+                            <label for="modalLizingInputOffice">Офис продаж</label>
+                            <input class="modal-input__input" type="text" id="modalLizingInputOffice" name="modal-lizing-office">
+                            <div class="modal-select__wrap">
+                                <div class="modal-select-preview modal-input__input">
+                                    <p>Выберите удобный офис продаж</p>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7.99999 9.98288C7.9111 9.98288 7.8251 9.96621 7.74199 9.93288C7.65844 9.89954 7.58888 9.8551 7.53333 9.79954L4.46666 6.73288C4.34444 6.61066 4.28333 6.4551 4.28333 6.26621C4.28333 6.07732 4.34444 5.92177 4.46666 5.79954C4.58888 5.67732 4.74444 5.61621 4.93333 5.61621C5.12221 5.61621 5.27777 5.67732 5.39999 5.79954L7.99999 8.39954L10.6 5.79954C10.7222 5.67732 10.8778 5.61621 11.0667 5.61621C11.2555 5.61621 11.4111 5.67732 11.5333 5.79954C11.6555 5.92177 11.7167 6.07732 11.7167 6.26621C11.7167 6.4551 11.6555 6.61066 11.5333 6.73288L8.46666 9.79954C8.39999 9.86621 8.32777 9.91332 8.24999 9.94088C8.17221 9.96888 8.08888 9.98288 7.99999 9.98288Z" fill="#858585"/>
+                                    </svg>
+                                </div>
+                                <div class="modal-select-options">
+                                    <button type="button" class="btn modal-select-options__item" data-select="Центральный офис Москва">Центральный офис Москва</button>
+                                    <button type="button" class="btn modal-select-options__item modal-select-options__item--active" data-select="Офис Санкт-Петербург">Офис Санкт-Петербург</button>
+                                    <button type="button" class="btn modal-select-options__item" data-select="Офис Казань">Офис Казань</button>
+                                    <button type="button" class="btn modal-select-options__item" data-select="Офис Уфа">Офис Уфа</button>
+                                    <button type="button" class="btn modal-select-options__item" data-select="Офис Иваново">Офис Иваново</button>
+                                    <button type="button" class="btn modal-select-options__item" data-select="Офис Новосибирск">Офис Новосибирск</button>
+                                    <button type="button" class="btn modal-select-options__item" data-select="Офис Сургут">Офис Сургут</button>
+                                    <button type="button" class="btn modal-select-options__item" data-select="Офис Красноярск">Офис Красноярск</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-col-6">
+                        <div class="modal-input modal-select">
+                            <label for="modalLizingInputLizCompany">Лизинговая компания</label>
+                            <input class="modal-input__input" type="text" id="modalLizingInputLizCompany" name="modal-lizing-liz-company">
+                            <div class="modal-select__wrap">
+                                <div class="modal-select-preview modal-input__input">
+                                    <p>Выберите лизинговую компанию</p>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7.99999 9.98288C7.9111 9.98288 7.8251 9.96621 7.74199 9.93288C7.65844 9.89954 7.58888 9.8551 7.53333 9.79954L4.46666 6.73288C4.34444 6.61066 4.28333 6.4551 4.28333 6.26621C4.28333 6.07732 4.34444 5.92177 4.46666 5.79954C4.58888 5.67732 4.74444 5.61621 4.93333 5.61621C5.12221 5.61621 5.27777 5.67732 5.39999 5.79954L7.99999 8.39954L10.6 5.79954C10.7222 5.67732 10.8778 5.61621 11.0667 5.61621C11.2555 5.61621 11.4111 5.67732 11.5333 5.79954C11.6555 5.92177 11.7167 6.07732 11.7167 6.26621C11.7167 6.4551 11.6555 6.61066 11.5333 6.73288L8.46666 9.79954C8.39999 9.86621 8.32777 9.91332 8.24999 9.94088C8.17221 9.96888 8.08888 9.98288 7.99999 9.98288Z" fill="#858585"/>
+                                    </svg>
+                                </div>
+                                <div class="modal-select-options">
+                                    <button type="button" class="btn modal-select-options__item" data-select="Центральный офис Москва">Эксперт-Лизинг</button>
+                                    <button type="button" class="btn modal-select-options__item modal-select-options__item--active" data-select="Офис Санкт-Петербург">Каркаде</button>
+                                    <button type="button" class="btn modal-select-options__item" data-select="Офис Казань">Аспект Лизинг</button>
+                                    <button type="button" class="btn modal-select-options__item" data-select="Офис Уфа">Элемент Лизинг</button>
+                                    <button type="button" class="btn modal-select-options__item" data-select="Офис Иваново">Балтийский лизинг</button>
+                                    <button type="button" class="btn modal-select-options__item" data-select="Офис Новосибирск">ВЭБ-лизинг</button>
+                                    <button type="button" class="btn modal-select-options__item" data-select="Офис Сургут">Европлан</button>
+                                    <button type="button" class="btn modal-select-options__item" data-select="Офис Красноярск">ВТБ лизинг</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-col-6">
+                        <div class="modal-input">
+                            <label for="modalLizingInputPhone">Телефон</label>
+                            <input class="modal-input__input" type="text" id="modalLizingInputPhone" name="modal-lizing-phone" data-input-required="true" data-input-phone="true">
+                        </div>
+                    </div>
+                    <div class="section-col-6">
+                        <div class="modal-input">
+                            <label for="modalLizingInputEmail">Электронная почта</label>
+                            <input class="modal-input__input" type="text" id="modalLizingInputEmail" name="modal-lizing-email" data-input-required="true" data-input-email="true">
+                        </div>
+                    </div>
+                    <div class="section-col-12">
+                        <button type="submit" class="btn btn-more modal-submit">Оставить заявку</button>
+                        <div class="modal-agreement modal-input">
+                            <label class="modal-agreement__label">
+                                Я ознакомлен и принимаю условия  Соглашения об использовании сайта, в том числе в части обработки и использования моих персональных данных
+                                <input type="checkbox" data-input-required="true">
+                                <span class="modal-agreement__checkmark">
+                                <svg width="7" height="5" viewBox="0 0 7 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M6.168 0.4992L2.7136 4.8184L0 2.5568L0.512 1.9424L2.5984 3.6808L5.544 0L6.168 0.4992Z" fill="#4A4A4A"/>
+</svg>
+                            </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <button class="modal-close modal-exit">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.94 11.9999L17.8 7.13993C17.9092 7.0124 17.9663 6.84835 17.9598 6.68056C17.9533 6.51278 17.8838 6.35362 17.7651 6.23489C17.6463 6.11616 17.4872 6.0466 17.3194 6.04012C17.1516 6.03364 16.9876 6.09071 16.86 6.19993L12 11.0599L7.14002 6.19326C7.01249 6.08405 6.84844 6.02698 6.68065 6.03346C6.51287 6.03994 6.35371 6.10949 6.23498 6.22822C6.11625 6.34695 6.0467 6.50611 6.04022 6.67389C6.03373 6.84168 6.09081 7.00573 6.20002 7.13326L11.06 11.9999L6.19336 16.8599C6.12357 16.9197 6.06689 16.9932 6.02687 17.076C5.98686 17.1587 5.96437 17.2487 5.96082 17.3406C5.95728 17.4324 5.97275 17.5239 6.00626 17.6095C6.03978 17.695 6.09062 17.7727 6.15559 17.8377C6.22056 17.9027 6.29826 17.9535 6.38381 17.987C6.46936 18.0205 6.56091 18.036 6.65273 18.0325C6.74454 18.0289 6.83463 18.0064 6.91734 17.9664C7.00005 17.9264 7.07359 17.8697 7.13336 17.7999L12 12.9399L16.86 17.7999C16.9876 17.9091 17.1516 17.9662 17.3194 17.9597C17.4872 17.9533 17.6463 17.8837 17.7651 17.765C17.8838 17.6462 17.9533 17.4871 17.9598 17.3193C17.9663 17.1515 17.9092 16.9875 17.8 16.8599L12.94 11.9999Z" fill="#858585"/>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+
     <script src="libraries/poperjs/core2.js"></script>
     <script src="libraries/poperjs/tippy.js"></script>
+    <script src="js/main.js"></script>
     <script src="js/dropdowns.js"></script>
     <script src="libraries/swiper/swiper-bundle.min.js"></script>
     <script src="js/sliders.js"></script>
