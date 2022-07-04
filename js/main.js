@@ -20,7 +20,31 @@ if (headerCatalogueBtn) {
         document.body.classList.toggle('catalogue')
     });
 }
+document.body.addEventListener('click', function (e) {
+    if (!document.querySelector('.header-catalogue__wrap').contains(e.target) && !headerCatalogueBtn.contains(e.target)) {
+        document.body.classList.remove('catalogue')
+    }
+})
 
+const headerCatalogueSidebarBtns = document.querySelectorAll('.header-catalogue__sidebar-wrap .header-catalogue__sidebar-btn')
+const headerCatalogueContentCats = document.querySelectorAll('.header-catalogue__cat')
+if (headerCatalogueSidebarBtns.length > 0) {
+    headerCatalogueSidebarBtns.forEach(el => {
+        el.addEventListener('click', () => {
+            headerCatalogueSidebarBtns.forEach(el => el.classList.remove('header-catalogue__sidebar-btn--active'))
+            el.classList.add('header-catalogue__sidebar-btn--active')
+            if (headerCatalogueContentCats.length > 0) {
+                headerCatalogueContentCats.forEach(cat => {
+                    if (el.getAttribute('data-catalogue') === cat.id) {
+                        cat.classList.add('header-catalogue__cat--active')
+                    } else {
+                        cat.classList.remove('header-catalogue__cat--active')
+                    }
+                })
+            }
+        })
+    })
+}
 
 // Phone Mask
 const inputsPhone = document.querySelectorAll("input[data-input-phone]");

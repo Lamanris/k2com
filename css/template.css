@@ -894,7 +894,7 @@ body.catalogue .header__btn-catalogue__icon span {
     flex-direction: column;
     align-items: flex-start;
     box-shadow: 4px 4px 20px rgba(143, 143, 143, 0.15);
-
+    min-height: 836px;
 }
 .header-catalogue__sidebar-btn {
     height: 59px;
@@ -917,12 +917,53 @@ body.catalogue .header__btn-catalogue__icon span {
     box-shadow: 4px 4px 20px rgba(143, 143, 143, 0.15);
 }
 .header-catalogue__cat {
-
+    display: none;
+}
+.header-catalogue__cat--active {
+    display: block;
+}
+.header-catalogue__cat-spares {
+    width: 390px;
+}
+.header-catalogue__link {
+    height: 59px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #E8E8E8;
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 0 35px;
+    cursor: pointer;
+    color: #858585;
+    line-height: 19px;
+    transition: color .2s;
+}
+.header-catalogue__link:hover {
+    color: #181818;
 }
 .header-catalogue__item {
     padding: 0 50px;
     position: relative;
 }
+.header-catalogue__item-images {
+    min-height: 117px;
+}
+.header-catalogue__item-capacity, .header-catalogue__item-arrow {
+    min-height: 236px;
+}
+.header-catalogue__item-chassis {
+    min-height: 176px;
+}
+.header-catalogue__item-capacity a {
+    width: 128px;
+    white-space: nowrap;
+}
+.header-catalogue__item-arrow a {
+    width: 48px;
+    white-space: nowrap;
+}
+
 .header-catalogue__item:not(:first-of-type):after {
     content: '';
     width: 100%;
@@ -935,16 +976,15 @@ body.catalogue .header__btn-catalogue__icon span {
 .header-catalogue__item p {
     color: #08526C;
     line-height: 19px;
-    height: 59px;
+    padding: 20px 0 41px;
     display: flex;
     align-items: center;
 }
 .header-catalogue__item-wrap {
-    min-height: 59px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    margin: 0 -25px 0;
+    margin: -15px -25px 0;
 }
 .header-catalogue__item-wrap a {
     margin: 0 25px 15px;
@@ -1380,10 +1420,14 @@ body.catalogue .header__btn-catalogue__icon span {
     justify-content: center;
     margin-top: 50px;
 }
+.news__row-bottom > * {
+    margin: 0;
+}
 .news-card {
     background: #FFFFFF;
     box-shadow: 4px 4px 20px rgba(143, 143, 143, 0.15);
     border-radius: 3px;
+    display: block;
 }
 .news-card__image {
     height: 280px;
