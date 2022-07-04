@@ -309,7 +309,7 @@
     }
     .modal__section-row {
         --section-row-x: 20px;
-        --section-row-y: 20px;
+        --section-row-y: 30px;
     }
     .modal-input label {
         margin-bottom: 5px;
@@ -758,7 +758,9 @@
         margin: 0 12px;
     }
 
-
+    .modal {
+        padding: 0 10px;
+    }
     .modal-container {
         padding: 45px 10px 35px;
 

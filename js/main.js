@@ -1,7 +1,6 @@
 // Header Burger
 const headerBurger = document.querySelector('.header-burger')
 const headerBurgerLink = document.querySelectorAll('.header-burger__wrap .header-menu a')
-
 if (headerBurger) {
     headerBurger.addEventListener('click', () => {
         document.body.classList.toggle('burger')
@@ -15,7 +14,6 @@ if (headerBurger) {
 
 
 // Header Catalogue
-
 const headerCatalogueBtn = document.querySelector('.header__btn-catalogue')
 if (headerCatalogueBtn) {
     headerCatalogueBtn.addEventListener('click', () => {
@@ -70,9 +68,6 @@ inputsInn.forEach(el => {
         el.value = result;
     });
 })
-
-
-
 // Modal Input Errors
 const modalInputError = tippy('.modal-input', {
     trigger: 'manual',
@@ -84,7 +79,6 @@ const modalInputError = tippy('.modal-input', {
     offset: [0, 8],
     hideOnClick: false,
 });
-
 // Modal Select
 const modalCustomSelect = tippy('.modal-select__wrap', {
     interactive: true,
@@ -123,7 +117,6 @@ const modalCustomSelect = tippy('.modal-select__wrap', {
     offset: [0, 0],
     appendTo: () => document.body
 });
-
 // Modals
 const modals = document.querySelectorAll("[data-modal]");
 modals.forEach(function (trigger) {
@@ -132,9 +125,11 @@ modals.forEach(function (trigger) {
         const modal = document.getElementById(trigger.dataset.modal);
         if (trigger.dataset.modal === 'modalLizing') {
             const bigCard = trigger.closest('.big-card')
-            const bigCardTitle = bigCard.querySelector('h3')
-            const modalLizingInputMachine = modal.querySelector('input[name="modal-lizing-machine"]')
-            modalLizingInputMachine.value = bigCardTitle.innerText
+            if (bigCard) {
+                const bigCardTitle = bigCard.querySelector('h3')
+                const modalLizingInputMachine = modal.querySelector('input[name="modal-lizing-machine"]')
+                modalLizingInputMachine.value = bigCardTitle.innerText
+            }
         }
         modal.classList.add("open");
         document.body.style.overflow = 'hidden'
@@ -147,17 +142,23 @@ modals.forEach(function (trigger) {
                 const modalForm = modal.querySelector('form')
                 if (modalForm) {
                     modalForm.reset()
+                    const inputWrappers = modalForm.querySelectorAll('.modal-input')
+                    if (inputWrappers.length > 0) {
+                        inputWrappers.forEach(el => {
+                            el.classList.remove('modal-input--error')
+                            el.classList.remove('modal-input--error-format')
+                        })
+                    }
+                    modalInputError.forEach(el => {
+                        el.hide()
+                    })
+                    modal.classList.remove('modal--success')
                 }
-                modalInputError.forEach(el => {
-                    el.hide()
-                })
             });
         });
     });
 });
-
-
-// Modal Lizing
+// Modal Forms Validation & Submit Handling
 function formValidation(form) {
     const inputs = form.querySelectorAll('input')
     let validationArray = []
@@ -219,24 +220,30 @@ function formValidation(form) {
     }
     return validationArray.every(el => el === true)
 }
-const modalLizingForm = document.querySelector('.modal-lizing form')
-modalLizingForm.addEventListener('submit', function (e) {
-    e.preventDefault()
-    if (formValidation(e.target)) {
-        const modalWrap = e.target.closest('.modal')
-        modalWrap.classList.add('modal--loader')
-        setTimeout(() => {
-            modalWrap.classList.remove('modal--loader')
-            modalWrap.classList.add('modal--success')
-            setTimeout(() => {
-                modalWrap.classList.remove('modal--success')
-                modalWrap.classList.remove('open')
-                e.target.reset()
-                document.body.style.overflow = 'auto'
-            }, 1000)
-        }, 1000)
-    }
-})
+const modalForms = document.querySelectorAll('.modal form')
+if (modalForms.length > 0) {
+    modalForms.forEach(el => {
+        el.addEventListener('submit', function (e) {
+            e.preventDefault()
+            if (formValidation(e.target)) {
+                const modalWrap = e.target.closest('.modal')
+                modalWrap.classList.add('modal--loader')
+                setTimeout(() => {
+                    modalWrap.classList.remove('modal--loader')
+                    modalWrap.classList.add('modal--success')
+                    setTimeout(() => {
+                        if (modalWrap.classList.contains('modal--success')) {
+                            modalWrap.classList.remove('modal--success')
+                            modalWrap.classList.remove('open')
+                            e.target.reset()
+                            document.body.style.overflow = 'auto'
+                        }
+                    }, 5000)
+                }, 1000)
+            }
+        })
+    })
+}
 
 
 // Banner Form Validation & Submit Handling
