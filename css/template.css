@@ -62,7 +62,7 @@ a {
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: #fff;
+    background: #58BBDD;
     margin: -4px 0 0 -4px;
 }
 .lds-roller div:nth-child(1) {
@@ -496,6 +496,28 @@ a {
 .modal-select__wrap--active .modal-select-preview svg {
     transform: rotate(180deg);
 }
+.modal-loader, .modal-success {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.modal-success .modal-title {
+    margin-bottom: 20px;
+}
+.modal--loader .modal-body, .modal--success .modal-body {
+    visibility: hidden;
+}
+.modal--loader .modal-loader, .modal--success .modal-success {
+    display: flex;
+}
+
 
 .modal-lizing .modal-container {
     max-width: 800px;
@@ -1237,6 +1259,9 @@ body.catalogue .header__btn-catalogue__icon span {
 }
 .form-banner__form-submit {
     background: #24B37F;
+}
+.form-banner .lds-roller div:after {
+    background: white;
 }
 .form-banner__loader, .form-banner__container-success {
     z-index: 1;

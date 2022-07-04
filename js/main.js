@@ -223,7 +223,18 @@ const modalLizingForm = document.querySelector('.modal-lizing form')
 modalLizingForm.addEventListener('submit', function (e) {
     e.preventDefault()
     if (formValidation(e.target)) {
-        console.log(123)
+        const modalWrap = e.target.closest('.modal')
+        modalWrap.classList.add('modal--loader')
+        setTimeout(() => {
+            modalWrap.classList.remove('modal--loader')
+            modalWrap.classList.add('modal--success')
+            setTimeout(() => {
+                modalWrap.classList.remove('modal--success')
+                modalWrap.classList.remove('open')
+                e.target.reset()
+                document.body.style.overflow = 'auto'
+            }, 1000)
+        }, 1000)
     }
 })
 
@@ -241,6 +252,7 @@ if (bannerForm.length > 0) {
                     inputs.forEach((el, ind) => {
                         const inputWrapper = el.closest('.form-banner__form-input')
                         if (!el.value) {
+                            inputWrapper.classList.remove('form-banner__form-input--error-phone')
                             inputWrapper.classList.add('form-banner__form-input--error')
                             validationArray[ind] = false
                         } else {
