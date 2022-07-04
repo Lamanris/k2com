@@ -72,25 +72,21 @@ inputsInn.forEach(el => {
 })
 
 
-// Modals
-const modals = document.querySelectorAll("[data-modal]");
-modals.forEach(function (trigger) {
-    trigger.addEventListener("click", function (event) {
-        event.preventDefault();
-        const modal = document.getElementById(trigger.dataset.modal);
-        modal.classList.add("open");
-        const exits = modal.querySelectorAll(".modal-exit");
-        exits.forEach(function (exit) {
-            exit.addEventListener("click", function (event) {
-                event.preventDefault();
-                modal.classList.remove("open");
-            });
-        });
-    });
+
+// Modal Input Errors
+const modalInputError = tippy('.modal-input', {
+    trigger: 'manual',
+    theme: 'default-dropdown-theme',
+    content: '<span class="modal-input__error">Поле обязательно для заполнения</span>',
+    allowHTML: true,
+    placement: 'bottom-start',
+    arrow: false,
+    offset: [0, 8],
+    hideOnClick: false,
 });
 
-// Modals Select
-tippy('.modal-select__wrap', {
+// Modal Select
+const modalCustomSelect = tippy('.modal-select__wrap', {
     interactive: true,
     trigger: 'click',
     theme: 'default-dropdown-theme',
@@ -106,84 +102,122 @@ tippy('.modal-select__wrap', {
         instance.reference.classList.remove('modal-select__wrap--active')
     },
     onMount(instance) {
-        const allModalSelectOptions = document.querySelectorAll('.modal-select-options')
-        if (allModalSelectOptions.length > 0) {
-            allModalSelectOptions.forEach(el => {
-                const selectOptions = el.querySelectorAll('.modal-select-options__item')
-                if (selectOptions.length > 0) {
-                    selectOptions.forEach(option => {
-                        option.addEventListener('click', () => {
-                            selectOptions.forEach(el => el.classList.remove('modal-select-options__item--active'))
-                            option.classList.add('modal-select-options__item--active')
-                            const modalSelect = option.closest('.modal-select')
-                            const modalSelectInput = modalSelect.querySelector('input')
-                            const modalSelectPreview = modalSelect.querySelector('.modal-select-preview p')
-                            modalSelectPreview.innerText = option.innerText;
-                            modalSelectInput.value = option.getAttribute('data-select')
-                            instance.hide()
-                        })
+        const tippyBox = instance.popper.firstChild
+        const selectOptions = tippyBox.querySelector('.modal-select-options')
+        if (selectOptions) {
+            const selectOptionsItem = selectOptions.querySelectorAll('.modal-select-options__item')
+            if (selectOptionsItem.length > 0) {
+                selectOptionsItem.forEach(option => {
+                    option.addEventListener('click', () => {
+                        selectOptionsItem.forEach(el => el.classList.remove('modal-select-options__item--active'))
+                        option.classList.add('modal-select-options__item--active')
+                        const modalSelectInput = instance.reference.querySelector('input')
+                        modalSelectInput.value = option.getAttribute('data-select')
+                        instance.hide()
                     })
-                }
-            })
+                })
+            }
         }
     },
     placement: 'bottom-start',
-    offset: [0, 0]
+    offset: [0, 0],
+    appendTo: () => document.body
+});
+
+// Modals
+const modals = document.querySelectorAll("[data-modal]");
+modals.forEach(function (trigger) {
+    trigger.addEventListener("click", function (event) {
+        event.preventDefault();
+        const modal = document.getElementById(trigger.dataset.modal);
+        if (trigger.dataset.modal === 'modalLizing') {
+            const bigCard = trigger.closest('.big-card')
+            const bigCardTitle = bigCard.querySelector('h3')
+            const modalLizingInputMachine = modal.querySelector('input[name="modal-lizing-machine"]')
+            modalLizingInputMachine.value = bigCardTitle.innerText
+        }
+        modal.classList.add("open");
+        document.body.style.overflow = 'hidden'
+        const exits = modal.querySelectorAll(".modal-exit");
+        exits.forEach(function (exit) {
+            exit.addEventListener("click", function (event) {
+                event.preventDefault();
+                modal.classList.remove("open");
+                document.body.style.overflow = 'auto'
+                const modalForm = modal.querySelector('form')
+                if (modalForm) {
+                    modalForm.reset()
+                }
+                modalInputError.forEach(el => {
+                    el.hide()
+                })
+            });
+        });
+    });
 });
 
 
 // Modal Lizing
-const modalInputError = tippy('.modal-input', {
-    trigger: 'manual',
-    theme: 'default-dropdown-theme',
-    content: '<span class="modal-input__error">Поле обязательно для заполнения</span>',
-    allowHTML: true,
-    placement: 'bottom-start',
-    arrow: false,
-    offset: [0, 8],
-    hideOnClick: false,
-});
 function formValidation(form) {
     const inputs = form.querySelectorAll('input')
-
+    let validationArray = []
     if (inputs.length > 0) {
-        inputs.forEach(el => {
+        inputs.forEach((el, ind) => {
+            console.log(el.value)
             const inputWrapper = el.closest('.modal-input')
             if (el.getAttribute('data-input-required')) {
-                if (!el.value) {
-                    inputWrapper.classList.add('modal-input--error')
-                    modalInputError.forEach(el => {
-                        if (el.reference.classList.contains('modal-input--error')) {
-                            el.show()
-                        }
-                    })
-                } else {
-                    modalInputError.forEach(error => {
+                if (el.getAttribute('type') === 'checkbox') {
+                    if (!el.checked) {
+                        inputWrapper.classList.add('modal-input--error')
+                        validationArray[ind] = false
+
+                    } else {
                         inputWrapper.classList.remove('modal-input--error')
-                        if (!error.reference.classList.contains('modal-input--error')) {
-                            if (el.getAttribute('data-input-inn')) {
-                                if (el.value.length < 10) {
-                                    inputWrapper.classList.add('modal-input--error')
-                                    error.setContent('<span class="modal-input__error">Неверное значение</span>')
-                                } else {
-                                    error.setContent('<span class="modal-input__error">Поле обязательно для заполнения</span>')
-                                }
-                            } else if (el.getAttribute('data-input-phone')) {
-
-                            } else if (el.getAttribute('data-input-email')) {
-
+                        validationArray[ind] = true
+                    }
+                } else {
+                    if (!el.value) {
+                        inputWrapper.classList.add('modal-input--error')
+                        validationArray[ind] = false
+                    } else {
+                        function showFormatError(status) {
+                            if (status) {
+                                inputWrapper.classList.remove('modal-input--error')
+                                inputWrapper.classList.add('modal-input--error-format')
+                                validationArray[ind] = false
                             } else {
-                                error.hide()
-                                error.setContent('<span class="modal-input__error">Поле обязательно для заполнения</span>')
+                                inputWrapper.classList.remove('modal-input--error')
+                                inputWrapper.classList.remove('modal-input--error-format')
+                                validationArray[ind] = true
                             }
-                        } else {
-
                         }
-                    })
+                        if (el.getAttribute('data-input-inn')) {
+                            showFormatError(el.value.length < 10)
+                        } else if (el.getAttribute('data-input-phone')) {
+                            showFormatError(el.value.length !== 18)
+                        } else if (el.getAttribute('data-input-email')) {
+                            const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                            showFormatError(!el.value.match(emailRegex))
+                        } else {
+                            showFormatError(false)
+                        }
+                    }
                 }
+                modalInputError.forEach(el => {
+                    if (el.reference.classList.contains('modal-input--error')) {
+                        el.setContent('<span class="modal-input__error">Поле обязательно для заполнения</span>')
+                        el.show()
+                    } else if (el.reference.classList.contains('modal-input--error-format')) {
+                        el.setContent('<span class="modal-input__error">Неверное значение</span>')
+                        el.show()
+                    } else {
+                        el.hide()
+                    }
+                })
             }
         })
     }
+    return validationArray.every(el => el === true)
 }
 const modalLizingForm = document.querySelector('.modal-lizing form')
 modalLizingForm.addEventListener('submit', function (e) {
@@ -192,8 +226,6 @@ modalLizingForm.addEventListener('submit', function (e) {
         console.log(123)
     }
 })
-
-
 
 
 // Banner Form Validation & Submit Handling
@@ -225,7 +257,6 @@ if (bannerForm.length > 0) {
                                 validationArray[ind] = true
                             }
                         }
-
                     })
                 }
                 return validationArray.every(el => el === true)

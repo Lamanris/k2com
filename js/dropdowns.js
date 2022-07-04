@@ -25,9 +25,7 @@ smallDevice.addEventListener('change', initFooterDropdown) // Attach listener fu
 
 
 // Header Accordion
-
 const headerMenuItem = document.querySelectorAll('.header-burger__wrap .header-menu__link-collapse')
-
 if (headerMenuItem.length > 0) {
     headerMenuItem.forEach(el => {
         const headerMenuItemTitle = el.querySelector('p')
@@ -37,6 +35,7 @@ if (headerMenuItem.length > 0) {
     })
 }
 
+// Header Dropdown
 tippy('.header-menu__link-dropdown', {
     interactive: true,
     trigger: 'click',
@@ -53,9 +52,11 @@ tippy('.header-menu__link-dropdown', {
         instance.reference.classList.remove('header-menu__link-dropdown--active')
     },
     placement: 'bottom-start',
-    offset: [-20, 10]
+    offset: [-20, 10],
+    appendTo: () => document.body
 });
 
+// Region Dropdown
 tippy('.header-region__trigger', {
     interactive: true,
     trigger: 'click',
@@ -72,8 +73,10 @@ tippy('.header-region__trigger', {
         instance.reference.parentElement.classList.remove('header-region--active')
     },
     placement: 'bottom-start',
+    appendTo: () => document.body
 });
 
+// Map Dropdown
 tippy('.map-dropdown', {
     interactive: true,
     trigger: 'click',
@@ -90,5 +93,6 @@ tippy('.map-dropdown', {
         instance.reference.classList.remove('map-dropdown--active')
     },
     placement: 'bottom-start',
-    offset: [0, 0]
+    offset: [0, 0],
+    appendTo: () => document.body
 });

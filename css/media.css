@@ -296,6 +296,39 @@
     }
 
 
+    .modal-container {
+        padding: 50px 20px;
+    }
+    .modal-close {
+        right: 20px;
+    }
+    .modal-title {
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 35px;
+    }
+    .modal__section-row {
+        --section-row-x: 20px;
+        --section-row-y: 20px;
+    }
+    .modal-input label {
+        margin-bottom: 5px;
+    }
+    .modal-input__input {
+        padding: 0 10px;
+    }
+    .modal-submit {
+        margin: 10px 0 15px;
+    }
+    .modal-select-options {
+        width: 280px;
+        padding: 15px 10px;
+    }
+    .modal-lizing .modal-container {
+        max-width: 620px;
+    }
+
+
     .header {
         position: fixed;
         width: 100%;
@@ -723,6 +756,28 @@
     }
     .section-pagination__item {
         margin: 0 12px;
+    }
+
+
+    .modal-container {
+        padding: 45px 10px 35px;
+
+    }
+    .modal-close {
+        top: 15px;
+        right: 10px;
+    }
+    .modal-title {
+        margin-bottom: 25px;
+    }
+    .modal-input label {
+        margin-bottom: 10px;
+    }
+    .modal-submit {
+        margin: 15px 0;
+    }
+    .modal-select-options {
+        width: 300px;
     }
 
 

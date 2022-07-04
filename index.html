@@ -542,7 +542,7 @@
                 </div>
                 <div class="section-col-sm-6">
                     <div class="big-card">
-                        <h3>КС-55713-5К-1 «Клинцы»</h3>
+                        <h3>КС-55713-5К-2 «Клинцы»</h3>
                         <div class="big-card__main">
                             <div class="big-card__image">
                                 <img src="media/specialOffers/specialOfferCrane1.png" alt="КС-55713-5К-1 «Клинцы»">
@@ -1030,13 +1030,13 @@
                             <input class="modal-input__input" type="text" id="modalLizingInputName" name="modal-lizing-name" data-input-required="true">
                         </div>
                     </div>
-                    <div class="section-col-6">
+                    <div class="section-col-sm-6">
                         <div class="modal-input">
                             <label for="modalLizingInputCompanyName">Название компании</label>
                             <input class="modal-input__input" type="text" id="modalLizingInputCompanyName" name="modal-lizing-company-name" data-input-required="true">
                         </div>
                     </div>
-                    <div class="section-col-6">
+                    <div class="section-col-sm-6">
                         <div class="modal-input">
                             <label for="modalLizingInputInn">ИНН (Ваш или компании)</label>
                             <input class="modal-input__input" type="text" id="modalLizingInputInn" name="modal-lizing-inn" data-input-required="true" data-input-inn="true">
@@ -1045,23 +1045,22 @@
                     <div class="section-col-12">
                         <div class="modal-input">
                             <label for="modalLizingInputMachine">Какую технику вы хотите взять в лизинг</label>
-                            <input class="modal-input__input" type="text" id="modalLizingInputMachine" name="modal-lizing-machine">
+                            <input class="modal-input__input" type="text" id="modalLizingInputMachine" name="modal-lizing-machine" readonly>
                         </div>
                     </div>
-                    <div class="section-col-6">
+                    <div class="section-col-sm-6">
                         <div class="modal-input modal-select">
                             <label for="modalLizingInputOffice">Офис продаж</label>
-                            <input class="modal-input__input" type="text" id="modalLizingInputOffice" name="modal-lizing-office">
                             <div class="modal-select__wrap">
                                 <div class="modal-select-preview modal-input__input">
-                                    <p>Выберите удобный офис продаж</p>
+                                    <input value="Выберите удобный офис продаж" type="text" id="modalLizingInputOffice" name="modal-lizing-office" readonly>
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M7.99999 9.98288C7.9111 9.98288 7.8251 9.96621 7.74199 9.93288C7.65844 9.89954 7.58888 9.8551 7.53333 9.79954L4.46666 6.73288C4.34444 6.61066 4.28333 6.4551 4.28333 6.26621C4.28333 6.07732 4.34444 5.92177 4.46666 5.79954C4.58888 5.67732 4.74444 5.61621 4.93333 5.61621C5.12221 5.61621 5.27777 5.67732 5.39999 5.79954L7.99999 8.39954L10.6 5.79954C10.7222 5.67732 10.8778 5.61621 11.0667 5.61621C11.2555 5.61621 11.4111 5.67732 11.5333 5.79954C11.6555 5.92177 11.7167 6.07732 11.7167 6.26621C11.7167 6.4551 11.6555 6.61066 11.5333 6.73288L8.46666 9.79954C8.39999 9.86621 8.32777 9.91332 8.24999 9.94088C8.17221 9.96888 8.08888 9.98288 7.99999 9.98288Z" fill="#858585"/>
                                     </svg>
                                 </div>
                                 <div class="modal-select-options">
                                     <button type="button" class="btn modal-select-options__item" data-select="Центральный офис Москва">Центральный офис Москва</button>
-                                    <button type="button" class="btn modal-select-options__item modal-select-options__item--active" data-select="Офис Санкт-Петербург">Офис Санкт-Петербург</button>
+                                    <button type="button" class="btn modal-select-options__item" data-select="Офис Санкт-Петербург">Офис Санкт-Петербург</button>
                                     <button type="button" class="btn modal-select-options__item" data-select="Офис Казань">Офис Казань</button>
                                     <button type="button" class="btn modal-select-options__item" data-select="Офис Уфа">Офис Уфа</button>
                                     <button type="button" class="btn modal-select-options__item" data-select="Офис Иваново">Офис Иваново</button>
@@ -1072,37 +1071,36 @@
                             </div>
                         </div>
                     </div>
-                    <div class="section-col-6">
+                    <div class="section-col-sm-6">
                         <div class="modal-input modal-select">
                             <label for="modalLizingInputLizCompany">Лизинговая компания</label>
-                            <input class="modal-input__input" type="text" id="modalLizingInputLizCompany" name="modal-lizing-liz-company">
                             <div class="modal-select__wrap">
                                 <div class="modal-select-preview modal-input__input">
-                                    <p>Выберите лизинговую компанию</p>
+                                    <input value="Выберите лизинговую компанию" type="text" id="modalLizingInputLizCompany" name="modal-lizing-liz-company" readonly>
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M7.99999 9.98288C7.9111 9.98288 7.8251 9.96621 7.74199 9.93288C7.65844 9.89954 7.58888 9.8551 7.53333 9.79954L4.46666 6.73288C4.34444 6.61066 4.28333 6.4551 4.28333 6.26621C4.28333 6.07732 4.34444 5.92177 4.46666 5.79954C4.58888 5.67732 4.74444 5.61621 4.93333 5.61621C5.12221 5.61621 5.27777 5.67732 5.39999 5.79954L7.99999 8.39954L10.6 5.79954C10.7222 5.67732 10.8778 5.61621 11.0667 5.61621C11.2555 5.61621 11.4111 5.67732 11.5333 5.79954C11.6555 5.92177 11.7167 6.07732 11.7167 6.26621C11.7167 6.4551 11.6555 6.61066 11.5333 6.73288L8.46666 9.79954C8.39999 9.86621 8.32777 9.91332 8.24999 9.94088C8.17221 9.96888 8.08888 9.98288 7.99999 9.98288Z" fill="#858585"/>
                                     </svg>
                                 </div>
                                 <div class="modal-select-options">
-                                    <button type="button" class="btn modal-select-options__item" data-select="Центральный офис Москва">Эксперт-Лизинг</button>
-                                    <button type="button" class="btn modal-select-options__item modal-select-options__item--active" data-select="Офис Санкт-Петербург">Каркаде</button>
-                                    <button type="button" class="btn modal-select-options__item" data-select="Офис Казань">Аспект Лизинг</button>
-                                    <button type="button" class="btn modal-select-options__item" data-select="Офис Уфа">Элемент Лизинг</button>
-                                    <button type="button" class="btn modal-select-options__item" data-select="Офис Иваново">Балтийский лизинг</button>
-                                    <button type="button" class="btn modal-select-options__item" data-select="Офис Новосибирск">ВЭБ-лизинг</button>
-                                    <button type="button" class="btn modal-select-options__item" data-select="Офис Сургут">Европлан</button>
-                                    <button type="button" class="btn modal-select-options__item" data-select="Офис Красноярск">ВТБ лизинг</button>
+                                    <button type="button" class="btn modal-select-options__item" data-select="Эксперт-Лизинг">Эксперт-Лизинг</button>
+                                    <button type="button" class="btn modal-select-options__item" data-select="Каркаде">Каркаде</button>
+                                    <button type="button" class="btn modal-select-options__item" data-select="Аспект Лизинг">Аспект Лизинг</button>
+                                    <button type="button" class="btn modal-select-options__item" data-select="Элемент Лизинг">Элемент Лизинг</button>
+                                    <button type="button" class="btn modal-select-options__item" data-select="Балтийский лизинг">Балтийский лизинг</button>
+                                    <button type="button" class="btn modal-select-options__item" data-select="ВЭБ-лизинг">ВЭБ-лизинг</button>
+                                    <button type="button" class="btn modal-select-options__item" data-select="Европлан">Европлан</button>
+                                    <button type="button" class="btn modal-select-options__item" data-select="ВТБ лизинг">ВТБ лизинг</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="section-col-6">
+                    <div class="section-col-sm-6">
                         <div class="modal-input">
                             <label for="modalLizingInputPhone">Телефон</label>
                             <input class="modal-input__input" type="text" id="modalLizingInputPhone" name="modal-lizing-phone" data-input-required="true" data-input-phone="true">
                         </div>
                     </div>
-                    <div class="section-col-6">
+                    <div class="section-col-sm-6">
                         <div class="modal-input">
                             <label for="modalLizingInputEmail">Электронная почта</label>
                             <input class="modal-input__input" type="text" id="modalLizingInputEmail" name="modal-lizing-email" data-input-required="true" data-input-email="true">
