@@ -360,5 +360,61 @@ if (bannerForm.length > 0) {
 }
 
 
+// Map Dropdown
+tippy('.map-dropdown', {
+    interactive: true,
+    trigger: 'click',
+    theme: 'default-dropdown-theme',
+    arrow: false,
+    content(reference) {
+        return reference.querySelector('.map-dropdown__list');
+    },
+    allowHTML: true,
+    onShow(instance) {
+        instance.reference.classList.add('map-dropdown--active')
+    },
+    onHide(instance) {
+        instance.reference.classList.remove('map-dropdown--active')
+    },
+    onCreate(inst) {
+        tippy('.map-wrap__item', {
+            interactive: true,
+            trigger: 'click',
+            theme: 'default-dropdown-theme',
+            arrow: false,
+            content(reference) {
+                return reference.querySelector('.map-wrap__item-card');
+            },
+            allowHTML: true,
+            onShow(instance) {
+                instance.reference.classList.add('map-wrap__item--active')
+            },
+            onHide(instance) {
+                instance.reference.classList.remove('map-wrap__item--active')
+            },
+            onCreate(instance) {
+                const title = instance.popper.querySelector('h6')
+                const titleClone = title.cloneNode(true)
+                titleClone.addEventListener('click', () => {
+                    instance.show()
+                    inst.hide()
+                })
+                inst.popper.querySelector('.map-dropdown__list').appendChild(titleClone)
+            },
+            placement: 'right',
+            appendTo: () => document.body,
+            zIndex: 9
+        });
+    },
+    placement: 'bottom-start',
+    offset: [0, 0],
+    appendTo: () => document.body,
+    zIndex: 9
+});
+
+
+
+
+
 
 

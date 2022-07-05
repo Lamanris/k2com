@@ -258,6 +258,31 @@
     }
 
 
+    .map-wrap__item-card {
+        max-width: 160px;
+    }
+    .map-wrap__item-card__top img {
+        width: 19px;
+        height: 22px;
+    }
+    .map-wrap__item-card__top h6 {
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .map-wrap__item-card__info-item {
+        font-size: 9px;
+    }
+    .map-wrap__item-card__info-item svg {
+        width: 10px;
+        height: 10px;
+    }
+    .map-wrap__item-card__link {
+        font-size: 12px;
+        line-height: 14px;
+        padding: 15px 0;
+    }
+
+
     .footer-menu {
         margin-left: 60px;
     }
@@ -267,7 +292,6 @@
     .footer-menu__item ul:not(:last-of-type) {
         margin-right: 20px;
     }
-
     .footer-contacts {
         margin-top: 39px;
     }
@@ -285,7 +309,6 @@
     .footer-contacts__phone button {
         margin-left: 19px;
     }
-
     .footer-contacts__address div {
         max-width: 172px;
     }
@@ -293,7 +316,6 @@
         font-size: 16px;
         line-height: 19px;
     }
-
     .footer-bottom {
         margin-top: -20px;
     }
@@ -756,17 +778,42 @@
     }
     .map h2 {
         max-width: 660px;
-        padding: 0 20px;
+        padding: 0 20px 30px;
         width: 100%;
+        margin: 0 auto;
     }
     .map-title {
         width: 100%;
         border-bottom: 1px solid #D9D9D9;
     }
-    .map h2 {
+    .map-dropdown__wrap {
+        max-width: 660px;
+        width: 100%;
+        padding: 15px 20px;
         margin: 0 auto;
-        padding-bottom: 30px;
     }
+    .map-dropdown__preview {
+        border: none;
+        width: 100%;
+    }
+
+
+    .map-wrap__item-card {
+        max-width: 125px;
+    }
+    .map-wrap__item-card__top {
+        padding: 10px;
+    }
+    .map-wrap__item-card__top h6 {
+        margin-left: 5px;
+        font-size: 10px;
+        line-height: 12px;
+    }
+    .map-wrap__item-card__info {
+        padding: 15px 10px;
+    }
+
+
 
 
 
@@ -1153,9 +1200,31 @@
     .map h2 {
         padding: 0 10px 30px;
     }
+    .map-dropdown__wrap {
+        padding: 15px 10px;
+    }
+    .map-dropdown__list {
+        width: 300px;
+    }
     .map-wrap__item {
         font-size: 7px;
         line-height: 9px;
+    }
+    .map-wrap__item--active {
+        font-size: 8px;
+        line-height: 10px;
+    }
+    .map-wrap__item--active::after {
+        width: 20px;
+        height: 20px;
+    }
+    .map-wrap__item:hover {
+        font-size: 8px;
+        line-height: 10px;
+    }
+    .map-wrap__item:hover::after {
+        width: 20px;
+        height: 20px;
     }
 
 

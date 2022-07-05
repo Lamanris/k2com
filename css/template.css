@@ -1473,61 +1473,6 @@ body.catalogue .header__btn-catalogue__icon span {
     align-items: flex-start;
     justify-content: space-between;
 }
-.map-wrap {
-    position: relative;
-}
-.map-wrap img {
-    max-width: 100%;
-    display: block;
-    width: 100%;
-}
-.map-wrap__item {
-    position: absolute;
-    text-align: center;
-    font-weight: 500;
-    font-size: 10.8px;
-    line-height: 14px;
-    color: #000000;
-    text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
-}
-.map-wrap__item::after {
-    content: '';
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #58BBDC;
-    border: 1px solid #08526C;
-    display: block;
-    margin: 2px auto 0;
-}
-.map-wrap__item--active {
-    font-size: 12px;
-    line-height: 15px;
-}
-.map-wrap__item--active::after {
-    width: 24px;
-    height: 24px;
-}
-.map-wrap__item-moscow {
-    top: 33%;
-    left: 28.5%;
-}
-.map-wrap__item-ufa {
-    top: 37%;
-    left: 51.5%;
-}
-.map-wrap__item-surgut {
-    top: 4%;
-    left: 72%;
-}
-.map-wrap__item-speter {
-    top: 11%;
-    left: 18%;
-}
-.map-wrap__item-novosi{
-    top: 35.5%;
-    left: 82.5%;
-}
 .map-dropdown__preview {
     width: 320px;
     height: 28px;
@@ -1559,7 +1504,7 @@ body.catalogue .header__btn-catalogue__icon span {
 .map-dropdown .map-dropdown__list {
     display: none;
 }
-.map-dropdown__list p {
+.map-dropdown__list h6 {
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
@@ -1567,11 +1512,130 @@ body.catalogue .header__btn-catalogue__icon span {
     transition: color .2s;
     cursor: pointer;
 }
-.map-dropdown__list p:hover {
+.map-dropdown__list h6:hover {
     color: #08526C;
 }
-.map-dropdown__list p:not(:last-of-type) {
+.map-dropdown__list h6:not(:last-of-type) {
     margin-bottom: 10px;
+}
+.map-dropdown__preview img {
+    transition: transform .2s;
+}
+.map-dropdown--active .map-dropdown__preview img {
+    transform: rotate(180deg);
+}
+.map-wrap {
+    position: relative;
+}
+.map-wrap img {
+    max-width: 100%;
+    display: block;
+    width: 100%;
+}
+.map-wrap__item {
+    position: absolute;
+    text-align: center;
+    font-weight: 500;
+    font-size: 10.8px;
+    line-height: 14px;
+    color: #000000;
+    text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+    cursor: pointer;
+}
+.map-wrap__item::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #58BBDC;
+    border: 1px solid #08526C;
+    display: block;
+    margin: 2px auto 0;
+}
+.map-wrap__item:hover {
+    font-size: 12px;
+    line-height: 15px;
+}
+.map-wrap__item:hover::after {
+    width: 24px;
+    height: 24px;
+}
+.map-wrap__item--active {
+    font-size: 12px;
+    line-height: 15px;
+}
+.map-wrap__item--active::after {
+    width: 24px;
+    height: 24px;
+}
+.map-wrap__item .map-wrap__item-card {
+    display: none;
+}
+.map-wrap__item-card {
+    background: #FFFFFF;
+    box-shadow: 4px 4px 20px rgba(143, 143, 143, 0.15);
+    border-radius: 10px;
+    max-width: 240px;
+    cursor: default;
+}
+.map-wrap__item-card__top {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+.map-wrap__item-card__top img {
+    width: 31px;
+    height: 35px;
+}
+.map-wrap__item-card__top h6 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #08526C;
+    max-width: 124px;
+    text-align: left;
+    margin-left: 10px;
+}
+.map-wrap__item-card hr {
+    border: 0;
+    border-top: 1px solid #D9D9D9;
+}
+.map-wrap__item-card__info {
+    padding: 15px;
+}
+.map-wrap__item-card__info-item {
+    display: flex;
+    font-size: 12px;
+    line-height: 110%;
+    color: #181818;
+}
+.map-wrap__item-card__info-item-phone {
+    margin-top: 10px;
+    transition: color .2s
+}
+.map-wrap__item-card__info-item-phone:hover {
+    color: #08526C;
+}
+.map-wrap__item-card__info-item svg {
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+}
+.map-wrap__item-card__info-item span {
+    flex: 1;
+    text-align: left;
+}
+.map-wrap__item-card__link {
+    line-height: 19px;
+    color: #08526C;
+    text-transform: uppercase;
+    padding: 20px 0;
+    display: block;
+    transition: color .2s;
+    text-align: center;
+}
+.map-wrap__item-card__link:hover {
+    color: #58BBDC;
 }
 
 

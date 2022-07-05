@@ -76,23 +76,3 @@ tippy('.header-region__trigger', {
     appendTo: () => document.body
 });
 
-// Map Dropdown
-tippy('.map-dropdown', {
-    interactive: true,
-    trigger: 'click',
-    theme: 'default-dropdown-theme',
-    arrow: false,
-    content(reference) {
-        return reference.querySelector('.map-dropdown__list');
-    },
-    allowHTML: true,
-    onShow(instance) {
-        instance.reference.classList.add('map-dropdown--active')
-    },
-    onHide(instance) {
-        instance.reference.classList.remove('map-dropdown--active')
-    },
-    placement: 'bottom-start',
-    offset: [0, 0],
-    appendTo: () => document.body
-});
