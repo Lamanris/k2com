@@ -877,8 +877,6 @@ body.catalogue .header__btn-catalogue__icon:after {
 body.catalogue .header__btn-catalogue__icon span {
     transform: scale(0);
 }
-
-
 .header-catalogue__wrap {
     display: flex;
 }
@@ -913,10 +911,12 @@ body.catalogue .header__btn-catalogue__icon span {
     border-right: 2px solid #57BADC;
 }
 .header-catalogue__content {
-    background: white;
-    box-shadow: 4px 4px 20px rgba(143, 143, 143, 0.15);
+    flex: 1;
 }
 .header-catalogue__cat {
+    box-shadow: 4px 4px 20px rgba(143, 143, 143, 0.15);
+    background: white;
+    padding-bottom: 70px;
     display: none;
 }
 .header-catalogue__cat--active {
@@ -943,11 +943,12 @@ body.catalogue .header__btn-catalogue__icon span {
     color: #181818;
 }
 .header-catalogue__item {
-    padding: 0 50px;
+    padding: 20px 50px;
     position: relative;
 }
 .header-catalogue__item-images {
     min-height: 117px;
+    padding-bottom: 10px!important;
 }
 .header-catalogue__item-capacity, .header-catalogue__item-arrow {
     min-height: 236px;
@@ -963,7 +964,6 @@ body.catalogue .header__btn-catalogue__icon span {
     width: 48px;
     white-space: nowrap;
 }
-
 .header-catalogue__item:not(:first-of-type):after {
     content: '';
     width: 100%;
@@ -976,7 +976,7 @@ body.catalogue .header__btn-catalogue__icon span {
 .header-catalogue__item p {
     color: #08526C;
     line-height: 19px;
-    padding: 20px 0 41px;
+    padding-bottom: 41px;
     display: flex;
     align-items: center;
 }
@@ -987,7 +987,7 @@ body.catalogue .header__btn-catalogue__icon span {
     margin: -15px -25px 0;
 }
 .header-catalogue__item-wrap a {
-    margin: 0 25px 15px;
+    margin: 15px 25px 0;
     color: #858585;
     line-height: 19px;
     transition: color .2s;
@@ -999,7 +999,10 @@ body.catalogue .header__btn-catalogue__icon span {
     width: 260px;
     height: 60px;
     background: #58BBDD;
-    margin: 50px auto 70px;
+    margin: 30px auto 0;
+}
+.header-catalogue__cat-spares .header-catalogue__cat-link {
+    margin: 50px auto 0;
 }
 .header-catalogue__cat-link svg {
     width: 13px;
