@@ -21,30 +21,69 @@ if (headerCatalogueBtn) {
     });
 }
 document.body.addEventListener('click', function (e) {
-    if (!document.querySelector('.header-catalogue__wrap').contains(e.target) && !headerCatalogueBtn.contains(e.target)) {
+    if (!document.querySelector('.header-catalogue__sidebar-wrap').contains(e.target) && !document.querySelector('.header-catalogue__content').contains(e.target) && !headerCatalogueBtn.contains(e.target)) {
         document.body.classList.remove('catalogue')
     }
 })
-
 const headerCatalogueSidebarBtns = document.querySelectorAll('.header-catalogue__sidebar-wrap .header-catalogue__sidebar-btn')
-const headerCatalogueContentCats = document.querySelectorAll('.header-catalogue__cat')
+const headerCatalogueContent = document.querySelector('.header-catalogue__content')
 if (headerCatalogueSidebarBtns.length > 0) {
+    let firstRender = false
     headerCatalogueSidebarBtns.forEach(el => {
-        el.addEventListener('click', () => {
-            headerCatalogueSidebarBtns.forEach(el => el.classList.remove('header-catalogue__sidebar-btn--active'))
-            el.classList.add('header-catalogue__sidebar-btn--active')
-            if (headerCatalogueContentCats.length > 0) {
-                headerCatalogueContentCats.forEach(cat => {
-                    if (el.getAttribute('data-catalogue') === cat.id) {
-                        cat.classList.add('header-catalogue__cat--active')
-                    } else {
-                        cat.classList.remove('header-catalogue__cat--active')
+        const catalogueSidebarItem = el.closest('.header-catalogue__sidebar-item')
+        const catalogueCat = catalogueSidebarItem.querySelector('.header-catalogue__cat')
+        if (catalogueSidebarItem) {
+            function triggerCatalogueBtnDesktop () {
+                headerCatalogueSidebarBtns.forEach(el => el.classList.remove('header-catalogue__sidebar-btn--active'))
+                el.classList.add('header-catalogue__sidebar-btn--active')
+                headerCatalogueContent.innerHTML = ''
+                if (catalogueCat) {
+                    const catalogueCatClone = catalogueCat.cloneNode(true)
+                    headerCatalogueContent.appendChild(catalogueCatClone)
+                }
+            }
+            function triggerCatalogueBtnMobile () {
+                el.classList.toggle('header-catalogue__sidebar-btn--active')
+                catalogueSidebarItem.classList.toggle('header-catalogue__sidebar-item--active')
+            }
+            function deviceChangeHandler(x) {
+                if (x.matches) {
+                    el.removeEventListener('click', triggerCatalogueBtnDesktop)
+                    el.addEventListener('click', triggerCatalogueBtnMobile)
+                } else {
+                    el.removeEventListener('click', triggerCatalogueBtnMobile)
+                    const catalogueCat = catalogueSidebarItem.querySelector('.header-catalogue__cat')
+                    if (catalogueCat && !firstRender) {
+                        firstRender = true
+                        const catalogueCatClone = catalogueCat.cloneNode(true)
+                        headerCatalogueContent.appendChild(catalogueCatClone)
+                        el.classList.add('header-catalogue__sidebar-btn--active')
                     }
+                    el.addEventListener('click', triggerCatalogueBtnDesktop)
+                }
+            }
+            var smallDevice = window.matchMedia("(max-width: 660px)")
+            deviceChangeHandler(smallDevice)
+            smallDevice.addEventListener('change', deviceChangeHandler)
+        }
+    })
+    function deviceChangeHandler(x) {
+        if (x.matches) {
+            const headerCatalogueItemTrigger = document.querySelectorAll('.header-catalogue__item p')
+            if (headerCatalogueItemTrigger.length > 0) {
+                headerCatalogueItemTrigger.forEach(el => {
+                    const triggerWrapper = el.closest('.header-catalogue__item')
+                    el.addEventListener('click', () => {
+                        triggerWrapper.classList.toggle('header-catalogue__item--active')
+                    })
                 })
             }
-        })
-    })
+        }
+    }
+    var smallDevice = window.matchMedia("(max-width: 660px)")
+    deviceChangeHandler(smallDevice)
 }
+
 
 // Phone Mask
 const inputsPhone = document.querySelectorAll("input[data-input-phone]");

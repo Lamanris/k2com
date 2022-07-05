@@ -877,6 +877,7 @@ body.catalogue .header__btn-catalogue__icon:after {
 body.catalogue .header__btn-catalogue__icon span {
     transform: scale(0);
 }
+
 .header-catalogue__wrap {
     display: flex;
 }
@@ -893,6 +894,12 @@ body.catalogue .header__btn-catalogue__icon span {
     align-items: flex-start;
     box-shadow: 4px 4px 20px rgba(143, 143, 143, 0.15);
     min-height: 836px;
+}
+.header-catalogue__sidebar-item {
+    width: 100%;
+}
+.header-catalogue__sidebar-item .header-catalogue__cat {
+    display: none;
 }
 .header-catalogue__sidebar-btn {
     height: 59px;
@@ -917,10 +924,6 @@ body.catalogue .header__btn-catalogue__icon span {
     box-shadow: 4px 4px 20px rgba(143, 143, 143, 0.15);
     background: white;
     padding-bottom: 70px;
-    display: none;
-}
-.header-catalogue__cat--active {
-    display: block;
 }
 .header-catalogue__cat-spares {
     width: 390px;
@@ -949,6 +952,9 @@ body.catalogue .header__btn-catalogue__icon span {
 .header-catalogue__item-images {
     min-height: 117px;
     padding-bottom: 10px!important;
+}
+.header-catalogue__item-images a span {
+    display: none;
 }
 .header-catalogue__item-capacity, .header-catalogue__item-arrow {
     min-height: 236px;
@@ -1626,7 +1632,6 @@ body.catalogue .header__btn-catalogue__icon span {
 .footer-menu__item ul li:not(:last-of-type) {
     margin-bottom: 10px;
 }
-
 .footer-contacts svg {
     width: 18px;
     height: 18px;
@@ -1658,7 +1663,6 @@ body.catalogue .header__btn-catalogue__icon span {
     color: #FFFFFF;
     border-bottom-color: #FFFFFF;
 }
-
 .footer-contacts__address div {
     display: flex;
     align-items: flex-start;
@@ -1671,7 +1675,6 @@ body.catalogue .header__btn-catalogue__icon span {
     color: #FFFFFF;
     flex: 1;
 }
-
 .footer-bottom {
     display: flex;
     align-items: flex-end;

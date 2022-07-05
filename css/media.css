@@ -513,7 +513,10 @@
 
 
     .header-catalogue {
-        top: 163px;
+        top: 161px;
+        position: fixed;
+        max-height: calc(100vh - 160px);
+        overflow: auto;
     }
     .header-catalogue__sidebar {
         max-width: 190px;
@@ -953,6 +956,84 @@
     }
     .header-burger__wrap .header-phone {
         display: inline-block;
+    }
+
+
+    .header-catalogue .container {
+        padding: 0;
+    }
+    .header-catalogue__content {
+        display: none;
+    }
+    .header-catalogue__sidebar {
+        max-width: 100%;
+    }
+    .header-catalogue__sidebar-wrap {
+        min-height: auto;
+    }
+    .header-catalogue__sidebar-item {
+        max-height: 47px;
+        overflow: hidden;
+        transition: max-height 0.2s ease-in-out;
+    }
+    .header-catalogue__sidebar-item--active {
+        max-height: 1000px;
+    }
+    .header-catalogue__sidebar-item .header-catalogue__cat {
+        display: block;
+        padding: 0 0 47px;
+    }
+    .header-catalogue__sidebar-btn {
+        padding: 0 35px;
+    }
+    .header-catalogue__item {
+        padding: 0 35px 15px!important;
+        max-height: 47px;
+        overflow: hidden;
+        min-height: auto!important;
+        transition: max-height 0.2s ease-in-out;
+    }
+    .header-catalogue__item p {
+        padding: 15px 0 10px;
+        margin-bottom: 10px;
+        position: relative;
+
+    }
+    .header-catalogue__item p::after {
+        content: url("../media/icons/dropdownPolygonIcon.svg");
+        width: 8px;
+        height: 8px;
+        position: absolute;
+        top: 12px;
+        right: 0;
+        opacity: 0;
+        transition: opacity .2s;
+    }
+    .header-catalogue__item--active {
+        max-height: 1000px;
+    }
+    .header-catalogue__item--active p::after {
+        opacity: 1;
+    }
+    .header-catalogue__item-images a span {
+        display: block;
+    }
+    .header-catalogue__item-images a img {
+        display: none;
+    }
+    .header-catalogue__item-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .header-catalogue__link {
+        padding: 0 35px;
+    }
+    .header-catalogue__cat-link {
+        height: 45px;
+        margin-top: 20px;
+    }
+    .header-catalogue__cat-spares .header-catalogue__cat-link {
+        margin-top: 40px;
     }
 
 
