@@ -142,44 +142,6 @@ const modalInputError = tippy('.modal-input', {
     offset: [0, 8],
     hideOnClick: false,
 });
-// Modal Select
-const modalCustomSelect = tippy('.modal-select__wrap', {
-    interactive: true,
-    trigger: 'click',
-    theme: 'default-dropdown-theme',
-    arrow: false,
-    content(reference) {
-        return reference.querySelector('.modal-select-options');
-    },
-    allowHTML: true,
-    onShow(instance) {
-        instance.reference.classList.add('modal-select__wrap--active')
-    },
-    onHide(instance) {
-        instance.reference.classList.remove('modal-select__wrap--active')
-    },
-    onMount(instance) {
-        const tippyBox = instance.popper.firstChild
-        const selectOptions = tippyBox.querySelector('.modal-select-options')
-        if (selectOptions) {
-            const selectOptionsItem = selectOptions.querySelectorAll('.modal-select-options__item')
-            if (selectOptionsItem.length > 0) {
-                selectOptionsItem.forEach(option => {
-                    option.addEventListener('click', () => {
-                        selectOptionsItem.forEach(el => el.classList.remove('modal-select-options__item--active'))
-                        option.classList.add('modal-select-options__item--active')
-                        const modalSelectInput = instance.reference.querySelector('input')
-                        modalSelectInput.value = option.getAttribute('data-select')
-                        instance.hide()
-                    })
-                })
-            }
-        }
-    },
-    placement: 'bottom-start',
-    offset: [0, 0],
-    appendTo: () => document.body
-});
 // Modals
 const modals = document.querySelectorAll("[data-modal]");
 modals.forEach(function (trigger) {
@@ -359,6 +321,44 @@ if (bannerForm.length > 0) {
     })
 }
 
+// Custom Select
+const customSelect = tippy('.custom-select__wrap', {
+    interactive: true,
+    trigger: 'click',
+    theme: 'default-dropdown-theme',
+    arrow: false,
+    content(reference) {
+        return reference.querySelector('.custom-select-options');
+    },
+    allowHTML: true,
+    onShow(instance) {
+        instance.reference.classList.add('custom-select__wrap--active')
+    },
+    onHide(instance) {
+        instance.reference.classList.remove('custom-select__wrap--active')
+    },
+    onMount(instance) {
+        const tippyBox = instance.popper.firstChild
+        const selectOptions = tippyBox.querySelector('.custom-select-options')
+        if (selectOptions) {
+            const selectOptionsItem = selectOptions.querySelectorAll('.custom-select-options__item')
+            if (selectOptionsItem.length > 0) {
+                selectOptionsItem.forEach(option => {
+                    option.addEventListener('click', () => {
+                        selectOptionsItem.forEach(el => el.classList.remove('custom-select-options__item--active'))
+                        option.classList.add('custom-select-options__item--active')
+                        const modalSelectInput = instance.reference.querySelector('input')
+                        modalSelectInput.value = option.getAttribute('data-select')
+                        instance.hide()
+                    })
+                })
+            }
+        }
+    },
+    placement: 'bottom-start',
+    offset: [0, 0],
+    appendTo: () => document.body
+});
 
 // Map Dropdown
 tippy('.map-dropdown', {
@@ -411,10 +411,4 @@ tippy('.map-dropdown', {
     appendTo: () => document.body,
     zIndex: 9
 });
-
-
-
-
-
-
 
