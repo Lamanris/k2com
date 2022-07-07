@@ -555,12 +555,12 @@
 <section class="section-list">
     <div class="section-filters">
         <div class="container">
-            <div class="section-filters__wrap">
+            <form action="#" class="section-filters__wrap" data-form="form-filters">
                 <div class="section-filters__top">
                     <div class="section-filters__select-sort custom-select">
                         <div class="custom-select__wrap">
                             <div class="custom-select-preview">
-                                <input value="Сортировать по" type="text" name="filter-manufacturer" readonly>
+                                <input placeholder="Сортировать по" type="text" name="filter-sort-by" readonly>
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="#858585" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M7.99999 9.98288C7.9111 9.98288 7.8251 9.96621 7.74199 9.93288C7.65844 9.89954 7.58888 9.8551 7.53333 9.79954L4.46666 6.73288C4.34444 6.61066 4.28333 6.4551 4.28333 6.26621C4.28333 6.07732 4.34444 5.92177 4.46666 5.79954C4.58888 5.67732 4.74444 5.61621 4.93333 5.61621C5.12221 5.61621 5.27777 5.67732 5.39999 5.79954L7.99999 8.39954L10.6 5.79954C10.7222 5.67732 10.8778 5.61621 11.0667 5.61621C11.2555 5.61621 11.4111 5.67732 11.5333 5.79954C11.6555 5.92177 11.7167 6.07732 11.7167 6.26621C11.7167 6.4551 11.6555 6.61066 11.5333 6.73288L8.46666 9.79954C8.39999 9.86621 8.32777 9.91332 8.24999 9.94088C8.17221 9.96888 8.08888 9.98288 7.99999 9.98288Z"/>
                                 </svg>
@@ -574,8 +574,25 @@
                         </div>
                     </div>
                     <div class="section-filters__top-buttons">
-                        <button type="button" class="btn section-filters__btn-view">
-                            <svg width="13" height="11" viewBox="0 0 13 11" fill="#08526C" xmlns="http://www.w3.org/2000/svg">
+                        <button type="button" class="btn section-filters__btn-show-filters">
+                            <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="3" height="2" fill="#08526C"/>
+                                <rect y="8" width="3" height="2" fill="#08526C"/>
+                                <rect x="11" y="4" width="3" height="2" fill="#08526C"/>
+                                <rect x="7" width="7" height="2" fill="#08526C"/>
+                                <rect x="7" y="8" width="7" height="2" fill="#08526C"/>
+                                <rect y="4" width="7" height="2" fill="#08526C"/>
+                                <rect x="4" width="2" height="2" fill="#08526C"/>
+                                <rect x="4" y="8" width="2" height="2" fill="#08526C"/>
+                                <rect x="8" y="4" width="2" height="2" fill="#08526C"/>
+                            </svg>
+                            <span>Фильтры</span>
+                        </button>
+                        <div class="section-filters__btn-view">
+                            <label>
+                                <input type="radio" name="filter-view" value="line">
+                                <span class="section-filters__btn-view__checkmark">
+                                    <svg width="13" height="11" viewBox="0 0 13 11" fill="#08526C" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_433_3077)">
                                     <path d="M2.03125 0.21875H0.40625C0.181884 0.21875 0 0.400634 0 0.625V2.25C0 2.47437 0.181884 2.65625 0.40625 2.65625H2.03125C2.25562 2.65625 2.4375 2.47437 2.4375 2.25V0.625C2.4375 0.400634 2.25562 0.21875 2.03125 0.21875Z"/>
                                     <path d="M2.03125 4.28125H0.40625C0.181884 4.28125 0 4.46313 0 4.6875V6.3125C0 6.53687 0.181884 6.71875 0.40625 6.71875H2.03125C2.25562 6.71875 2.4375 6.53687 2.4375 6.3125V4.6875C2.4375 4.46313 2.25562 4.28125 2.03125 4.28125Z"/>
@@ -590,9 +607,14 @@
                                     </clipPath>
                                 </defs>
                             </svg>
-                        </button>
-                        <button type="button" class="btn section-filters__btn-view section-filters__btn-view--active">
-                            <svg width="11" height="11" viewBox="0 0 11 11" fill="#08526C" xmlns="http://www.w3.org/2000/svg">
+                                </span>
+                            </label>
+                        </div>
+                        <div class="section-filters__btn-view">
+                            <label>
+                                <input type="radio" name="filter-view" checked value="card">
+                                <span class="section-filters__btn-view__checkmark">
+                                    <svg width="11" height="11" viewBox="0 0 11 11" fill="#08526C" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_433_3214)">
                                     <path d="M2.11538 0H0.423077C0.189418 0 0 0.189418 0 0.423077V2.11538C0 2.34904 0.189418 2.53846 0.423077 2.53846H2.11538C2.34904 2.53846 2.53846 2.34904 2.53846 2.11538V0.423077C2.53846 0.189418 2.34904 0 2.11538 0Z"/>
                                     <path d="M6.34616 0H4.65385C4.42019 0 4.23077 0.189418 4.23077 0.423077V2.11538C4.23077 2.34904 4.42019 2.53846 4.65385 2.53846H6.34616C6.57982 2.53846 6.76924 2.34904 6.76924 2.11538V0.423077C6.76924 0.189418 6.57982 0 6.34616 0Z"/>
@@ -610,16 +632,18 @@
                                     </clipPath>
                                 </defs>
                             </svg>
-                        </button>
+                                </span>
+                            </label>
+                        </div>
                     </div>
                 </div>
                 <div class="section-filter__middle">
                     <div class="section-row">
-                        <div class="section-col-3">
+                        <div class="section-col-md-3 section-col-sm-6">
                             <div class="section-filter__select custom-select">
                                 <div class="custom-select__wrap">
                                     <div class="custom-select-preview">
-                                        <input value="Производитель" type="text" name="filter-manufacturer" readonly>
+                                        <input placeholder="Производитель" type="text" name="filter-manufacturer" readonly>
                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M7.99999 9.98288C7.9111 9.98288 7.8251 9.96621 7.74199 9.93288C7.65844 9.89954 7.58888 9.8551 7.53333 9.79954L4.46666 6.73288C4.34444 6.61066 4.28333 6.4551 4.28333 6.26621C4.28333 6.07732 4.34444 5.92177 4.46666 5.79954C4.58888 5.67732 4.74444 5.61621 4.93333 5.61621C5.12221 5.61621 5.27777 5.67732 5.39999 5.79954L7.99999 8.39954L10.6 5.79954C10.7222 5.67732 10.8778 5.61621 11.0667 5.61621C11.2555 5.61621 11.4111 5.67732 11.5333 5.79954C11.6555 5.92177 11.7167 6.07732 11.7167 6.26621C11.7167 6.4551 11.6555 6.61066 11.5333 6.73288L8.46666 9.79954C8.39999 9.86621 8.32777 9.91332 8.24999 9.94088C8.17221 9.96888 8.08888 9.98288 7.99999 9.98288Z" fill="#858585"/>
                                         </svg>
@@ -633,11 +657,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="section-col-3">
+                        <div class="section-col-md-3 section-col-sm-6">
                             <div class="section-filter__select custom-select">
                                 <div class="custom-select__wrap">
                                     <div class="custom-select-preview">
-                                        <input value="Грузоподъемность (т.)" type="text" name="filter-manufacturer" readonly>
+                                        <input placeholder="Грузоподъемность (т.)" type="text" name="filter-load-capacity" readonly>
                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M7.99999 9.98288C7.9111 9.98288 7.8251 9.96621 7.74199 9.93288C7.65844 9.89954 7.58888 9.8551 7.53333 9.79954L4.46666 6.73288C4.34444 6.61066 4.28333 6.4551 4.28333 6.26621C4.28333 6.07732 4.34444 5.92177 4.46666 5.79954C4.58888 5.67732 4.74444 5.61621 4.93333 5.61621C5.12221 5.61621 5.27777 5.67732 5.39999 5.79954L7.99999 8.39954L10.6 5.79954C10.7222 5.67732 10.8778 5.61621 11.0667 5.61621C11.2555 5.61621 11.4111 5.67732 11.5333 5.79954C11.6555 5.92177 11.7167 6.07732 11.7167 6.26621C11.7167 6.4551 11.6555 6.61066 11.5333 6.73288L8.46666 9.79954C8.39999 9.86621 8.32777 9.91332 8.24999 9.94088C8.17221 9.96888 8.08888 9.98288 7.99999 9.98288Z" fill="#858585"/>
                                         </svg>
@@ -665,29 +689,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="section-col-3">
+                        <div class="section-col-md-3 section-col-sm-6">
                             <div class="section-filter__select custom-select">
                                 <div class="custom-select__wrap">
                                     <div class="custom-select-preview">
-                                        <input value="Длина стрелы (м.)" type="text" name="filter-manufacturer" readonly>
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M7.99999 9.98288C7.9111 9.98288 7.8251 9.96621 7.74199 9.93288C7.65844 9.89954 7.58888 9.8551 7.53333 9.79954L4.46666 6.73288C4.34444 6.61066 4.28333 6.4551 4.28333 6.26621C4.28333 6.07732 4.34444 5.92177 4.46666 5.79954C4.58888 5.67732 4.74444 5.61621 4.93333 5.61621C5.12221 5.61621 5.27777 5.67732 5.39999 5.79954L7.99999 8.39954L10.6 5.79954C10.7222 5.67732 10.8778 5.61621 11.0667 5.61621C11.2555 5.61621 11.4111 5.67732 11.5333 5.79954C11.6555 5.92177 11.7167 6.07732 11.7167 6.26621C11.7167 6.4551 11.6555 6.61066 11.5333 6.73288L8.46666 9.79954C8.39999 9.86621 8.32777 9.91332 8.24999 9.94088C8.17221 9.96888 8.08888 9.98288 7.99999 9.98288Z" fill="#858585"/>
-                                        </svg>
-                                    </div>
-                                    <div class="section-filter__select-options custom-select-options">
-                                        <button type="button" class="btn custom-select-options__item" data-select="Камышин">Камышин</button>
-                                        <button type="button" class="btn custom-select-options__item" data-select="Галичанин">Галичанин</button>
-                                        <button type="button" class="btn custom-select-options__item" data-select="Клинцы">Клинцы</button>
-                                        <button type="button" class="btn custom-select-options__item" data-select="Sany">Sany</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="section-col-3">
-                            <div class="section-filter__select custom-select">
-                                <div class="custom-select__wrap">
-                                    <div class="custom-select-preview">
-                                        <input value="Вылет стрелы (м.)" type="text" name="filter-manufacturer" readonly>
+                                        <input placeholder="Длина стрелы (м.)" type="text" name="filter-jib-length" readonly>
                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M7.99999 9.98288C7.9111 9.98288 7.8251 9.96621 7.74199 9.93288C7.65844 9.89954 7.58888 9.8551 7.53333 9.79954L4.46666 6.73288C4.34444 6.61066 4.28333 6.4551 4.28333 6.26621C4.28333 6.07732 4.34444 5.92177 4.46666 5.79954C4.58888 5.67732 4.74444 5.61621 4.93333 5.61621C5.12221 5.61621 5.27777 5.67732 5.39999 5.79954L7.99999 8.39954L10.6 5.79954C10.7222 5.67732 10.8778 5.61621 11.0667 5.61621C11.2555 5.61621 11.4111 5.67732 11.5333 5.79954C11.6555 5.92177 11.7167 6.07732 11.7167 6.26621C11.7167 6.4551 11.6555 6.61066 11.5333 6.73288L8.46666 9.79954C8.39999 9.86621 8.32777 9.91332 8.24999 9.94088C8.17221 9.96888 8.08888 9.98288 7.99999 9.98288Z" fill="#858585"/>
                                         </svg>
@@ -701,11 +707,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="section-col-3">
+                        <div class="section-col-md-3 section-col-sm-6">
                             <div class="section-filter__select custom-select">
                                 <div class="custom-select__wrap">
                                     <div class="custom-select-preview">
-                                        <input value="Шасси" type="text" name="filter-manufacturer" readonly>
+                                        <input placeholder="Вылет стрелы (м.)" type="text" name="filter-jib-reach" readonly>
                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M7.99999 9.98288C7.9111 9.98288 7.8251 9.96621 7.74199 9.93288C7.65844 9.89954 7.58888 9.8551 7.53333 9.79954L4.46666 6.73288C4.34444 6.61066 4.28333 6.4551 4.28333 6.26621C4.28333 6.07732 4.34444 5.92177 4.46666 5.79954C4.58888 5.67732 4.74444 5.61621 4.93333 5.61621C5.12221 5.61621 5.27777 5.67732 5.39999 5.79954L7.99999 8.39954L10.6 5.79954C10.7222 5.67732 10.8778 5.61621 11.0667 5.61621C11.2555 5.61621 11.4111 5.67732 11.5333 5.79954C11.6555 5.92177 11.7167 6.07732 11.7167 6.26621C11.7167 6.4551 11.6555 6.61066 11.5333 6.73288L8.46666 9.79954C8.39999 9.86621 8.32777 9.91332 8.24999 9.94088C8.17221 9.96888 8.08888 9.98288 7.99999 9.98288Z" fill="#858585"/>
                                         </svg>
@@ -719,11 +725,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="section-col-3">
+                        <div class="section-col-md-3 section-col-sm-6">
                             <div class="section-filter__select custom-select">
                                 <div class="custom-select__wrap">
                                     <div class="custom-select-preview">
-                                        <input value="Колесная формула" type="text" name="filter-manufacturer" readonly>
+                                        <input placeholder="Шасси" type="text" name="filter-chassis" readonly>
                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M7.99999 9.98288C7.9111 9.98288 7.8251 9.96621 7.74199 9.93288C7.65844 9.89954 7.58888 9.8551 7.53333 9.79954L4.46666 6.73288C4.34444 6.61066 4.28333 6.4551 4.28333 6.26621C4.28333 6.07732 4.34444 5.92177 4.46666 5.79954C4.58888 5.67732 4.74444 5.61621 4.93333 5.61621C5.12221 5.61621 5.27777 5.67732 5.39999 5.79954L7.99999 8.39954L10.6 5.79954C10.7222 5.67732 10.8778 5.61621 11.0667 5.61621C11.2555 5.61621 11.4111 5.67732 11.5333 5.79954C11.6555 5.92177 11.7167 6.07732 11.7167 6.26621C11.7167 6.4551 11.6555 6.61066 11.5333 6.73288L8.46666 9.79954C8.39999 9.86621 8.32777 9.91332 8.24999 9.94088C8.17221 9.96888 8.08888 9.98288 7.99999 9.98288Z" fill="#858585"/>
                                         </svg>
@@ -737,11 +743,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="section-col-3">
+                        <div class="section-col-md-3 section-col-sm-6">
                             <div class="section-filter__select custom-select">
                                 <div class="custom-select__wrap">
                                     <div class="custom-select-preview">
-                                            <input value="Тип привода" type="text" name="filter-manufacturer" readonly>
+                                        <input placeholder="Колесная формула" type="text" name="filter-wheel-formula" readonly>
                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M7.99999 9.98288C7.9111 9.98288 7.8251 9.96621 7.74199 9.93288C7.65844 9.89954 7.58888 9.8551 7.53333 9.79954L4.46666 6.73288C4.34444 6.61066 4.28333 6.4551 4.28333 6.26621C4.28333 6.07732 4.34444 5.92177 4.46666 5.79954C4.58888 5.67732 4.74444 5.61621 4.93333 5.61621C5.12221 5.61621 5.27777 5.67732 5.39999 5.79954L7.99999 8.39954L10.6 5.79954C10.7222 5.67732 10.8778 5.61621 11.0667 5.61621C11.2555 5.61621 11.4111 5.67732 11.5333 5.79954C11.6555 5.92177 11.7167 6.07732 11.7167 6.26621C11.7167 6.4551 11.6555 6.61066 11.5333 6.73288L8.46666 9.79954C8.39999 9.86621 8.32777 9.91332 8.24999 9.94088C8.17221 9.96888 8.08888 9.98288 7.99999 9.98288Z" fill="#858585"/>
                                         </svg>
@@ -755,11 +761,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="section-col-3">
+                        <div class="section-col-md-3 section-col-sm-6">
                             <div class="section-filter__select custom-select">
                                 <div class="custom-select__wrap">
                                     <div class="custom-select-preview">
-                                        <input value="Двигатель" type="text" name="filter-manufacturer" readonly>
+                                        <input placeholder="Тип привода" type="text" name="filter-drive-type" readonly>
                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M7.99999 9.98288C7.9111 9.98288 7.8251 9.96621 7.74199 9.93288C7.65844 9.89954 7.58888 9.8551 7.53333 9.79954L4.46666 6.73288C4.34444 6.61066 4.28333 6.4551 4.28333 6.26621C4.28333 6.07732 4.34444 5.92177 4.46666 5.79954C4.58888 5.67732 4.74444 5.61621 4.93333 5.61621C5.12221 5.61621 5.27777 5.67732 5.39999 5.79954L7.99999 8.39954L10.6 5.79954C10.7222 5.67732 10.8778 5.61621 11.0667 5.61621C11.2555 5.61621 11.4111 5.67732 11.5333 5.79954C11.6555 5.92177 11.7167 6.07732 11.7167 6.26621C11.7167 6.4551 11.6555 6.61066 11.5333 6.73288L8.46666 9.79954C8.39999 9.86621 8.32777 9.91332 8.24999 9.94088C8.17221 9.96888 8.08888 9.98288 7.99999 9.98288Z" fill="#858585"/>
                                         </svg>
@@ -773,11 +779,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="section-col-3">
+                        <div class="section-col-md-3 section-col-sm-6">
                             <div class="section-filter__select custom-select">
                                 <div class="custom-select__wrap">
                                     <div class="custom-select-preview">
-                                        <input value="Скорость механизма поворота" type="text" name="filter-manufacturer" readonly>
+                                        <input placeholder="Двигатель" type="text" name="filter-engine" readonly>
                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M7.99999 9.98288C7.9111 9.98288 7.8251 9.96621 7.74199 9.93288C7.65844 9.89954 7.58888 9.8551 7.53333 9.79954L4.46666 6.73288C4.34444 6.61066 4.28333 6.4551 4.28333 6.26621C4.28333 6.07732 4.34444 5.92177 4.46666 5.79954C4.58888 5.67732 4.74444 5.61621 4.93333 5.61621C5.12221 5.61621 5.27777 5.67732 5.39999 5.79954L7.99999 8.39954L10.6 5.79954C10.7222 5.67732 10.8778 5.61621 11.0667 5.61621C11.2555 5.61621 11.4111 5.67732 11.5333 5.79954C11.6555 5.92177 11.7167 6.07732 11.7167 6.26621C11.7167 6.4551 11.6555 6.61066 11.5333 6.73288L8.46666 9.79954C8.39999 9.86621 8.32777 9.91332 8.24999 9.94088C8.17221 9.96888 8.08888 9.98288 7.99999 9.98288Z" fill="#858585"/>
                                         </svg>
@@ -791,11 +797,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="section-col-3">
+                        <div class="section-col-md-3 section-col-sm-6">
                             <div class="section-filter__select custom-select">
                                 <div class="custom-select__wrap">
                                     <div class="custom-select-preview">
-                                        <input value="Макс. глубина крюка" type="text" name="filter-manufacturer" readonly>
+                                        <input placeholder="Скорость механизма поворота" type="text" name="filter-swing-speed" readonly>
                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M7.99999 9.98288C7.9111 9.98288 7.8251 9.96621 7.74199 9.93288C7.65844 9.89954 7.58888 9.8551 7.53333 9.79954L4.46666 6.73288C4.34444 6.61066 4.28333 6.4551 4.28333 6.26621C4.28333 6.07732 4.34444 5.92177 4.46666 5.79954C4.58888 5.67732 4.74444 5.61621 4.93333 5.61621C5.12221 5.61621 5.27777 5.67732 5.39999 5.79954L7.99999 8.39954L10.6 5.79954C10.7222 5.67732 10.8778 5.61621 11.0667 5.61621C11.2555 5.61621 11.4111 5.67732 11.5333 5.79954C11.6555 5.92177 11.7167 6.07732 11.7167 6.26621C11.7167 6.4551 11.6555 6.61066 11.5333 6.73288L8.46666 9.79954C8.39999 9.86621 8.32777 9.91332 8.24999 9.94088C8.17221 9.96888 8.08888 9.98288 7.99999 9.98288Z" fill="#858585"/>
                                         </svg>
@@ -809,11 +815,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="section-col-3">
+                        <div class="section-col-md-3 section-col-sm-6">
                             <div class="section-filter__select custom-select">
                                 <div class="custom-select__wrap">
                                     <div class="custom-select-preview">
-                                        <input value="Длина гуська" type="text" name="filter-manufacturer" readonly>
+                                        <input placeholder="Макс. глубина крюка" type="text" name="filter-hook-depth" readonly>
                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M7.99999 9.98288C7.9111 9.98288 7.8251 9.96621 7.74199 9.93288C7.65844 9.89954 7.58888 9.8551 7.53333 9.79954L4.46666 6.73288C4.34444 6.61066 4.28333 6.4551 4.28333 6.26621C4.28333 6.07732 4.34444 5.92177 4.46666 5.79954C4.58888 5.67732 4.74444 5.61621 4.93333 5.61621C5.12221 5.61621 5.27777 5.67732 5.39999 5.79954L7.99999 8.39954L10.6 5.79954C10.7222 5.67732 10.8778 5.61621 11.0667 5.61621C11.2555 5.61621 11.4111 5.67732 11.5333 5.79954C11.6555 5.92177 11.7167 6.07732 11.7167 6.26621C11.7167 6.4551 11.6555 6.61066 11.5333 6.73288L8.46666 9.79954C8.39999 9.86621 8.32777 9.91332 8.24999 9.94088C8.17221 9.96888 8.08888 9.98288 7.99999 9.98288Z" fill="#858585"/>
                                         </svg>
@@ -827,11 +833,29 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="section-col-3">
+                        <div class="section-col-md-3 section-col-sm-6">
                             <div class="section-filter__select custom-select">
                                 <div class="custom-select__wrap">
                                     <div class="custom-select-preview">
-                                        <input value="Температура эксплуатации" type="text" name="filter-manufacturer" readonly>
+                                        <input placeholder="Длина гуська" type="text" name="filter-gooseneck-length" readonly>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.99999 9.98288C7.9111 9.98288 7.8251 9.96621 7.74199 9.93288C7.65844 9.89954 7.58888 9.8551 7.53333 9.79954L4.46666 6.73288C4.34444 6.61066 4.28333 6.4551 4.28333 6.26621C4.28333 6.07732 4.34444 5.92177 4.46666 5.79954C4.58888 5.67732 4.74444 5.61621 4.93333 5.61621C5.12221 5.61621 5.27777 5.67732 5.39999 5.79954L7.99999 8.39954L10.6 5.79954C10.7222 5.67732 10.8778 5.61621 11.0667 5.61621C11.2555 5.61621 11.4111 5.67732 11.5333 5.79954C11.6555 5.92177 11.7167 6.07732 11.7167 6.26621C11.7167 6.4551 11.6555 6.61066 11.5333 6.73288L8.46666 9.79954C8.39999 9.86621 8.32777 9.91332 8.24999 9.94088C8.17221 9.96888 8.08888 9.98288 7.99999 9.98288Z" fill="#858585"/>
+                                        </svg>
+                                    </div>
+                                    <div class="section-filter__select-options custom-select-options">
+                                        <button type="button" class="btn custom-select-options__item" data-select="Камышин">Камышин</button>
+                                        <button type="button" class="btn custom-select-options__item" data-select="Галичанин">Галичанин</button>
+                                        <button type="button" class="btn custom-select-options__item" data-select="Клинцы">Клинцы</button>
+                                        <button type="button" class="btn custom-select-options__item" data-select="Sany">Sany</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-col-md-3 section-col-sm-6">
+                            <div class="section-filter__select custom-select">
+                                <div class="custom-select__wrap">
+                                    <div class="custom-select-preview">
+                                        <input placeholder="Температура эксплуатации" type="text" name="filter-operation-temperature" readonly>
                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M7.99999 9.98288C7.9111 9.98288 7.8251 9.96621 7.74199 9.93288C7.65844 9.89954 7.58888 9.8551 7.53333 9.79954L4.46666 6.73288C4.34444 6.61066 4.28333 6.4551 4.28333 6.26621C4.28333 6.07732 4.34444 5.92177 4.46666 5.79954C4.58888 5.67732 4.74444 5.61621 4.93333 5.61621C5.12221 5.61621 5.27777 5.67732 5.39999 5.79954L7.99999 8.39954L10.6 5.79954C10.7222 5.67732 10.8778 5.61621 11.0667 5.61621C11.2555 5.61621 11.4111 5.67732 11.5333 5.79954C11.6555 5.92177 11.7167 6.07732 11.7167 6.26621C11.7167 6.4551 11.6555 6.61066 11.5333 6.73288L8.46666 9.79954C8.39999 9.86621 8.32777 9.91332 8.24999 9.94088C8.17221 9.96888 8.08888 9.98288 7.99999 9.98288Z" fill="#858585"/>
                                         </svg>
@@ -848,13 +872,13 @@
                     </div>
                 </div>
                 <div class="section-row section-filters__bottom">
-                    <div class="section-col-6">
+                    <div class="section-col-md-6">
                         <div class="section-filters__bottom-left">
                             <button type="button" class="btn section-filters__btn-all">Все параметры</button>
                             <div class="section-filters__bottom-checkbox">
                                 <label>
                                     В наличии
-                                    <input type="checkbox" data-input-required="true">
+                                    <input type="checkbox" name="filter-in-stock">
                                     <span class="section-filters__bottom-checkbox__checkmark">
                                         <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M7.11197 1.24969L3.65757 5.56889L0.94397 3.30729L1.45597 2.69289L3.54237 4.43129L6.48797 0.750488L7.11197 1.24969Z" fill="#08526C"/>
@@ -864,19 +888,19 @@
                             </div>
                         </div>
                     </div>
-                    <div class="section-col-6">
+                    <div class="section-col-md-6">
                         <div class="section-filters__bottom-right section-row">
-                            <div class="section-col-6"><button type="button" class="btn section-filters__btn-reset">
+                            <div class="section-col-sm-6"><button type="button" class="btn section-filters__btn-reset">
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M8.62664 8.00044L11.8666 4.76044C11.9395 4.67542 11.9775 4.56605 11.9732 4.4542C11.9689 4.34234 11.9225 4.23623 11.8433 4.15708C11.7642 4.07793 11.6581 4.03156 11.5462 4.02724C11.4344 4.02292 11.325 4.06096 11.24 4.13378L7.99997 7.37378L4.75997 4.12933C4.67495 4.05652 4.56558 4.01847 4.45373 4.02279C4.34187 4.02711 4.23577 4.07348 4.15661 4.15264C4.07746 4.23179 4.03109 4.3379 4.02677 4.44975C4.02245 4.56161 4.0605 4.67097 4.13331 4.756L7.37331 8.00044L4.12886 11.2404C4.08234 11.2803 4.04455 11.3293 4.01787 11.3845C3.9912 11.4396 3.97621 11.4997 3.97384 11.5609C3.97148 11.6221 3.98179 11.6831 4.00414 11.7401C4.02648 11.7972 4.06037 11.849 4.10369 11.8923C4.147 11.9356 4.1988 11.9695 4.25583 11.9918C4.31286 12.0142 4.3739 12.0245 4.43511 12.0221C4.49632 12.0198 4.55638 12.0048 4.61152 11.9781C4.66666 11.9514 4.71569 11.9136 4.75553 11.8671L7.99997 8.62711L11.24 11.8671C11.325 11.9399 11.4344 11.978 11.5462 11.9736C11.6581 11.9693 11.7642 11.923 11.8433 11.8438C11.9225 11.7647 11.9689 11.6585 11.9732 11.5467C11.9775 11.4348 11.9395 11.3255 11.8666 11.2404L8.62664 8.00044Z" fill="white"/>
                                 </svg>
                                 Сбросить фильтр
                             </button></div>
-                            <div class="section-col-6"><button type="submit" class="btn section-filters__btn-show">Показать</button></div>
+                            <div class="section-col-sm-6"><button type="submit" class="btn section-filters__btn-show">Показать</button></div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
     <div class="container">
@@ -888,77 +912,56 @@
                         <div class="big-card__image">
                             <img src="media/specialOffers/specialOfferCrane1.png" alt="КС-55713-5К-1 «Клинцы»">
                         </div>
-                        <div class="big-card__info">
-                            <div class="big-card__info-item">
-                                <p>Грузоподъемность, т: <span>25</span></p>
+                        <div class="big-card__main-right">
+                            <div class="big-card__info">
+                                <div class="big-card__info-item">
+                                    <p>Грузоподъемность, т: <span>25</span></p>
+                                </div>
+                                <div class="big-card__info-item">
+                                    <p>Длина стрелы: <span>21,0 м</span></p>
+                                </div>
+                                <div class="big-card__info-item">
+                                    <p>Вылет стрелы: <span>30,34 м</span></p>
+                                </div>
+                                <div class="big-card__info-item">
+                                    <p>Шасси: <span>КамАЗ-43118</span></p>
+                                </div>
+                                <div class="big-card__info-item">
+                                    <p>Колесная формула: <span>6х6</span></p>
+                                </div>
                             </div>
-                            <div class="big-card__info-item">
-                                <p>Длина стрелы: <span>21,0 м</span></p>
-                            </div>
-                            <div class="big-card__info-item">
-                                <p>Вылет стрелы: <span>30,34 м</span></p>
-                            </div>
-                            <div class="big-card__info-item">
-                                <p>Шасси: <span>КамАЗ-43118</span></p>
-                            </div>
-                            <div class="big-card__info-item">
-                                <p>Колесная формула: <span>6х6</span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="big-card__bottom">
-                        <h4>12 350 000 руб.</h4>
-                        <p>(В наличии — 6 ед.)</p>
-                    </div>
-                    <div class="big-card__buttons section-row">
-                        <div class="section-col-md-6">
-                            <a href="#" class="btn btn-more">Подробнее</a>
-                        </div>
-                        <div class="section-col-md-6">
-                            <button type="button" class="btn btn-lizing" data-modal="modalLizing">
-                                Стоимость лизинга
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="section-col-sm-6">
-                <div class="big-card">
-                    <h3>КС-55713-5К-2 «Клинцы»</h3>
-                    <div class="big-card__main">
-                        <div class="big-card__image">
-                            <img src="media/specialOffers/specialOfferCrane1.png" alt="КС-55713-5К-1 «Клинцы»">
-                        </div>
-                        <div class="big-card__info">
-                            <div class="big-card__info-item">
-                                <p>Грузоподъемность, т: <span>25</span></p>
-                            </div>
-                            <div class="big-card__info-item">
-                                <p>Длина стрелы: <span>21,0 м</span></p>
-                            </div>
-                            <div class="big-card__info-item">
-                                <p>Вылет стрелы: <span>30,34 м</span></p>
-                            </div>
-                            <div class="big-card__info-item">
-                                <p>Шасси: <span>КамАЗ-43118</span></p>
-                            </div>
-                            <div class="big-card__info-item">
-                                <p>Колесная формула: <span>6х6</span></p>
+                            <div class="big-card__bottom">
+                                <div class="big-card__price">
+                                    <h4>12 350 000 руб.</h4>
+                                    <p>(В наличии — 6 ед.)</p>
+                                </div>
+                                <div class="big-card__buttons section-row">
+                                    <div class="section-col-md-6">
+                                        <a href="#" class="btn btn-more">Подробнее</a>
+                                    </div>
+                                    <div class="section-col-md-6">
+                                        <button type="button" class="btn btn-lizing" data-modal="modalLizing">
+                                            Стоимость лизинга
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="big-card__bottom">
-                        <h4>12 350 000 руб.</h4>
-                        <p>(В наличии — 6 ед.)</p>
-                    </div>
-                    <div class="big-card__buttons section-row">
-                        <div class="section-col-md-6">
-                            <a href="#" class="btn btn-more">Подробнее</a>
+                        <div class="big-card__price">
+                            <h4>12 350 000 руб.</h4>
+                            <p>(В наличии — 6 ед.)</p>
                         </div>
-                        <div class="section-col-md-6">
-                            <button type="button" class="btn btn-lizing" data-modal="modalLizing">
-                                Стоимость лизинга
-                            </button>
+                        <div class="big-card__buttons section-row">
+                            <div class="section-col-md-6">
+                                <a href="#" class="btn btn-more">Подробнее</a>
+                            </div>
+                            <div class="section-col-md-6">
+                                <button type="button" class="btn btn-lizing" data-modal="modalLizing">
+                                    Стоимость лизинга
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -970,36 +973,56 @@
                         <div class="big-card__image">
                             <img src="media/specialOffers/specialOfferCrane1.png" alt="КС-55713-5К-1 «Клинцы»">
                         </div>
-                        <div class="big-card__info">
-                            <div class="big-card__info-item">
-                                <p>Грузоподъемность, т: <span>25</span></p>
+                        <div class="big-card__main-right">
+                            <div class="big-card__info">
+                                <div class="big-card__info-item">
+                                    <p>Грузоподъемность, т: <span>25</span></p>
+                                </div>
+                                <div class="big-card__info-item">
+                                    <p>Длина стрелы: <span>21,0 м</span></p>
+                                </div>
+                                <div class="big-card__info-item">
+                                    <p>Вылет стрелы: <span>30,34 м</span></p>
+                                </div>
+                                <div class="big-card__info-item">
+                                    <p>Шасси: <span>КамАЗ-43118</span></p>
+                                </div>
+                                <div class="big-card__info-item">
+                                    <p>Колесная формула: <span>6х6</span></p>
+                                </div>
                             </div>
-                            <div class="big-card__info-item">
-                                <p>Длина стрелы: <span>21,0 м</span></p>
-                            </div>
-                            <div class="big-card__info-item">
-                                <p>Вылет стрелы: <span>30,34 м</span></p>
-                            </div>
-                            <div class="big-card__info-item">
-                                <p>Шасси: <span>КамАЗ-43118</span></p>
-                            </div>
-                            <div class="big-card__info-item">
-                                <p>Колесная формула: <span>6х6</span></p>
+                            <div class="big-card__bottom">
+                                <div class="big-card__price">
+                                    <h4>12 350 000 руб.</h4>
+                                    <p>(В наличии — 6 ед.)</p>
+                                </div>
+                                <div class="big-card__buttons section-row">
+                                    <div class="section-col-md-6">
+                                        <a href="#" class="btn btn-more">Подробнее</a>
+                                    </div>
+                                    <div class="section-col-md-6">
+                                        <button type="button" class="btn btn-lizing" data-modal="modalLizing">
+                                            Стоимость лизинга
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="big-card__bottom">
-                        <h4>12 350 000 руб.</h4>
-                        <p>(В наличии — 6 ед.)</p>
-                    </div>
-                    <div class="big-card__buttons section-row">
-                        <div class="section-col-md-6">
-                            <a href="#" class="btn btn-more">Подробнее</a>
+                        <div class="big-card__price">
+                            <h4>12 350 000 руб.</h4>
+                            <p>(В наличии — 6 ед.)</p>
                         </div>
-                        <div class="section-col-md-6">
-                            <button type="button" class="btn btn-lizing" data-modal="modalLizing">
-                                Стоимость лизинга
-                            </button>
+                        <div class="big-card__buttons section-row">
+                            <div class="section-col-md-6">
+                                <a href="#" class="btn btn-more">Подробнее</a>
+                            </div>
+                            <div class="section-col-md-6">
+                                <button type="button" class="btn btn-lizing" data-modal="modalLizing">
+                                    Стоимость лизинга
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1011,36 +1034,117 @@
                         <div class="big-card__image">
                             <img src="media/specialOffers/specialOfferCrane1.png" alt="КС-55713-5К-1 «Клинцы»">
                         </div>
-                        <div class="big-card__info">
-                            <div class="big-card__info-item">
-                                <p>Грузоподъемность, т: <span>25</span></p>
+                        <div class="big-card__main-right">
+                            <div class="big-card__info">
+                                <div class="big-card__info-item">
+                                    <p>Грузоподъемность, т: <span>25</span></p>
+                                </div>
+                                <div class="big-card__info-item">
+                                    <p>Длина стрелы: <span>21,0 м</span></p>
+                                </div>
+                                <div class="big-card__info-item">
+                                    <p>Вылет стрелы: <span>30,34 м</span></p>
+                                </div>
+                                <div class="big-card__info-item">
+                                    <p>Шасси: <span>КамАЗ-43118</span></p>
+                                </div>
+                                <div class="big-card__info-item">
+                                    <p>Колесная формула: <span>6х6</span></p>
+                                </div>
                             </div>
-                            <div class="big-card__info-item">
-                                <p>Длина стрелы: <span>21,0 м</span></p>
-                            </div>
-                            <div class="big-card__info-item">
-                                <p>Вылет стрелы: <span>30,34 м</span></p>
-                            </div>
-                            <div class="big-card__info-item">
-                                <p>Шасси: <span>КамАЗ-43118</span></p>
-                            </div>
-                            <div class="big-card__info-item">
-                                <p>Колесная формула: <span>6х6</span></p>
+                            <div class="big-card__bottom">
+                                <div class="big-card__price">
+                                    <h4>12 350 000 руб.</h4>
+                                    <p>(В наличии — 6 ед.)</p>
+                                </div>
+                                <div class="big-card__buttons section-row">
+                                    <div class="section-col-md-6">
+                                        <a href="#" class="btn btn-more">Подробнее</a>
+                                    </div>
+                                    <div class="section-col-md-6">
+                                        <button type="button" class="btn btn-lizing" data-modal="modalLizing">
+                                            Стоимость лизинга
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="big-card__bottom">
-                        <h4>12 350 000 руб.</h4>
-                        <p>(В наличии — 6 ед.)</p>
-                    </div>
-                    <div class="big-card__buttons section-row">
-                        <div class="section-col-md-6">
-                            <a href="#" class="btn btn-more">Подробнее</a>
+                        <div class="big-card__price">
+                            <h4>12 350 000 руб.</h4>
+                            <p>(В наличии — 6 ед.)</p>
                         </div>
-                        <div class="section-col-md-6">
-                            <button type="button" class="btn btn-lizing" data-modal="modalLizing">
-                                Стоимость лизинга
-                            </button>
+                        <div class="big-card__buttons section-row">
+                            <div class="section-col-md-6">
+                                <a href="#" class="btn btn-more">Подробнее</a>
+                            </div>
+                            <div class="section-col-md-6">
+                                <button type="button" class="btn btn-lizing" data-modal="modalLizing">
+                                    Стоимость лизинга
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-col-sm-6">
+                <div class="big-card">
+                    <h3>КС-55713-5К-1 «Клинцы»</h3>
+                    <div class="big-card__main">
+                        <div class="big-card__image">
+                            <img src="media/specialOffers/specialOfferCrane1.png" alt="КС-55713-5К-1 «Клинцы»">
+                        </div>
+                        <div class="big-card__main-right">
+                            <div class="big-card__info">
+                                <div class="big-card__info-item">
+                                    <p>Грузоподъемность, т: <span>25</span></p>
+                                </div>
+                                <div class="big-card__info-item">
+                                    <p>Длина стрелы: <span>21,0 м</span></p>
+                                </div>
+                                <div class="big-card__info-item">
+                                    <p>Вылет стрелы: <span>30,34 м</span></p>
+                                </div>
+                                <div class="big-card__info-item">
+                                    <p>Шасси: <span>КамАЗ-43118</span></p>
+                                </div>
+                                <div class="big-card__info-item">
+                                    <p>Колесная формула: <span>6х6</span></p>
+                                </div>
+                            </div>
+                            <div class="big-card__bottom">
+                                <div class="big-card__price">
+                                    <h4>12 350 000 руб.</h4>
+                                    <p>(В наличии — 6 ед.)</p>
+                                </div>
+                                <div class="big-card__buttons section-row">
+                                    <div class="section-col-md-6">
+                                        <a href="#" class="btn btn-more">Подробнее</a>
+                                    </div>
+                                    <div class="section-col-md-6">
+                                        <button type="button" class="btn btn-lizing" data-modal="modalLizing">
+                                            Стоимость лизинга
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="big-card__bottom">
+                        <div class="big-card__price">
+                            <h4>12 350 000 руб.</h4>
+                            <p>(В наличии — 6 ед.)</p>
+                        </div>
+                        <div class="big-card__buttons section-row">
+                            <div class="section-col-md-6">
+                                <a href="#" class="btn btn-more">Подробнее</a>
+                            </div>
+                            <div class="section-col-md-6">
+                                <button type="button" class="btn btn-lizing" data-modal="modalLizing">
+                                    Стоимость лизинга
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1398,7 +1502,7 @@
                             <label for="modalLizingInputOffice">Офис продаж</label>
                             <div class="modal-select__wrap custom-select__wrap">
                                 <div class="modal-select-preview custom-select-preview modal-input__input">
-                                    <input value="Выберите удобный офис продаж" type="text" id="modalLizingInputOffice" name="modal-lizing-office" readonly>
+                                    <input placeholder="Выберите удобный офис продаж" type="text" id="modalLizingInputOffice" name="modal-lizing-office" data-input-required="true" readonly>
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M7.99999 9.98288C7.9111 9.98288 7.8251 9.96621 7.74199 9.93288C7.65844 9.89954 7.58888 9.8551 7.53333 9.79954L4.46666 6.73288C4.34444 6.61066 4.28333 6.4551 4.28333 6.26621C4.28333 6.07732 4.34444 5.92177 4.46666 5.79954C4.58888 5.67732 4.74444 5.61621 4.93333 5.61621C5.12221 5.61621 5.27777 5.67732 5.39999 5.79954L7.99999 8.39954L10.6 5.79954C10.7222 5.67732 10.8778 5.61621 11.0667 5.61621C11.2555 5.61621 11.4111 5.67732 11.5333 5.79954C11.6555 5.92177 11.7167 6.07732 11.7167 6.26621C11.7167 6.4551 11.6555 6.61066 11.5333 6.73288L8.46666 9.79954C8.39999 9.86621 8.32777 9.91332 8.24999 9.94088C8.17221 9.96888 8.08888 9.98288 7.99999 9.98288Z" fill="#858585"/>
                                     </svg>
@@ -1421,7 +1525,7 @@
                             <label for="modalLizingInputLizCompany">Лизинговая компания</label>
                             <div class="modal-select__wrap custom-select__wrap">
                                 <div class="modal-select-preview custom-select-preview modal-input__input">
-                                    <input value="Выберите лизинговую компанию" type="text" id="modalLizingInputLizCompany" name="modal-lizing-liz-company" readonly>
+                                    <input placeholder="Выберите лизинговую компанию" type="text" id="modalLizingInputLizCompany" name="modal-lizing-liz-company" data-input-required="true" readonly>
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M7.99999 9.98288C7.9111 9.98288 7.8251 9.96621 7.74199 9.93288C7.65844 9.89954 7.58888 9.8551 7.53333 9.79954L4.46666 6.73288C4.34444 6.61066 4.28333 6.4551 4.28333 6.26621C4.28333 6.07732 4.34444 5.92177 4.46666 5.79954C4.58888 5.67732 4.74444 5.61621 4.93333 5.61621C5.12221 5.61621 5.27777 5.67732 5.39999 5.79954L7.99999 8.39954L10.6 5.79954C10.7222 5.67732 10.8778 5.61621 11.0667 5.61621C11.2555 5.61621 11.4111 5.67732 11.5333 5.79954C11.6555 5.92177 11.7167 6.07732 11.7167 6.26621C11.7167 6.4551 11.6555 6.61066 11.5333 6.73288L8.46666 9.79954C8.39999 9.86621 8.32777 9.91332 8.24999 9.94088C8.17221 9.96888 8.08888 9.98288 7.99999 9.98288Z" fill="#858585"/>
                                     </svg>

@@ -412,3 +412,52 @@ tippy('.map-dropdown', {
     zIndex: 9
 });
 
+// Filters Section
+const sectionFiltersBtnAll = document.querySelectorAll('.section-filters__btn-all')
+sectionFiltersBtnAll.forEach(el => {
+    el.addEventListener('click', () => {
+        const sectionFilterWrap = el.closest('.section-filters__wrap')
+        sectionFilterWrap.classList.toggle('section-filters__wrap--active')
+    })
+})
+const sectionFiltersBtnReset = document.querySelectorAll('.section-filters__btn-reset')
+sectionFiltersBtnReset.forEach(el => {
+    el.addEventListener('click', () => {
+        const formFilter = el.closest('form[data-form="form-filters"]')
+        formFilter.reset()
+    })
+})
+const formFilters = document.querySelectorAll('form[data-form="form-filters"]')
+formFilters.forEach(el => {
+    el.addEventListener('submit', function(e) {
+        e.preventDefault()
+        var data = new FormData(el);
+        for (const entry of data) {
+            console.log(entry)
+            if (entry[0] === 'filter-view') {
+                const sectionList = el.closest('.section-list')
+                const sectionListRow = sectionList.querySelector('.section-list__row')
+                if (entry[1] === 'card') {
+                    sectionListRow.classList.remove('section-row--line')
+                } else if (entry[1] === 'line') {
+                    sectionListRow.classList.add('section-row--line')
+                }
+            }
+        }
+    })
+})
+const sectionFiltersBtnMobileShow = document.querySelectorAll('.section-filters__btn-show-filters')
+if (sectionFiltersBtnMobileShow.length > 0) {
+    sectionFiltersBtnMobileShow.forEach(el => {
+        el.addEventListener('click', () => {
+            const sectionFilters = el.closest('.section-filters')
+            const buttonText = el.querySelector('span')
+            sectionFilters.classList.toggle('section-filters--active')
+            if (sectionFilters.classList.contains('section-filters--active')) {
+                buttonText.innerText = 'Закрыть'
+            } else {
+                buttonText.innerText = 'Фильтры'
+            }
+        })
+    })
+}
