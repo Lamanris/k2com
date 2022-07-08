@@ -149,11 +149,11 @@ modals.forEach(function (trigger) {
         event.preventDefault();
         const modal = document.getElementById(trigger.dataset.modal);
         if (trigger.dataset.modal === 'modalLizing') {
-            const bigCard = trigger.closest('.big-card')
-            if (bigCard) {
-                const bigCardTitle = bigCard.querySelector('h3')
+            const lizingParent = trigger.closest('[data-lizing="parent"]')
+            if (lizingParent) {
+                const lizingTitle = lizingParent.querySelector('[data-lizing="title"]')
                 const modalLizingInputMachine = modal.querySelector('input[name="modal-lizing-machine"]')
-                modalLizingInputMachine.value = bigCardTitle.innerText
+                modalLizingInputMachine.value = lizingTitle.innerText
             }
         }
         modal.classList.add("open");
@@ -461,3 +461,52 @@ if (sectionFiltersBtnMobileShow.length > 0) {
         })
     })
 }
+
+
+// Product Tabs
+const productTabsBtns = document.querySelectorAll('.product__tabs-buttons .product__tabs-buttons__btn[data-tab]')
+if (productTabsBtns.length > 0) {
+    productTabsBtns.forEach(el => {
+        el.addEventListener('click', () => {
+            productTabsBtns.forEach(el => el.classList.remove('product__tabs-buttons__btn--active'))
+            const productTabsPanels = document.querySelectorAll('.product__tabs-panel')
+            const productTabsWrap = el.closest('.product__tabs-buttons')
+            productTabsWrap.classList.toggle('product__tabs-buttons--active')
+            if (productTabsPanels.length > 0) {
+                productTabsPanels.forEach(panel => {
+                    panel.classList.remove('product__tabs-panel--active')
+                    if (panel.id === el.getAttribute('data-tab')) {
+                        panel.classList.add('product__tabs-panel--active')
+                        el.classList.add('product__tabs-buttons__btn--active')
+                    }
+                })
+            }
+        })
+    })
+}
+// Product Tabs Mobile
+const productTabsBtnsMobile = document.querySelectorAll('.product__tabs-buttons__mobile .product__tabs-buttons__btn[data-tab]')
+if (productTabsBtnsMobile.length > 0) {
+    productTabsBtnsMobile.forEach(el => {
+        el.addEventListener('click', () => {
+            const productTabsPanels = document.querySelectorAll('.product__tabs-panel')
+            const productTabsWrap = el.closest('.product__tabs-buttons__mobile')
+            productTabsWrap.classList.toggle('product__tabs-buttons__mobile--active')
+            if (!productTabsWrap.classList.contains('product__tabs-buttons__mobile--active')) {
+                productTabsBtnsMobile.forEach(el => {
+                    el.classList.remove('product__tabs-buttons__btn--active')
+                })
+                if (productTabsPanels.length > 0) {
+                    productTabsPanels.forEach(panel => {
+                        panel.classList.remove('product__tabs-panel--active')
+                        if (panel.id === el.getAttribute('data-tab')) {
+                            panel.classList.add('product__tabs-panel--active')
+                            el.classList.add('product__tabs-buttons__btn--active')
+                        }
+                    })
+                }
+            }
+        })
+    })
+}
+
