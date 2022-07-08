@@ -1413,7 +1413,7 @@
         transition: max-height 0.2s ease-in-out;
     }
     .header-catalogue__sidebar-item--active {
-        max-height: 1000px;
+        max-height: 3000px;
     }
     .header-catalogue__sidebar-item .header-catalogue__cat {
         display: block;
@@ -1562,6 +1562,16 @@
     .section-list__sidebar-list {
         max-height: 50px;
         overflow: hidden;
+        transition: max-height .2s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #08526C;
+    }
+    .section-list__sidebar-list--active {
+        max-height: 2000px;
+    }
+    .section-list__sidebar-list__title {
+        display: none;
     }
     .section-list--sidebar .section-list__wrap {
         padding: 0 10px;
@@ -1591,6 +1601,30 @@
         display: flex;
         margin-bottom: 25px;
     }
+    .section-list__sidebar-btn {
+        border: 0;
+        border-top: 1px solid #08526C;
+    }
+    .section-list__sidebar-btn--active {
+        color: #08526C;
+        border: none;
+        background: white;
+        justify-content: space-between;
+        align-items: center;
+        order: -1;
+    }
+    .section-list__sidebar-btn--active:hover {
+        color: #08526C;
+    }
+    .section-list__sidebar-btn--active:after {
+        content: url("../media/icons/dropdownArrowIcon-blue.svg");
+        width: 14px;
+        height: 14px;
+    }
+    .section-list__sidebar-item--active {
+        order: -1;
+    }
+
 
 
     .small-card__image {

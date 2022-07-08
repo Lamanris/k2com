@@ -147,6 +147,8 @@ a {
 .section-title:before {
     content: '';
     width: 4px;
+    min-width: 4px;
+    max-width: 4px;
     background: #58BBDC;
     margin-right: 5px;
 }
@@ -1456,6 +1458,9 @@ body.catalogue .header__btn-catalogue__icon span {
     display: flex;
     align-items: center;
 }
+.section-list__sidebar-item .section-list__sidebar-content {
+    display: none;
+}
 .section-list__sidebar-btn {
     height: 59px;
     width: 100%;
@@ -1701,7 +1706,7 @@ body.catalogue .header__btn-catalogue__icon span {
 .section-row--line .big-card__main-right .big-card__buttons {
     max-width: 550px;
 }
-.section-row--line > .section-col-sm-6 {
+.section-row--line .section-list__row-filter-view > .section-col-sm-6 {
     width: 100%!important;
 }
 .section-row--line .big-card__image {

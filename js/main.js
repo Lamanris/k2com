@@ -37,10 +37,8 @@ if (headerCatalogueSidebarBtns.length > 0) {
                 headerCatalogueSidebarBtns.forEach(el => el.classList.remove('header-catalogue__sidebar-btn--active'))
                 el.classList.add('header-catalogue__sidebar-btn--active')
                 headerCatalogueContent.innerHTML = ''
-                if (catalogueCat) {
-                    const catalogueCatClone = catalogueCat.cloneNode(true)
-                    headerCatalogueContent.appendChild(catalogueCatClone)
-                }
+                const catalogueCatClone = catalogueCat.cloneNode(true)
+                headerCatalogueContent.appendChild(catalogueCatClone)
             }
             function triggerCatalogueBtnMobile () {
                 el.classList.toggle('header-catalogue__sidebar-btn--active')
@@ -49,7 +47,9 @@ if (headerCatalogueSidebarBtns.length > 0) {
             function deviceChangeHandler(x) {
                 if (x.matches) {
                     el.removeEventListener('click', triggerCatalogueBtnDesktop)
-                    el.addEventListener('click', triggerCatalogueBtnMobile)
+                    if (catalogueCat) {
+                        el.addEventListener('click', triggerCatalogueBtnMobile)
+                    }
                 } else {
                     el.removeEventListener('click', triggerCatalogueBtnMobile)
                     const catalogueCat = catalogueSidebarItem.querySelector('.header-catalogue__cat')
@@ -59,7 +59,9 @@ if (headerCatalogueSidebarBtns.length > 0) {
                         headerCatalogueContent.appendChild(catalogueCatClone)
                         el.classList.add('header-catalogue__sidebar-btn--active')
                     }
-                    el.addEventListener('click', triggerCatalogueBtnDesktop)
+                    if (catalogueCat) {
+                        el.addEventListener('click', triggerCatalogueBtnDesktop)
+                    }
                 }
             }
             var smallDevice = window.matchMedia("(max-width: 660px)")
@@ -483,14 +485,13 @@ if (customCounter.length > 0) {
 const inputFilterView = document.querySelectorAll('input[name="filter-view"]')
 inputFilterView.forEach(el => {
     const sectionList = el.closest('.section-list')
-    const sectionListRow = sectionList.querySelector('.section-list__row')
-    if (sectionListRow) {
+    if (sectionList) {
         el.addEventListener('change', () => {
             if (el.checked) {
                 if (el.value === 'line') {
-                    sectionListRow.classList.add('section-row--line')
+                    sectionList.classList.add('section-row--line')
                 } else if (el.value === 'card'){
-                    sectionListRow.classList.remove('section-row--line')
+                    sectionList.classList.remove('section-row--line')
                 }
             }
         })
@@ -545,3 +546,47 @@ if (productTabsBtnsMobile.length > 0) {
     })
 }
 
+
+// Catalogue Spares Section List
+const sectionListSidebarBtns = document.querySelectorAll('.section-list__sidebar-btn')
+const sectionListContent = document.querySelector('.section-list__content')
+if (sectionListContent && sectionListSidebarBtns.length > 0) {
+    let firstRender = false
+    sectionListSidebarBtns.forEach(el => {
+        const sidebarItem = el.closest('.section-list__sidebar-item')
+        if (sidebarItem) {
+            const sidebarItemContent = sidebarItem.querySelector('.section-list__sidebar-content')
+            if (sidebarItemContent) {
+                if (sidebarItemContent && !firstRender) {
+                    firstRender = true
+                    const itemContentClone = sidebarItemContent.cloneNode(true)
+                    sectionListContent.appendChild(itemContentClone)
+                    el.classList.add('section-list__sidebar-btn--active')
+                }
+                el.addEventListener('click', () => {
+                    sectionListSidebarBtns.forEach(el => {
+                        el.classList.remove('section-list__sidebar-btn--active')
+                        const sidebarItemsSpec = el.closest('.section-list__sidebar-item')
+                        sidebarItemsSpec.classList.remove('section-list__sidebar-item--active')
+                    })
+                    el.classList.add('section-list__sidebar-btn--active')
+                    const sidebarWrap = el.closest('.section-list__sidebar-wrap')
+                    const sectionTitle = sidebarWrap.querySelector('h2.section-title')
+                    sectionTitle.innerText = el.innerText
+                    const itemContentClone = sidebarItemContent.cloneNode(true)
+                    sectionListContent.innerHTML = ''
+                    sectionListContent.appendChild(itemContentClone)
+                    function deviceChangeHandler(x) {
+                        if (x.matches) {
+                            const sidebarList = el.closest('.section-list__sidebar-list')
+                            sidebarList.classList.toggle('section-list__sidebar-list--active')
+                            sidebarItem.classList.toggle('section-list__sidebar-item--active')
+                        }
+                    }
+                    let smallDevice = window.matchMedia("(max-width: 660px)")
+                    deviceChangeHandler(smallDevice)
+                })
+            }
+        }
+    })
+}
