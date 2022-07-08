@@ -517,7 +517,7 @@
 
 <section class="catalogue-list section-spacing">
     <div class="catalogue-list__container container">
-        <a href="#" class="catalogue-list__item">
+        <a href="#" class="catalogue-list__item catalogue-list__item--active">
             <img src="media/categoriesList/crane1.png" alt="Автокраны">
             <p>Автокраны</p>
         </a>
@@ -545,10 +545,418 @@
             <img src="media/categoriesList/crane7.png" alt="Автомастерские">
             <p>Автомастерские</p>
         </a>
-        <a href="#" class="catalogue-list__item catalogue-list__item--active">
+        <a href="#" class="catalogue-list__item">
             <img src="media/categoriesList/crane8.png" alt="Запчасти">
             <p>Запчасти</p>
         </a>
+    </div>
+</section>
+
+<section class="section-list section-list--sidebar">
+    <div class="container">
+        <div class="section-list__sidebar">
+            <div class="section-list__sidebar-wrap">
+                <div class="section-list__head">
+                    <h2 class="section-title">Кабины крановщика</h2>
+                </div>
+                <div class="section-list__sidebar-list__wrap">
+                    <div class="section-filters__top">
+                        <div class="section-filters__top-left">
+                            <div class="section-filters__select-sort custom-select">
+                                <div class="custom-select__wrap">
+                                    <div class="custom-select-preview">
+                                        <input placeholder="Сортировать по" type="text" name="filter-sort-by" readonly>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="#858585" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.99999 9.98288C7.9111 9.98288 7.8251 9.96621 7.74199 9.93288C7.65844 9.89954 7.58888 9.8551 7.53333 9.79954L4.46666 6.73288C4.34444 6.61066 4.28333 6.4551 4.28333 6.26621C4.28333 6.07732 4.34444 5.92177 4.46666 5.79954C4.58888 5.67732 4.74444 5.61621 4.93333 5.61621C5.12221 5.61621 5.27777 5.67732 5.39999 5.79954L7.99999 8.39954L10.6 5.79954C10.7222 5.67732 10.8778 5.61621 11.0667 5.61621C11.2555 5.61621 11.4111 5.67732 11.5333 5.79954C11.6555 5.92177 11.7167 6.07732 11.7167 6.26621C11.7167 6.4551 11.6555 6.61066 11.5333 6.73288L8.46666 9.79954C8.39999 9.86621 8.32777 9.91332 8.24999 9.94088C8.17221 9.96888 8.08888 9.98288 7.99999 9.98288Z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="section-filters__select-sort-options custom-select-options" style="width: auto">
+                                        <button type="button" class="btn custom-select-options__item" data-select="Популярности">Популярности</button>
+                                        <button type="button" class="btn custom-select-options__item" data-select="Сначала дешевле">Сначала дешевле</button>
+                                        <button type="button" class="btn custom-select-options__item" data-select="Сначала дороже">Сначала дороже</button>
+                                        <button type="button" class="btn custom-select-options__item" data-select="Новизне">Новизне</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-filters__bottom-checkbox">
+                                <label>
+                                    В наличии
+                                    <input type="checkbox" name="filter-in-stock">
+                                    <span class="section-filters__bottom-checkbox__checkmark">
+                                        <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M7.11197 1.24969L3.65757 5.56889L0.94397 3.30729L1.45597 2.69289L3.54237 4.43129L6.48797 0.750488L7.11197 1.24969Z" fill="#08526C"/>
+</svg>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="section-filters__top-buttons">
+                            <div class="section-filters__btn-view">
+                                <label>
+                                    <input type="radio" name="filter-view" value="line">
+                                    <span class="section-filters__btn-view__checkmark">
+                                    <svg width="13" height="11" viewBox="0 0 13 11" fill="#08526C" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_433_3077)">
+                                    <path d="M2.03125 0.21875H0.40625C0.181884 0.21875 0 0.400634 0 0.625V2.25C0 2.47437 0.181884 2.65625 0.40625 2.65625H2.03125C2.25562 2.65625 2.4375 2.47437 2.4375 2.25V0.625C2.4375 0.400634 2.25562 0.21875 2.03125 0.21875Z"/>
+                                    <path d="M2.03125 4.28125H0.40625C0.181884 4.28125 0 4.46313 0 4.6875V6.3125C0 6.53687 0.181884 6.71875 0.40625 6.71875H2.03125C2.25562 6.71875 2.4375 6.53687 2.4375 6.3125V4.6875C2.4375 4.46313 2.25562 4.28125 2.03125 4.28125Z"/>
+                                    <path d="M2.03125 8.34375H0.40625C0.181884 8.34375 0 8.52563 0 8.75V10.375C0 10.5994 0.181884 10.7812 0.40625 10.7812H2.03125C2.25562 10.7812 2.4375 10.5994 2.4375 10.375V8.75C2.4375 8.52563 2.25562 8.34375 2.03125 8.34375Z"/>
+                                    <path d="M12.5938 0.21875H3.65625C3.43188 0.21875 3.25 0.400634 3.25 0.625V2.25C3.25 2.47437 3.43188 2.65625 3.65625 2.65625H12.5938C12.8181 2.65625 13 2.47437 13 2.25V0.625C13 0.400634 12.8181 0.21875 12.5938 0.21875Z"/>
+                                    <path d="M12.5938 4.28125H3.65625C3.43188 4.28125 3.25 4.46313 3.25 4.6875V6.3125C3.25 6.53687 3.43188 6.71875 3.65625 6.71875H12.5938C12.8181 6.71875 13 6.53687 13 6.3125V4.6875C13 4.46313 12.8181 4.28125 12.5938 4.28125Z"/>
+                                    <path d="M12.5938 8.34375H3.65625C3.43188 8.34375 3.25 8.52563 3.25 8.75V10.375C3.25 10.5994 3.43188 10.7812 3.65625 10.7812H12.5938C12.8181 10.7812 13 10.5994 13 10.375V8.75C13 8.52563 12.8181 8.34375 12.5938 8.34375Z"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_433_3077">
+                                        <rect width="13" height="10.5625" fill="white" transform="translate(0 0.21875)"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                                </span>
+                                </label>
+                            </div>
+                            <div class="section-filters__btn-view">
+                                <label>
+                                    <input type="radio" name="filter-view" checked value="card">
+                                    <span class="section-filters__btn-view__checkmark">
+                                    <svg width="11" height="11" viewBox="0 0 11 11" fill="#08526C" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_433_3214)">
+                                    <path d="M2.11538 0H0.423077C0.189418 0 0 0.189418 0 0.423077V2.11538C0 2.34904 0.189418 2.53846 0.423077 2.53846H2.11538C2.34904 2.53846 2.53846 2.34904 2.53846 2.11538V0.423077C2.53846 0.189418 2.34904 0 2.11538 0Z"/>
+                                    <path d="M6.34616 0H4.65385C4.42019 0 4.23077 0.189418 4.23077 0.423077V2.11538C4.23077 2.34904 4.42019 2.53846 4.65385 2.53846H6.34616C6.57982 2.53846 6.76924 2.34904 6.76924 2.11538V0.423077C6.76924 0.189418 6.57982 0 6.34616 0Z"/>
+                                    <path d="M10.5769 0H8.88462C8.65097 0 8.46155 0.189418 8.46155 0.423077V2.11538C8.46155 2.34904 8.65097 2.53846 8.88462 2.53846H10.5769C10.8106 2.53846 11 2.34904 11 2.11538V0.423077C11 0.189418 10.8106 0 10.5769 0Z"/>
+                                    <path d="M2.11538 4.23047H0.423077C0.189418 4.23047 0 4.41989 0 4.65355V6.34585C0 6.57951 0.189418 6.76893 0.423077 6.76893H2.11538C2.34904 6.76893 2.53846 6.57951 2.53846 6.34585V4.65355C2.53846 4.41989 2.34904 4.23047 2.11538 4.23047Z"/>
+                                    <path d="M6.3461 4.23047H4.65379C4.42013 4.23047 4.23071 4.41989 4.23071 4.65355V6.34585C4.23071 6.57951 4.42013 6.76893 4.65379 6.76893H6.3461C6.57976 6.76893 6.76917 6.57951 6.76917 6.34585V4.65355C6.76917 4.41989 6.57976 4.23047 6.3461 4.23047Z"/>
+                                    <path d="M10.5769 4.23047H8.88462C8.65097 4.23047 8.46155 4.41989 8.46155 4.65355V6.34585C8.46155 6.57951 8.65097 6.76893 8.88462 6.76893H10.5769C10.8106 6.76893 11 6.57951 11 6.34585V4.65355C11 4.41989 10.8106 4.23047 10.5769 4.23047Z"/>
+                                    <path d="M2.11538 8.46191H0.423077C0.189418 8.46191 0 8.65133 0 8.88499V10.5773C0 10.811 0.189418 11.0004 0.423077 11.0004H2.11538C2.34904 11.0004 2.53846 10.811 2.53846 10.5773V8.88499C2.53846 8.65133 2.34904 8.46191 2.11538 8.46191Z"/>
+                                    <path d="M6.3461 8.46191H4.65379C4.42013 8.46191 4.23071 8.65133 4.23071 8.88499V10.5773C4.23071 10.811 4.42013 11.0004 4.65379 11.0004H6.3461C6.57976 11.0004 6.76917 10.811 6.76917 10.5773V8.88499C6.76917 8.65133 6.57976 8.46191 6.3461 8.46191Z"/>
+                                    <path d="M10.5769 8.46191H8.88462C8.65097 8.46191 8.46155 8.65133 8.46155 8.88499V10.5773C8.46155 10.811 8.65097 11.0004 8.88462 11.0004H10.5769C10.8106 11.0004 11 10.811 11 10.5773V8.88499C11 8.65133 10.8106 8.46191 10.5769 8.46191Z"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_433_3214">
+                                        <rect width="11" height="11" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                                </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-list__sidebar-list">
+                        <h6 class="section-list__sidebar-list__title">Категории</h6>
+                        <button type="button" class="section-list__sidebar-btn">Опорно-поворотные устройства</button>
+                        <button type="button" class="section-list__sidebar-btn">Гидроцилиндры</button>
+                        <button type="button" class="section-list__sidebar-btn">Механизмы поворота</button>
+                        <button type="button" class="section-list__sidebar-btn">Электрооборудование</button>
+                        <button type="button" class="section-list__sidebar-btn section-list__sidebar-btn--active">Кабины крановщика</button>
+                        <button type="button" class="section-list__sidebar-btn">Приборы безопасности</button>
+                        <button type="button" class="section-list__sidebar-btn">Грузовые лебедки</button>
+                        <button type="button" class="section-list__sidebar-btn">Стрелы</button>
+                        <button type="button" class="section-list__sidebar-btn">Ремкомплекты</button>
+                        <button type="button" class="section-list__sidebar-btn">Дополнительное оборудование</button>
+                        <button type="button" class="section-list__sidebar-btn">Гидрооборудование</button>
+                        <button type="button" class="section-list__sidebar-btn">Металлоконструкции</button>
+                        <button type="button" class="section-list__sidebar-btn">Гидромоторы-гидронасосы</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-list__wrap">
+            <div class="section-filters section-list__head">
+                <form action="#" class="section-filters__wrap" data-form="form-filters">
+                    <div class="section-filters__top">
+                        <div class="section-filters__top-left">
+                            <div class="section-filters__select-sort custom-select">
+                                <div class="custom-select__wrap">
+                                    <div class="custom-select-preview">
+                                        <input placeholder="Сортировать по" type="text" name="filter-sort-by" readonly>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="#858585" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.99999 9.98288C7.9111 9.98288 7.8251 9.96621 7.74199 9.93288C7.65844 9.89954 7.58888 9.8551 7.53333 9.79954L4.46666 6.73288C4.34444 6.61066 4.28333 6.4551 4.28333 6.26621C4.28333 6.07732 4.34444 5.92177 4.46666 5.79954C4.58888 5.67732 4.74444 5.61621 4.93333 5.61621C5.12221 5.61621 5.27777 5.67732 5.39999 5.79954L7.99999 8.39954L10.6 5.79954C10.7222 5.67732 10.8778 5.61621 11.0667 5.61621C11.2555 5.61621 11.4111 5.67732 11.5333 5.79954C11.6555 5.92177 11.7167 6.07732 11.7167 6.26621C11.7167 6.4551 11.6555 6.61066 11.5333 6.73288L8.46666 9.79954C8.39999 9.86621 8.32777 9.91332 8.24999 9.94088C8.17221 9.96888 8.08888 9.98288 7.99999 9.98288Z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="section-filters__select-sort-options custom-select-options" style="width: auto">
+                                        <button type="button" class="btn custom-select-options__item" data-select="Популярности">Популярности</button>
+                                        <button type="button" class="btn custom-select-options__item" data-select="Сначала дешевле">Сначала дешевле</button>
+                                        <button type="button" class="btn custom-select-options__item" data-select="Сначала дороже">Сначала дороже</button>
+                                        <button type="button" class="btn custom-select-options__item" data-select="Новизне">Новизне</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-filters__bottom-checkbox">
+                                <label>
+                                    В наличии
+                                    <input type="checkbox" name="filter-in-stock">
+                                    <span class="section-filters__bottom-checkbox__checkmark">
+                                        <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M7.11197 1.24969L3.65757 5.56889L0.94397 3.30729L1.45597 2.69289L3.54237 4.43129L6.48797 0.750488L7.11197 1.24969Z" fill="#08526C"/>
+</svg>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="section-filters__top-buttons">
+                            <div class="section-filters__btn-view">
+                                <label>
+                                    <input type="radio" name="filter-view" value="line">
+                                    <span class="section-filters__btn-view__checkmark">
+                                    <svg width="13" height="11" viewBox="0 0 13 11" fill="#08526C" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_433_3077)">
+                                    <path d="M2.03125 0.21875H0.40625C0.181884 0.21875 0 0.400634 0 0.625V2.25C0 2.47437 0.181884 2.65625 0.40625 2.65625H2.03125C2.25562 2.65625 2.4375 2.47437 2.4375 2.25V0.625C2.4375 0.400634 2.25562 0.21875 2.03125 0.21875Z"/>
+                                    <path d="M2.03125 4.28125H0.40625C0.181884 4.28125 0 4.46313 0 4.6875V6.3125C0 6.53687 0.181884 6.71875 0.40625 6.71875H2.03125C2.25562 6.71875 2.4375 6.53687 2.4375 6.3125V4.6875C2.4375 4.46313 2.25562 4.28125 2.03125 4.28125Z"/>
+                                    <path d="M2.03125 8.34375H0.40625C0.181884 8.34375 0 8.52563 0 8.75V10.375C0 10.5994 0.181884 10.7812 0.40625 10.7812H2.03125C2.25562 10.7812 2.4375 10.5994 2.4375 10.375V8.75C2.4375 8.52563 2.25562 8.34375 2.03125 8.34375Z"/>
+                                    <path d="M12.5938 0.21875H3.65625C3.43188 0.21875 3.25 0.400634 3.25 0.625V2.25C3.25 2.47437 3.43188 2.65625 3.65625 2.65625H12.5938C12.8181 2.65625 13 2.47437 13 2.25V0.625C13 0.400634 12.8181 0.21875 12.5938 0.21875Z"/>
+                                    <path d="M12.5938 4.28125H3.65625C3.43188 4.28125 3.25 4.46313 3.25 4.6875V6.3125C3.25 6.53687 3.43188 6.71875 3.65625 6.71875H12.5938C12.8181 6.71875 13 6.53687 13 6.3125V4.6875C13 4.46313 12.8181 4.28125 12.5938 4.28125Z"/>
+                                    <path d="M12.5938 8.34375H3.65625C3.43188 8.34375 3.25 8.52563 3.25 8.75V10.375C3.25 10.5994 3.43188 10.7812 3.65625 10.7812H12.5938C12.8181 10.7812 13 10.5994 13 10.375V8.75C13 8.52563 12.8181 8.34375 12.5938 8.34375Z"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_433_3077">
+                                        <rect width="13" height="10.5625" fill="white" transform="translate(0 0.21875)"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                                </span>
+                                </label>
+                            </div>
+                            <div class="section-filters__btn-view">
+                                <label>
+                                    <input type="radio" name="filter-view" checked value="card">
+                                    <span class="section-filters__btn-view__checkmark">
+                                    <svg width="11" height="11" viewBox="0 0 11 11" fill="#08526C" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_433_3214)">
+                                    <path d="M2.11538 0H0.423077C0.189418 0 0 0.189418 0 0.423077V2.11538C0 2.34904 0.189418 2.53846 0.423077 2.53846H2.11538C2.34904 2.53846 2.53846 2.34904 2.53846 2.11538V0.423077C2.53846 0.189418 2.34904 0 2.11538 0Z"/>
+                                    <path d="M6.34616 0H4.65385C4.42019 0 4.23077 0.189418 4.23077 0.423077V2.11538C4.23077 2.34904 4.42019 2.53846 4.65385 2.53846H6.34616C6.57982 2.53846 6.76924 2.34904 6.76924 2.11538V0.423077C6.76924 0.189418 6.57982 0 6.34616 0Z"/>
+                                    <path d="M10.5769 0H8.88462C8.65097 0 8.46155 0.189418 8.46155 0.423077V2.11538C8.46155 2.34904 8.65097 2.53846 8.88462 2.53846H10.5769C10.8106 2.53846 11 2.34904 11 2.11538V0.423077C11 0.189418 10.8106 0 10.5769 0Z"/>
+                                    <path d="M2.11538 4.23047H0.423077C0.189418 4.23047 0 4.41989 0 4.65355V6.34585C0 6.57951 0.189418 6.76893 0.423077 6.76893H2.11538C2.34904 6.76893 2.53846 6.57951 2.53846 6.34585V4.65355C2.53846 4.41989 2.34904 4.23047 2.11538 4.23047Z"/>
+                                    <path d="M6.3461 4.23047H4.65379C4.42013 4.23047 4.23071 4.41989 4.23071 4.65355V6.34585C4.23071 6.57951 4.42013 6.76893 4.65379 6.76893H6.3461C6.57976 6.76893 6.76917 6.57951 6.76917 6.34585V4.65355C6.76917 4.41989 6.57976 4.23047 6.3461 4.23047Z"/>
+                                    <path d="M10.5769 4.23047H8.88462C8.65097 4.23047 8.46155 4.41989 8.46155 4.65355V6.34585C8.46155 6.57951 8.65097 6.76893 8.88462 6.76893H10.5769C10.8106 6.76893 11 6.57951 11 6.34585V4.65355C11 4.41989 10.8106 4.23047 10.5769 4.23047Z"/>
+                                    <path d="M2.11538 8.46191H0.423077C0.189418 8.46191 0 8.65133 0 8.88499V10.5773C0 10.811 0.189418 11.0004 0.423077 11.0004H2.11538C2.34904 11.0004 2.53846 10.811 2.53846 10.5773V8.88499C2.53846 8.65133 2.34904 8.46191 2.11538 8.46191Z"/>
+                                    <path d="M6.3461 8.46191H4.65379C4.42013 8.46191 4.23071 8.65133 4.23071 8.88499V10.5773C4.23071 10.811 4.42013 11.0004 4.65379 11.0004H6.3461C6.57976 11.0004 6.76917 10.811 6.76917 10.5773V8.88499C6.76917 8.65133 6.57976 8.46191 6.3461 8.46191Z"/>
+                                    <path d="M10.5769 8.46191H8.88462C8.65097 8.46191 8.46155 8.65133 8.46155 8.88499V10.5773C8.46155 10.811 8.65097 11.0004 8.88462 11.0004H10.5769C10.8106 11.0004 11 10.811 11 10.5773V8.88499C11 8.65133 10.8106 8.46191 10.5769 8.46191Z"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_433_3214">
+                                        <rect width="11" height="11" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                                </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="section-list__row section-row">
+                <div class="section-col-lg-3 section-col-md-4 section-col-sm-6">
+                    <div class="small-card">
+                        <p class="small-card__status">В наличии</p>
+                        <div class="small-card__image">
+                            <img src="media/spare-example.png" alt="Стекло КС-35716.52.012 980*735">
+                        </div>
+                        <div class="small-card__body">
+                            <div class="small-card__info">
+                                <h6 class="small-card__title">Стекло КС-35716.52.012 980*735</h6>
+                                <p class="small-card__desc">Арт: Стекло КС-35716.52.012 980*735</p>
+                                <h6 class="small-card__price">1 428 ₽ <span>/шт</span></h6>
+                            </div>
+                            <form action="#" class="small-card__form-counter">
+                                <div class="custom-counter">
+                                    <button type="button" class="btn custom-counter__decrease">-</button>
+                                    <input class="visually-hidden" value="1" type="text" name="product-quantity" readonly>
+                                    <p class="custom-counter__preview">1</p>
+                                    <button type="button" class="btn custom-counter__increase">+</button>
+                                </div>
+                                <button type="submit" class="btn btn-more small-card__btn-cart">В корзину</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-col-lg-3 section-col-md-4 section-col-sm-6">
+                    <div class="small-card">
+                        <p class="small-card__status">В наличии</p>
+                        <div class="small-card__image">
+                            <img src="media/spare-example.png" alt="Стекло КС-35716.52.012 980*735">
+                        </div>
+                        <div class="small-card__body">
+                            <div class="small-card__info">
+                                <h6 class="small-card__title">Стекло КС-35716.52.012 980*735</h6>
+                                <p class="small-card__desc">Арт: Стекло КС-35716.52.012 980*735</p>
+                                <h6 class="small-card__price">1 428 ₽ <span>/шт</span></h6>
+                            </div>
+                            <form action="#" class="small-card__form-counter">
+                                <div class="custom-counter">
+                                    <button type="button" class="btn custom-counter__decrease">-</button>
+                                    <input class="visually-hidden" value="1" type="text" name="product-quantity" readonly>
+                                    <p class="custom-counter__preview">1</p>
+                                    <button type="button" class="btn custom-counter__increase">+</button>
+                                </div>
+                                <button type="submit" class="btn btn-more small-card__btn-cart">В корзину</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-col-lg-3 section-col-md-4 section-col-sm-6">
+                    <div class="small-card">
+                        <p class="small-card__status">В наличии</p>
+                        <div class="small-card__image">
+                            <img src="media/smallCardNoImg.png" alt="Фото недоступно">
+                        </div>
+                        <div class="small-card__body">
+                            <div class="small-card__info">
+                                <h6 class="small-card__title">Стекло КС-35716.52.012 980*735</h6>
+                                <p class="small-card__desc">Арт: Стекло КС-35716.52.012 980*735</p>
+                                <h6 class="small-card__price">1 428 ₽ <span>/шт</span></h6>
+                            </div>
+                            <form action="#" class="small-card__form-counter">
+                                <div class="custom-counter">
+                                    <button type="button" class="btn custom-counter__decrease">-</button>
+                                    <input class="visually-hidden" value="1" type="text" name="product-quantity" readonly>
+                                    <p class="custom-counter__preview">1</p>
+                                    <button type="button" class="btn custom-counter__increase">+</button>
+                                </div>
+                                <button type="submit" class="btn btn-more small-card__btn-cart">В корзину</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-col-lg-3 section-col-md-4 section-col-sm-6">
+                    <div class="small-card">
+                        <p class="small-card__status">В наличии</p>
+                        <div class="small-card__image">
+                            <img src="media/smallCardNoImg.png" alt="Фото недоступно">
+                        </div>
+                        <div class="small-card__body">
+                            <div class="small-card__info">
+                                <h6 class="small-card__title">Стекло КС-35716.52.012 980*735</h6>
+                                <p class="small-card__desc">Арт: Стекло КС-35716.52.012 980*735</p>
+                                <h6 class="small-card__price">1 428 ₽ <span>/шт</span></h6>
+                            </div>
+                            <form action="#" class="small-card__form-counter">
+                                <div class="custom-counter">
+                                    <button type="button" class="btn custom-counter__decrease">-</button>
+                                    <input class="visually-hidden" value="1" type="text" name="product-quantity" readonly>
+                                    <p class="custom-counter__preview">1</p>
+                                    <button type="button" class="btn custom-counter__increase">+</button>
+                                </div>
+                                <button type="submit" class="btn btn-more small-card__btn-cart">В корзину</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-col-lg-3 section-col-md-4 section-col-sm-6">
+                    <div class="small-card">
+                        <p class="small-card__status">В наличии</p>
+                        <div class="small-card__image">
+                            <img src="media/smallCardNoImg.png" alt="Фото недоступно">
+                        </div>
+                        <div class="small-card__body">
+                            <div class="small-card__info">
+                                <h6 class="small-card__title">Стекло КС-35716.52.012 980*735</h6>
+                                <p class="small-card__desc">Арт: Стекло КС-35716.52.012 980*735</p>
+                                <h6 class="small-card__price">1 428 ₽ <span>/шт</span></h6>
+                            </div>
+                            <form action="#" class="small-card__form-counter">
+                                <div class="custom-counter">
+                                    <button type="button" class="btn custom-counter__decrease">-</button>
+                                    <input class="visually-hidden" value="1" type="text" name="product-quantity" readonly>
+                                    <p class="custom-counter__preview">1</p>
+                                    <button type="button" class="btn custom-counter__increase">+</button>
+                                </div>
+                                <button type="submit" class="btn btn-more small-card__btn-cart">В корзину</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-col-lg-3 section-col-md-4 section-col-sm-6">
+                    <div class="small-card">
+                        <p class="small-card__status">В наличии</p>
+                        <div class="small-card__image">
+                            <img src="media/smallCardNoImg.png" alt="Фото недоступно">
+                        </div>
+                        <div class="small-card__body">
+                            <div class="small-card__info">
+                                <h6 class="small-card__title">Стекло КС-35716.52.012 980*735</h6>
+                                <p class="small-card__desc">Арт: Стекло КС-35716.52.012 980*735</p>
+                                <h6 class="small-card__price">1 428 ₽ <span>/шт</span></h6>
+                            </div>
+                            <form action="#" class="small-card__form-counter">
+                                <div class="custom-counter">
+                                    <button type="button" class="btn custom-counter__decrease">-</button>
+                                    <input class="visually-hidden" value="1" type="text" name="product-quantity" readonly>
+                                    <p class="custom-counter__preview">1</p>
+                                    <button type="button" class="btn custom-counter__increase">+</button>
+                                </div>
+                                <button type="submit" class="btn btn-more small-card__btn-cart">В корзину</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-col-lg-3 section-col-md-4 section-col-sm-6">
+                    <div class="small-card">
+                        <p class="small-card__status">В наличии</p>
+                        <div class="small-card__image">
+                            <img src="media/smallCardNoImg.png" alt="Фото недоступно">
+                        </div>
+                        <div class="small-card__body">
+                            <div class="small-card__info">
+                                <h6 class="small-card__title">Стекло КС-35716.52.012 980*735</h6>
+                                <p class="small-card__desc">Арт: Стекло КС-35716.52.012 980*735</p>
+                                <h6 class="small-card__price">1 428 ₽ <span>/шт</span></h6>
+                            </div>
+                            <form action="#" class="small-card__form-counter">
+                                <div class="custom-counter">
+                                    <button type="button" class="btn custom-counter__decrease">-</button>
+                                    <input class="visually-hidden" value="1" type="text" name="product-quantity" readonly>
+                                    <p class="custom-counter__preview">1</p>
+                                    <button type="button" class="btn custom-counter__increase">+</button>
+                                </div>
+                                <button type="submit" class="btn btn-more small-card__btn-cart">В корзину</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-col-lg-3 section-col-md-4 section-col-sm-6">
+                    <div class="small-card">
+                        <p class="small-card__status">В наличии</p>
+                        <div class="small-card__image">
+                            <img src="media/smallCardNoImg.png" alt="Фото недоступно">
+                        </div>
+                        <div class="small-card__body">
+                            <div class="small-card__info">
+                                <h6 class="small-card__title">Стекло КС-35716.52.012 980*735</h6>
+                                <p class="small-card__desc">Арт: Стекло КС-35716.52.012 980*735</p>
+                                <h6 class="small-card__price">1 428 ₽ <span>/шт</span></h6>
+                            </div>
+                            <form action="#" class="small-card__form-counter">
+                                <div class="custom-counter">
+                                    <button type="button" class="btn custom-counter__decrease">-</button>
+                                    <input class="visually-hidden" value="1" type="text" name="product-quantity" readonly>
+                                    <p class="custom-counter__preview">1</p>
+                                    <button type="button" class="btn custom-counter__increase">+</button>
+                                </div>
+                                <button type="submit" class="btn btn-more small-card__btn-cart">В корзину</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-col-12">
+                    <button type="button" class="btn btn-more btn-pagination btn-pagination-mobile">Показать еще</button>
+                    <div class="section-pagination">
+                        <button type="button" class="section-pagination__item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="#858585" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.02495 11.9992C9.02495 12.1326 9.04995 12.2616 9.09995 12.3862C9.14995 12.5116 9.21662 12.6159 9.29995 12.6992L13.9 17.2992C14.0833 17.4826 14.3166 17.5742 14.6 17.5742C14.8833 17.5742 15.1166 17.4826 15.3 17.2992C15.4833 17.1159 15.575 16.8826 15.575 16.5992C15.575 16.3159 15.4833 16.0826 15.3 15.8992L11.4 11.9992L15.3 8.09922C15.4833 7.91589 15.575 7.68255 15.575 7.39922C15.575 7.11588 15.4833 6.88255 15.3 6.69922C15.1166 6.51589 14.8833 6.42422 14.6 6.42422C14.3166 6.42422 14.0833 6.51589 13.9 6.69922L9.29995 11.2992C9.19995 11.3992 9.12928 11.5076 9.08795 11.6242C9.04595 11.7409 9.02495 11.8659 9.02495 11.9992Z"/>
+                            </svg>
+                        </button>
+                        <button type="button" class="section-pagination__item section-pagination__item--active">1</button>
+                        <button type="button" class="section-pagination__item">2</button>
+                        <button type="button" class="section-pagination__item">3</button>
+                        <button type="button" class="section-pagination__item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="#858585" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14.975 11.9992C14.975 12.1326 14.95 12.2616 14.9 12.3862C14.85 12.5116 14.7834 12.6159 14.7 12.6992L10.1 17.2992C9.91672 17.4826 9.68338 17.5742 9.40005 17.5742C9.11671 17.5742 8.88338 17.4826 8.70005 17.2992C8.51672 17.1159 8.42505 16.8826 8.42505 16.5992C8.42505 16.3159 8.51672 16.0826 8.70005 15.8992L12.6 11.9992L8.70005 8.09922C8.51672 7.91589 8.42505 7.68255 8.42505 7.39922C8.42505 7.11588 8.51672 6.88255 8.70005 6.69922C8.88338 6.51589 9.11671 6.42422 9.40005 6.42422C9.68338 6.42422 9.91672 6.51589 10.1 6.69922L14.7 11.2992C14.8 11.3992 14.8707 11.5076 14.912 11.6242C14.954 11.7409 14.975 11.8659 14.975 11.9992Z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -876,47 +1284,47 @@
                         </div>
                     </div>
                     <div class="section-col-sm-6">
-                        <div class="modal-input modal-select">
+                        <div class="modal-input">
                             <label for="modalLizingInputOffice">Офис продаж</label>
-                            <div class="modal-select__wrap">
-                                <div class="modal-select-preview modal-input__input">
-                                    <input value="Выберите удобный офис продаж" type="text" id="modalLizingInputOffice" name="modal-lizing-office" readonly>
+                            <div class="modal-select__wrap custom-select__wrap">
+                                <div class="modal-select-preview custom-select-preview modal-input__input">
+                                    <input placeholder="Выберите удобный офис продаж" type="text" id="modalLizingInputOffice" name="modal-lizing-office" data-input-required="true" readonly>
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M7.99999 9.98288C7.9111 9.98288 7.8251 9.96621 7.74199 9.93288C7.65844 9.89954 7.58888 9.8551 7.53333 9.79954L4.46666 6.73288C4.34444 6.61066 4.28333 6.4551 4.28333 6.26621C4.28333 6.07732 4.34444 5.92177 4.46666 5.79954C4.58888 5.67732 4.74444 5.61621 4.93333 5.61621C5.12221 5.61621 5.27777 5.67732 5.39999 5.79954L7.99999 8.39954L10.6 5.79954C10.7222 5.67732 10.8778 5.61621 11.0667 5.61621C11.2555 5.61621 11.4111 5.67732 11.5333 5.79954C11.6555 5.92177 11.7167 6.07732 11.7167 6.26621C11.7167 6.4551 11.6555 6.61066 11.5333 6.73288L8.46666 9.79954C8.39999 9.86621 8.32777 9.91332 8.24999 9.94088C8.17221 9.96888 8.08888 9.98288 7.99999 9.98288Z" fill="#858585"/>
                                     </svg>
                                 </div>
-                                <div class="modal-select-options">
-                                    <button type="button" class="btn modal-select-options__item" data-select="Центральный офис Москва">Центральный офис Москва</button>
-                                    <button type="button" class="btn modal-select-options__item" data-select="Офис Санкт-Петербург">Офис Санкт-Петербург</button>
-                                    <button type="button" class="btn modal-select-options__item" data-select="Офис Казань">Офис Казань</button>
-                                    <button type="button" class="btn modal-select-options__item" data-select="Офис Уфа">Офис Уфа</button>
-                                    <button type="button" class="btn modal-select-options__item" data-select="Офис Иваново">Офис Иваново</button>
-                                    <button type="button" class="btn modal-select-options__item" data-select="Офис Новосибирск">Офис Новосибирск</button>
-                                    <button type="button" class="btn modal-select-options__item" data-select="Офис Сургут">Офис Сургут</button>
-                                    <button type="button" class="btn modal-select-options__item" data-select="Офис Красноярск">Офис Красноярск</button>
+                                <div class="modal-select-options custom-select-options">
+                                    <button type="button" class="btn modal-select-options__item custom-select-options__item" data-select="Центральный офис Москва">Центральный офис Москва</button>
+                                    <button type="button" class="btn modal-select-options__item custom-select-options__item" data-select="Офис Санкт-Петербург">Офис Санкт-Петербург</button>
+                                    <button type="button" class="btn modal-select-options__item custom-select-options__item" data-select="Офис Казань">Офис Казань</button>
+                                    <button type="button" class="btn modal-select-options__item custom-select-options__item" data-select="Офис Уфа">Офис Уфа</button>
+                                    <button type="button" class="btn modal-select-options__item custom-select-options__item" data-select="Офис Иваново">Офис Иваново</button>
+                                    <button type="button" class="btn modal-select-options__item custom-select-options__item" data-select="Офис Новосибирск">Офис Новосибирск</button>
+                                    <button type="button" class="btn modal-select-options__item custom-select-options__item" data-select="Офис Сургут">Офис Сургут</button>
+                                    <button type="button" class="btn modal-select-options__item custom-select-options__item" data-select="Офис Красноярск">Офис Красноярск</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="section-col-sm-6">
-                        <div class="modal-input modal-select">
+                        <div class="modal-input">
                             <label for="modalLizingInputLizCompany">Лизинговая компания</label>
-                            <div class="modal-select__wrap">
-                                <div class="modal-select-preview modal-input__input">
-                                    <input value="Выберите лизинговую компанию" type="text" id="modalLizingInputLizCompany" name="modal-lizing-liz-company" readonly>
+                            <div class="modal-select__wrap custom-select__wrap">
+                                <div class="modal-select-preview custom-select-preview modal-input__input">
+                                    <input placeholder="Выберите лизинговую компанию" type="text" id="modalLizingInputLizCompany" name="modal-lizing-liz-company" data-input-required="true" readonly>
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M7.99999 9.98288C7.9111 9.98288 7.8251 9.96621 7.74199 9.93288C7.65844 9.89954 7.58888 9.8551 7.53333 9.79954L4.46666 6.73288C4.34444 6.61066 4.28333 6.4551 4.28333 6.26621C4.28333 6.07732 4.34444 5.92177 4.46666 5.79954C4.58888 5.67732 4.74444 5.61621 4.93333 5.61621C5.12221 5.61621 5.27777 5.67732 5.39999 5.79954L7.99999 8.39954L10.6 5.79954C10.7222 5.67732 10.8778 5.61621 11.0667 5.61621C11.2555 5.61621 11.4111 5.67732 11.5333 5.79954C11.6555 5.92177 11.7167 6.07732 11.7167 6.26621C11.7167 6.4551 11.6555 6.61066 11.5333 6.73288L8.46666 9.79954C8.39999 9.86621 8.32777 9.91332 8.24999 9.94088C8.17221 9.96888 8.08888 9.98288 7.99999 9.98288Z" fill="#858585"/>
                                     </svg>
                                 </div>
-                                <div class="modal-select-options">
-                                    <button type="button" class="btn modal-select-options__item" data-select="Эксперт-Лизинг">Эксперт-Лизинг</button>
-                                    <button type="button" class="btn modal-select-options__item" data-select="Каркаде">Каркаде</button>
-                                    <button type="button" class="btn modal-select-options__item" data-select="Аспект Лизинг">Аспект Лизинг</button>
-                                    <button type="button" class="btn modal-select-options__item" data-select="Элемент Лизинг">Элемент Лизинг</button>
-                                    <button type="button" class="btn modal-select-options__item" data-select="Балтийский лизинг">Балтийский лизинг</button>
-                                    <button type="button" class="btn modal-select-options__item" data-select="ВЭБ-лизинг">ВЭБ-лизинг</button>
-                                    <button type="button" class="btn modal-select-options__item" data-select="Европлан">Европлан</button>
-                                    <button type="button" class="btn modal-select-options__item" data-select="ВТБ лизинг">ВТБ лизинг</button>
+                                <div class="modal-select-options custom-select-options">
+                                    <button type="button" class="btn modal-select-options__item custom-select-options__item" data-select="Эксперт-Лизинг">Эксперт-Лизинг</button>
+                                    <button type="button" class="btn modal-select-options__item custom-select-options__item" data-select="Каркаде">Каркаде</button>
+                                    <button type="button" class="btn modal-select-options__item custom-select-options__item" data-select="Аспект Лизинг">Аспект Лизинг</button>
+                                    <button type="button" class="btn modal-select-options__item custom-select-options__item" data-select="Элемент Лизинг">Элемент Лизинг</button>
+                                    <button type="button" class="btn modal-select-options__item custom-select-options__item" data-select="Балтийский лизинг">Балтийский лизинг</button>
+                                    <button type="button" class="btn modal-select-options__item custom-select-options__item" data-select="ВЭБ-лизинг">ВЭБ-лизинг</button>
+                                    <button type="button" class="btn modal-select-options__item custom-select-options__item" data-select="Европлан">Европлан</button>
+                                    <button type="button" class="btn modal-select-options__item custom-select-options__item" data-select="ВТБ лизинг">ВТБ лизинг</button>
                                 </div>
                             </div>
                         </div>
@@ -1105,7 +1513,6 @@
         </div>
     </div>
 </div>
-
 
 <script src="libraries/poperjs/core2.js"></script>
 <script src="libraries/poperjs/tippy.js"></script>

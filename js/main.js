@@ -360,6 +360,7 @@ const customSelect = tippy('.custom-select__wrap', {
     appendTo: () => document.body
 });
 
+
 // Map Dropdown
 tippy('.map-dropdown', {
     interactive: true,
@@ -434,15 +435,6 @@ formFilters.forEach(el => {
         var data = new FormData(el);
         for (const entry of data) {
             console.log(entry)
-            if (entry[0] === 'filter-view') {
-                const sectionList = el.closest('.section-list')
-                const sectionListRow = sectionList.querySelector('.section-list__row')
-                if (entry[1] === 'card') {
-                    sectionListRow.classList.remove('section-row--line')
-                } else if (entry[1] === 'line') {
-                    sectionListRow.classList.add('section-row--line')
-                }
-            }
         }
     })
 })
@@ -461,6 +453,49 @@ if (sectionFiltersBtnMobileShow.length > 0) {
         })
     })
 }
+
+
+// Custom Counter
+const customCounter = document.querySelectorAll('.custom-counter')
+if (customCounter.length > 0) {
+    customCounter.forEach(el => {
+        const decreaseBtn = el.querySelector('.custom-counter__decrease')
+        const increaseBtn = el.querySelector('.custom-counter__increase')
+        const input = el.querySelector('input')
+        let value = input.value
+        const preview = el.querySelector('.custom-counter__preview')
+        decreaseBtn.addEventListener('click', () => {
+            if (value > 1) {
+                value--
+                preview.innerText = value
+                input.value = value
+            }
+        })
+        increaseBtn.addEventListener('click', () => {
+            value++
+            preview.innerText = value
+            input.value = value
+        })
+    })
+}
+
+// Filter View
+const inputFilterView = document.querySelectorAll('input[name="filter-view"]')
+inputFilterView.forEach(el => {
+    const sectionList = el.closest('.section-list')
+    const sectionListRow = sectionList.querySelector('.section-list__row')
+    if (sectionListRow) {
+        el.addEventListener('change', () => {
+            if (el.checked) {
+                if (el.value === 'line') {
+                    sectionListRow.classList.add('section-row--line')
+                } else if (el.value === 'card'){
+                    sectionListRow.classList.remove('section-row--line')
+                }
+            }
+        })
+    }
+})
 
 
 // Product Tabs

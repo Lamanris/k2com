@@ -115,6 +115,8 @@ a {
     cursor: pointer;
     background: none;
     border: none;
+    font-weight: 500;
+    font-size: 16px;
     line-height: 19px;
     color: var(--color-card-grey-one);
     margin: 0 17px;
@@ -320,6 +322,9 @@ a {
     border-radius: 6px;
     margin-top: 20px;
 }
+.btn-pagination-mobile {
+    display: none;
+}
 .btn-commercial-offer {
     background: #58BBDC;
 }
@@ -372,6 +377,45 @@ a {
     transform: rotate(180deg);
 }
 /*Custom Select End*/
+
+
+/*Custom Counter Start*/
+.custom-counter {
+    height: 50px;
+    border: 1px solid #08526C;
+    filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.2));
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+}
+.custom-counter button {
+    font-weight: 500;
+    font-size: 16px!important;
+    line-height: 19px!important;
+    text-align: center;
+    color: #858585;
+    transition: color .2s;
+}
+.custom-counter button:hover {
+    color: #58BBDC;
+}
+.custom-counter input {
+    outline: none;
+    border: none;
+    background: none;
+}
+.custom-counter__preview {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #181818;
+    margin: 0 5px;
+    min-width: 20px;
+}
+/*Custom Counter End*/
 
 
 /*Modal Start*/
@@ -1185,6 +1229,13 @@ body.catalogue .header__btn-catalogue__icon span {
     justify-content: space-between;
     align-items: center;
 }
+.section-filters__top-left {
+    display: flex;
+    align-items: center;
+}
+.section-filters__top-left > div:first-of-type {
+    margin-right: 50px;
+}
 .section-filters__select-sort input, .section-filters__select-sort input::placeholder {
     font-size: 16px;
     line-height: 19px;
@@ -1369,7 +1420,193 @@ body.catalogue .header__btn-catalogue__icon span {
 .section-filter__select-options .custom-select-options__item:hover, .section-filter__select-options .custom-select-options__item--active {
     color: var(--color-black);
 }
+.section-list--sidebar {
+    position: relative;
+}
+.section-list--sidebar::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    box-shadow: 0 1px 1px rgba(133, 133, 133, 0.25);
+    position: absolute;
+    left: 0;
+    top: 124px;
+}
+.section-list--sidebar .container {
+    display: flex;
+}
+.section-list__sidebar-wrap {
+    width: 300px;
+    background: #FFFFFF;
+    box-shadow: 4px 4px 20px rgba(143, 143, 143, 0.15);
+    position: relative;
+    z-index: 1;
+    padding-bottom: 59px;
+}
+.section-list__sidebar-list__title {
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    background: #08526C;
+    text-transform: uppercase;
+    border-bottom: 0;
+    height: 59px;
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+}
+.section-list__sidebar-btn {
+    height: 59px;
+    width: 100%;
+    padding: 0 20px;
+    background: white;
+    font-size: 16px;
+    line-height: 19px;
+    color: #858585;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: none;
+    border-bottom: 1px solid #D9D9D9;
+    transition: color .2s;
+    text-align: left;
+    cursor: pointer;
+}
+.section-list__sidebar-btn--active {
+    background: #E9FBFE;
+    color: #181818;
+    border-right: 2px solid #58BBDC;
+}
+.section-list__sidebar-btn:hover {
+    color: #181818;
+}
+.section-list__head {
+    height: 124px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+.section-list__head .section-title {
+    font-size: 20px;
+    line-height: 24px;
+    padding: 0;
+}
+.section-list--sidebar .section-list__wrap {
+    flex: 1;
+    padding-left: 50px;
+    overflow: hidden;
+}
+.section-list--sidebar .section-filters {
+    margin-bottom: 60px;
+    box-shadow: none;
+}
+.section-list--sidebar .section-filters__wrap {
+    width: 100%;
+}
+.section-list--sidebar .section-list__row {
+    --section-row-x: 22px;
+    --section-row-y: 22px;
+}
+.section-list--sidebar .section-pagination {
+    margin-top: 8px;
+}
+.section-list__sidebar-list__wrap .section-filters__top {
+    display: none;
+}
 /*Section List End*/
+
+
+/*Small Card Start*/
+.small-card {
+    background: #FFFFFF;
+    border: 1px solid #F3F3F3;
+    box-shadow: 4px 4px 20px rgba(143, 143, 143, 0.15);
+    border-radius: 3px;
+    position: relative;
+    padding: 30px 10px;
+    height: 100%;
+}
+.small-card__status {
+    background: #FFFFFF;
+    border: 1px solid #F3F3F3;
+    box-shadow: 0 2px 8px rgba(85, 85, 85, 0.1);
+    border-radius: 3px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 8px;
+    line-height: 9px;
+    color: #58BBDC;
+    padding: 5px 10px;
+}
+.small-card__image {
+    height: 100px;
+}
+.small-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.small-card__title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #08526C;
+    margin: 15px 0 10px;
+}
+.small-card__desc {
+    font-size: 8px;
+    line-height: 9px;
+    color: #858585;
+}
+.small-card__price {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #08526C;
+    margin: 20px 0;
+}
+.small-card__price span {
+    font-weight: 400;
+}
+.small-card__form-counter {
+    display: flex;
+}
+.small-card__btn-cart {
+    flex: 1;
+    background: #24B37F;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    margin-left: 10px;
+    font-size: 14px;
+    line-height: 17px;
+}
+.section-row--line .small-card {
+    display: flex;
+    align-items: center;
+}
+.section-row--line .small-card__image {
+    width: 260px;
+}
+.section-row--line .small-card__body {
+    display: flex;
+    align-items: center;
+}
+.section-row--line .small-card__info {
+    max-width: 170px;
+    margin: 0 65px 0 30px;
+}
+.section-row--line .small-card__form-counter > * {
+    width: 130px;
+}
+.section-row--line .small-card__form-counter .custom-counter__preview {
+    margin: 0 20px;
+}
+.section-row--line .small-card__btn-cart {
+    margin-left: 30px;
+}
+/*Small Card End*/
 
 
 /*Big Card Start*/
@@ -2178,7 +2415,6 @@ body.catalogue .header__btn-catalogue__icon span {
 .product__tabs-buttons__mobile {
     display: none;
 }
-
 /*Product Section End*/
 
 
