@@ -458,30 +458,6 @@ if (sectionFiltersBtnMobileShow.length > 0) {
 }
 
 
-// Custom Counter
-const customCounter = document.querySelectorAll('.custom-counter')
-if (customCounter.length > 0) {
-    customCounter.forEach(el => {
-        const decreaseBtn = el.querySelector('.custom-counter__decrease')
-        const increaseBtn = el.querySelector('.custom-counter__increase')
-        const input = el.querySelector('input')
-        let value = input.value
-        const preview = el.querySelector('.custom-counter__preview')
-        decreaseBtn.addEventListener('click', () => {
-            if (value > 1) {
-                value--
-                preview.innerText = value
-                input.value = value
-            }
-        })
-        increaseBtn.addEventListener('click', () => {
-            value++
-            preview.innerText = value
-            input.value = value
-        })
-    })
-}
-
 // Filter View
 const inputFilterView = document.querySelectorAll('input[name="filter-view"]')
 inputFilterView.forEach(el => {
@@ -576,7 +552,7 @@ if (sectionListContent && sectionListSidebarBtns.length > 0) {
                     sectionTitle.innerText = el.innerText
                     const itemContentClone = sidebarItemContent.cloneNode(true)
                     sectionListContent.innerHTML = ''
-                    sectionListContent.appendChild(itemContentClone)
+                    sectionListContent.appendChild(sidebarItemContent)
                     function deviceChangeHandler(x) {
                         if (x.matches) {
                             const sidebarList = el.closest('.section-list__sidebar-list')
@@ -589,5 +565,30 @@ if (sectionListContent && sectionListSidebarBtns.length > 0) {
                 })
             }
         }
+    })
+}
+
+
+// Custom Counter
+const customCounter = document.querySelectorAll('.custom-counter')
+if (customCounter.length > 0) {
+    customCounter.forEach(el => {
+        const decreaseBtn = el.querySelector('.custom-counter__decrease')
+        const increaseBtn = el.querySelector('.custom-counter__increase')
+        const input = el.querySelector('input')
+        let value = input.value
+        const preview = el.querySelector('.custom-counter__preview')
+        decreaseBtn.addEventListener('click', () => {
+            if (value > 1) {
+                value--
+                preview.innerText = value
+                input.value = value
+            }
+        })
+        increaseBtn.addEventListener('click', () => {
+            value++
+            preview.innerText = value
+            input.value = value
+        })
     })
 }
