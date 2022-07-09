@@ -1,5 +1,3 @@
-// Dropdowns
-
 // Footer Accordion
 function toggleItemActive(e) {
     const parentItem = e.target.parentElement
