@@ -1788,6 +1788,22 @@ body.catalogue .header__btn-catalogue__icon span {
     line-height: 21px;
     margin: 20px 0 50px;
 }
+.form-banner p a {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    color: #58BBDC;
+    margin-left: 10px;
+}
+.form-banner__text {
+    margin: 20px 0 50px;
+}
+.form-banner__text p {
+    margin: 0;
+}
+.form-banner__text p:nth-child(2) {
+    margin-top: 15px;
+}
 .form-banner-bg {
     position: absolute;
     top: 0;
@@ -2581,6 +2597,45 @@ body.catalogue .header__btn-catalogue__icon span {
 }
 /*Benefits Section End*/
 
+
+/*Lizing List Section Start*/
+.lizing-list__row {
+    --section-row-x: 20px;
+    --section-row-y: 30px;
+}
+.lizing__card {
+    background: #FFFFFF;
+    border: 1px solid #F3F3F3;
+    box-shadow: 4px 4px 20px rgba(143, 143, 143, 0.15);
+    border-radius: 3px;
+    padding: 25px 11px 31px 15px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.lizing__card img {
+    max-height: 55px;
+}
+.lizing__card-body {
+    width: 100%;
+}
+.lizing__card h6 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #08526C;
+}
+.lizing__card a {
+    background: #24B37F;
+    border-radius: 2px;
+    margin-top: 30px;
+    width: 100%;
+    font-size: 16px!important;
+    line-height: 19px!important;
+}
+/*Lizing List Section End*/
 
 
 /*Footer Start*/

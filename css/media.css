@@ -510,6 +510,16 @@
     /*Benefits Section End*/
 
 
+    /*Lizing List Section Start*/
+    .lizing__card {
+        padding: 25px 15px 31px;
+    }
+    .lizing__card img {
+        max-height: 34px;
+    }
+    /*Lizing List Section End*/
+
+
 
     .footer-menu {
         margin-left: 60px;
@@ -1073,6 +1083,9 @@
     .form-banner p {
         margin: 15px 0 35px;
     }
+    .form-banner__text {
+        margin: 15px 0 35px;
+    }
     .form-banner__form {
         flex-direction: column;
         max-width: 400px;
@@ -1299,6 +1312,20 @@
         justify-content: center;
     }
     /*Benefits Section End*/
+
+
+    /*Lizing List Section Start*/
+    .lizing-list__row {
+        --section-row-x: 10px;
+        --section-row-y: 25px;
+    }
+    .lizing__card {
+        padding: 25px 10px 31px;
+    }
+    .lizing__card img {
+        max-height: 30px;
+    }
+    /*Lizing List Section End*/
 
 
     .footer {
@@ -1842,6 +1869,17 @@
         line-height: 19px;
         margin: 15px 0 25px;
     }
+    .form-banner__text {
+        margin: 15px 0 30px;
+    }
+    .form-banner__text p {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .form-banner p a {
+        margin-top: 10px;
+    }
 
 
     .why-us h6 {
@@ -2088,6 +2126,17 @@
         --section-row-y: 25px;
     }
     /*Benefits Section End*/
+
+
+    /*Lizing List Section Start*/
+    .lizing__card {
+        padding: 25px 10px 30px;
+        height: 230px;
+    }
+    .lizing__card img {
+        max-height: 40px;
+    }
+    /*Lizing List Section End*/
 
 
     .footer {
