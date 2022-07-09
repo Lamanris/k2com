@@ -536,8 +536,7 @@ if (sectionListContent && sectionListSidebarBtns.length > 0) {
             if (sidebarItemContent) {
                 if (sidebarItemContent && !firstRender) {
                     firstRender = true
-                    const itemContentClone = sidebarItemContent.cloneNode(true)
-                    sectionListContent.appendChild(itemContentClone)
+                    sectionListContent.appendChild(sidebarItemContent)
                     el.classList.add('section-list__sidebar-btn--active')
                 }
                 el.addEventListener('click', () => {
@@ -550,7 +549,6 @@ if (sectionListContent && sectionListSidebarBtns.length > 0) {
                     const sidebarWrap = el.closest('.section-list__sidebar-wrap')
                     const sectionTitle = sidebarWrap.querySelector('h2.section-title')
                     sectionTitle.innerText = el.innerText
-                    const itemContentClone = sidebarItemContent.cloneNode(true)
                     sectionListContent.innerHTML = ''
                     sectionListContent.appendChild(sidebarItemContent)
                     function deviceChangeHandler(x) {
