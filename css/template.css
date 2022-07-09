@@ -2769,3 +2769,56 @@ body.catalogue .header__btn-catalogue__icon span {
     color: var(--color-blue);
 }
 /*Footer End*/
+
+
+/*404 Page*/
+.not-found {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.not-found__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.05;
+}
+.not-found__content {
+    max-width: 800px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin-bottom: 5%;
+}
+.not-found__content h2 {
+    font-weight: 900;
+    font-size: 360px;
+    color: #58BBDD;
+    text-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+.not-found__content h6 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    color: #08526C;
+}
+.not-found__content p {
+    font-size: 16px;
+    line-height: 19px;
+    color: #08526C;
+    margin: 15px 0 35px;
+}
+.not-found__content p a {
+    color: #58BBDD;
+}
+.not-found__content-link {
+    background: #24B37F;
+    max-width: 360px;
+    margin: 0 auto;
+}
+/*404 Page*/

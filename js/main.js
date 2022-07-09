@@ -21,6 +21,7 @@ if (headerCatalogueBtn) {
     });
 }
 document.body.addEventListener('click', function (e) {
+    if (document.querySelector('.header-catalogue__sidebar-wrap') && document.querySelector('.header-catalogue__content') && headerCatalogueBtn)
     if (!document.querySelector('.header-catalogue__sidebar-wrap').contains(e.target) && !document.querySelector('.header-catalogue__content').contains(e.target) && !headerCatalogueBtn.contains(e.target)) {
         document.body.classList.remove('catalogue')
     }
