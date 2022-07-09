@@ -2430,8 +2430,9 @@ body.catalogue .header__btn-catalogue__icon span {
 .product__tabs-buttons__mobile {
     display: none;
 }
-
-
+.product--one-slider {
+    padding-bottom: 50px!important;
+}
 .product--one-slider__wrap {
     box-shadow: 4px 4px 20px rgba(143, 143, 143, 0.15);
     padding-bottom: 30px;
@@ -2533,10 +2534,6 @@ body.catalogue .header__btn-catalogue__icon span {
     border-bottom: 1px solid #FFFFFF;
     display: inline-block;
 }
-
-
-
-
 .product__desc {
     font-size: 16px;
     line-height: 19px;
@@ -2544,6 +2541,46 @@ body.catalogue .header__btn-catalogue__icon span {
     margin-top: 30px;
 }
 /*Product Section End*/
+
+
+/*Benefits Section Start*/
+.benefits {
+    background: #E9FBFE;
+    padding: 50px 0;
+    margin-bottom: 90px;
+}
+.benefits__row {
+    --section-row-x: 25px;
+}
+.benefits__item {
+    height: 100%;
+    min-height: 220px;
+    background: #FFFFFF;
+    border: 1px solid #F3F3F3;
+    box-shadow: 4px 4px 20px rgba(143, 143, 143, 0.15);
+    border-radius: 3px;
+    text-align: center;
+    padding: 20px 10px;
+}
+.benefits__item img {
+    width: 64px;
+    height: 64px;
+}
+.benefits__item h5 {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    text-transform: uppercase;
+    color: #08516B;
+    margin: 20px 0 15px;
+}
+.benefits__item p {
+    font-size: 16px;
+    line-height: 19px;
+    color: #4A4A4A;
+}
+/*Benefits Section End*/
+
 
 
 /*Footer Start*/
