@@ -745,6 +745,29 @@ a {
 .modal-request .modal-container, .modal-offer .modal-container {
     max-width: 460px;
 }
+.modal-order-product {
+    padding: 20px;
+    height: auto;
+}
+.modal-order-product__title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #08526C;
+}
+.modal-order-product__desc {
+    display: block;
+    font-size: 8px;
+    line-height: 9px;
+    color: #858585;
+    margin-top: 10px;
+}
+.modal-order-product__price {
+    font-size: 16px;
+    line-height: 19px;
+    color: #181818;
+    margin-top: 15px;
+}
 /*Modal End*/
 
 
@@ -2001,14 +2024,16 @@ body.catalogue .header__btn-catalogue__icon span {
     color: #858585;
 }
 .small-card__price {
+    display: flex;
     font-weight: 500;
     font-size: 18px;
     line-height: 21px;
     color: #08526C;
     margin: 20px 0;
 }
-.small-card__price span {
+.small-card__price p {
     font-weight: 400;
+    margin-left: 5px;
 }
 .small-card__form-counter {
     display: -webkit-box;

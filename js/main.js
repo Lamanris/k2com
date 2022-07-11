@@ -159,6 +159,27 @@ modals.forEach(function (trigger) {
                 modalLizingInputMachine.value = lizingTitle.innerText
             }
         }
+        if (trigger.dataset.modal === 'modalOrder') {
+            const orderParent = trigger.closest('[data-order="parent"]')
+            if (orderParent) {
+                const orderTitle = orderParent.querySelector('[data-order="title"]')
+                const orderDesc = orderParent.querySelector('[data-order="desc"]')
+                const orderPrice = orderParent.querySelector('[data-order="price"]')
+                const orderQuantity = orderParent.querySelector('[data-order="quantity"]')
+                const modalOrderProduct = modal.querySelector('.modal-order-product')
+                modalOrderProduct.innerHTML = ''
+                console.log(orderPrice.innerText)
+                if (orderTitle && orderTitle.innerText) {
+                    modalOrderProduct.innerHTML+= `<h6 class="modal-order-product__title">${orderTitle.innerText}</h6>`
+                }
+                if (orderDesc && orderDesc.innerText) {
+                    modalOrderProduct.innerHTML+= `<h6 class="modal-order-product__desc">${orderDesc.innerText}</h6>`
+                }
+                if (orderDesc && orderDesc.innerText) {
+                    modalOrderProduct.innerHTML+= `<h6 class="modal-order-product__price">${orderQuantity.innerText} штук — 13 965 ₽</h6>`
+                }
+            }
+        }
         modal.classList.add("open");
         document.body.style.overflow = 'hidden'
         const exits = modal.querySelectorAll(".modal-exit");
