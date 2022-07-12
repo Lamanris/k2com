@@ -681,6 +681,9 @@
     .modal-lizing .modal-container {
         max-width: 620px;
     }
+    .modal-order-product {
+        padding: 20px 10px;
+    }
 
 
     .header {
@@ -1680,6 +1683,14 @@
     .modal-submit {
         margin: 15px 0;
     }
+    .modal-order-product {
+        padding: 15px 10px;
+    }
+    .modal-order-product__price {
+        font-size: 14px;
+        line-height: 17px;
+        margin-top: 10px;
+    }
 
 
     .header-logo {
@@ -2053,7 +2064,7 @@
     }
     .section-row--line .small-card__image {
         width: 80px;
-        height: 80px;
+        height: 80px!important;
     }
     .section-row--line .small-card__info {
         max-width: 100%;

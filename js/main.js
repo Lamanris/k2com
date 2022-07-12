@@ -147,6 +147,40 @@ const modalInputError = tippy('.modal-input', {
 });
 // Modals
 const modals = document.querySelectorAll("[data-modal]");
+function getScrollbarWidth() {
+    const outer = document.createElement('div');
+    outer.style.visibility = 'hidden';
+    outer.style.overflow = 'scroll';
+    outer.style.msOverflowStyle = 'scrollbar';
+    document.body.appendChild(outer);
+    const inner = document.createElement('div');
+    outer.appendChild(inner);
+    const scrollbarWidth = (outer.offsetWidth - inner.offsetWidth);
+    outer.parentNode.removeChild(outer);
+    return scrollbarWidth;
+}
+function numberWithSpaces(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
+function formatStringQuantity(num) {
+    const lastDigit = Number(String(num).slice(-1))
+    if (num === 1) {
+        return num + ' штука'
+    } else if (num <= 4) {
+        return num + ' штуки'
+    } else if (num <= 20) {
+        return num + ' штук'
+    } else if (lastDigit === 0) {
+        return num + ' штук'
+    } else if (lastDigit === 1) {
+        return num + ' штука'
+    } else if (lastDigit <= 4) {
+        return num + ' штуки'
+    } else {
+        return num + ' штук'
+    }
+}
+
 modals.forEach(function (trigger) {
     trigger.addEventListener("click", function (event) {
         event.preventDefault();
@@ -168,26 +202,51 @@ modals.forEach(function (trigger) {
                 const orderQuantity = orderParent.querySelector('[data-order="quantity"]')
                 const modalOrderProduct = modal.querySelector('.modal-order-product')
                 modalOrderProduct.innerHTML = ''
-                console.log(orderPrice.innerText)
                 if (orderTitle && orderTitle.innerText) {
-                    modalOrderProduct.innerHTML+= `<h6 class="modal-order-product__title">${orderTitle.innerText}</h6>`
+                    modalOrderProduct.innerHTML+= `
+                        <h6 class="modal-order-product__title">
+                            ${orderTitle.innerText}
+                            <input value="${orderTitle.innerText}" name="modal-order-title" readonly>
+                        </h6>`
                 }
                 if (orderDesc && orderDesc.innerText) {
-                    modalOrderProduct.innerHTML+= `<h6 class="modal-order-product__desc">${orderDesc.innerText}</h6>`
+                    modalOrderProduct.innerHTML+= `
+                        <span class="modal-order-product__desc">
+                            ${orderDesc.innerText}
+                            <input value="${orderDesc.innerText}" name="modal-order-desc" readonly>
+                        </span>`
                 }
-                if (orderDesc && orderDesc.innerText) {
-                    modalOrderProduct.innerHTML+= `<h6 class="modal-order-product__price">${orderQuantity.innerText} штук — 13 965 ₽</h6>`
+                if (orderPrice && orderPrice.innerText) {
+                    if (orderQuantity && orderQuantity.innerText) {
+                        const price = Number(orderPrice.innerText.replace(/\s/g, ''))
+                        const totalPrice = price * +orderQuantity.innerText
+                        if (totalPrice) {
+                            modalOrderProduct.innerHTML+= `
+                            <p class="modal-order-product__price">
+                                ${formatStringQuantity(+orderQuantity.innerText)} — ${numberWithSpaces(totalPrice)} ₽
+                                <input value="${formatStringQuantity(+orderQuantity.innerText)} — ${numberWithSpaces(totalPrice)} ₽" name="modal-order-price" readonly>
+                            </p>`
+                        }
+                    } else {
+                        modalOrderProduct.innerHTML+= `
+                        <p class="modal-order-product__price">
+                            ${orderPrice.innerText} ₽
+                            <input value="${orderPrice.innerText} ₽" name="modal-order-price" readonly>
+                        </p>`
+                    }
                 }
             }
         }
         modal.classList.add("open");
         document.body.style.overflow = 'hidden'
+        document.body.style.paddingRight = `${getScrollbarWidth()}px`
         const exits = modal.querySelectorAll(".modal-exit");
         exits.forEach(function (exit) {
             exit.addEventListener("click", function (event) {
                 event.preventDefault();
-                modal.classList.remove("open");
+                modal.classList.remove("open")
                 document.body.style.overflow = 'auto'
+                document.body.style.paddingRight = '0'
                 const modalForm = modal.querySelector('form')
                 if (modalForm) {
                     modalForm.reset()
@@ -213,7 +272,6 @@ function formValidation(form) {
     let validationArray = []
     if (inputs.length > 0) {
         inputs.forEach((el, ind) => {
-            console.log(el.value)
             const inputWrapper = el.closest('.modal-input')
             if (el.getAttribute('data-input-required')) {
                 if (el.getAttribute('type') === 'checkbox') {
@@ -274,6 +332,10 @@ if (modalForms.length > 0) {
     modalForms.forEach(el => {
         el.addEventListener('submit', function (e) {
             e.preventDefault()
+            var data = new FormData(el);
+            for (const entry of data) {
+                console.log(entry)
+            }
             if (formValidation(e.target)) {
                 const modalWrap = e.target.closest('.modal')
                 modalWrap.classList.add('modal--loader')
@@ -286,6 +348,7 @@ if (modalForms.length > 0) {
                             modalWrap.classList.remove('open')
                             e.target.reset()
                             document.body.style.overflow = 'auto'
+                            document.body.style.paddingRight = '0'
                         }
                     }, 5000)
                 }, 1000)

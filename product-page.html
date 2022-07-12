@@ -552,9 +552,9 @@
     </div>
 </div>
 
-<section class="product" data-lizing="parent">
+<section class="product" data-lizing="parent" data-order="parent">
     <div class="container">
-        <h2 class="section-title" data-lizing="title">КС-55713-5К-1 «Клинцы» на базе шасси КамАЗ-43118 (6х6)</h2>
+        <h2 class="section-title" data-lizing="title" data-order="title">КС-55713-5К-1 «Клинцы» на базе шасси КамАЗ-43118 (6х6)</h2>
         <div class="product__wrap">
             <div class="product__slider">
                 <div class="product__slider-with-thumbs">
@@ -608,7 +608,7 @@
                 <p class="product__info-quantity product__info-item">(В наличии — 6 ед.)</p>
                 <div class="product__info-top product__info-item">
                     <p>Цена:</p>
-                    <h6>12 350 000 руб.</h6>
+                    <h6><span data-order="price">12 350 000</span> руб.</h6>
                 </div>
                 <div class="product__info-main product__info-item">
                     <p>Производитель:</p>
@@ -637,7 +637,7 @@
                     </div>
                 </div>
                 <div class="product__info-buttons product__info-item">
-                    <button type="button" class="btn btn-more product__info-buttons__btn-order">Заказать</button>
+                    <button type="button" class="btn btn-more product__info-buttons__btn-order" data-modal="modalOrder">Заказать</button>
                     <button type="button" class="btn btn-lizing btn-more product__info-buttons__btn-lizing" data-modal="modalLizing">Стоимость лизинга</button>
                 </div>
                 <div class="product__info-bottom product__info-item">
@@ -1568,6 +1568,67 @@
             <h2 class="modal-title">Cпасибо!<br>
                 ваша заявка отправлена.</h2>
             <p class=".modal-subtitle">Наш менеджер свяжется с Вами в ближайшее время</p>
+        </div>
+    </div>
+</div>
+<div class="modal modal-order" id="modalOrder">
+    <div class="modal-bg modal-exit"></div>
+    <div class="modal-container">
+        <div class="modal-body">
+            <h2 class="modal-title">Ваш заказ</h2>
+            <p class="modal-subtitle">Наш менеджер свяжется с Вами и согласует условия оплаты и доставки</p>
+            <form action="#">
+                <div class="section-row modal__section-row">
+                    <div class="section-col-12">
+                        <div class="modal-input__input modal-order-product"></div>
+                    </div>
+                    <div class="section-col-12">
+                        <div class="modal-input">
+                            <label for="modalOrderInputName" class="visually-hidden">Имя</label>
+                            <input class="modal-input__input" placeholder="Ваше имя" type="text" id="modalOrderInputName" name="modal-order-name" data-input-required="true">
+                        </div>
+                    </div>
+                    <div class="section-col-12">
+                        <div class="modal-input">
+                            <label for="modalOrderInputPhone" class="visually-hidden">Телефон</label>
+                            <input class="modal-input__input" placeholder="Номер телефона" type="text" id="modalOrderInputPhone" name="modal-order-phone" data-input-required="true" data-input-phone="true">
+                        </div>
+                    </div>
+                    <div class="section-col-12">
+                        <div class="modal-input">
+                            <label for="modalOrderInputQuestion" class="visually-hidden">Вопрос</label>
+                            <textarea class="modal-input__input" placeholder="Ваш комментарий" id="modalOrderInputQuestion" name="modal-order-comment" rows="5"></textarea>
+                        </div>
+                    </div>
+                    <div class="section-col-12">
+                        <button type="submit" class="btn btn-more modal-submit">Оставить заявку</button>
+                        <div class="modal-agreement modal-input">
+                            <label class="modal-agreement__label">
+                                Я ознакомлен и принимаю условия  Соглашения об использовании сайта, в том числе в части обработки и использования моих персональных данных
+                                <input type="checkbox" data-input-required="true">
+                                <span class="modal-agreement__checkmark">
+                                <svg width="7" height="5" viewBox="0 0 7 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M6.168 0.4992L2.7136 4.8184L0 2.5568L0.512 1.9424L2.5984 3.6808L5.544 0L6.168 0.4992Z" fill="#4A4A4A"/>
+</svg>
+                            </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <button class="modal-close modal-exit">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.94 11.9999L17.8 7.13993C17.9092 7.0124 17.9663 6.84835 17.9598 6.68056C17.9533 6.51278 17.8838 6.35362 17.7651 6.23489C17.6463 6.11616 17.4872 6.0466 17.3194 6.04012C17.1516 6.03364 16.9876 6.09071 16.86 6.19993L12 11.0599L7.14002 6.19326C7.01249 6.08405 6.84844 6.02698 6.68065 6.03346C6.51287 6.03994 6.35371 6.10949 6.23498 6.22822C6.11625 6.34695 6.0467 6.50611 6.04022 6.67389C6.03373 6.84168 6.09081 7.00573 6.20002 7.13326L11.06 11.9999L6.19336 16.8599C6.12357 16.9197 6.06689 16.9932 6.02687 17.076C5.98686 17.1587 5.96437 17.2487 5.96082 17.3406C5.95728 17.4324 5.97275 17.5239 6.00626 17.6095C6.03978 17.695 6.09062 17.7727 6.15559 17.8377C6.22056 17.9027 6.29826 17.9535 6.38381 17.987C6.46936 18.0205 6.56091 18.036 6.65273 18.0325C6.74454 18.0289 6.83463 18.0064 6.91734 17.9664C7.00005 17.9264 7.07359 17.8697 7.13336 17.7999L12 12.9399L16.86 17.7999C16.9876 17.9091 17.1516 17.9662 17.3194 17.9597C17.4872 17.9533 17.6463 17.8837 17.7651 17.765C17.8838 17.6462 17.9533 17.4871 17.9598 17.3193C17.9663 17.1515 17.9092 16.9875 17.8 16.8599L12.94 11.9999Z" fill="#858585"/>
+            </svg>
+        </button>
+        <div class="modal-loader">
+            <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="modal-success">
+            <h2 class="modal-title">Cпасибо!<br>
+                ваша заявка отправлена.</h2>
+            <p class="modal-subtitle">Наш менеджер свяжется с Вами в ближайшее время</p>
         </div>
     </div>
 </div>
