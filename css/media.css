@@ -1691,6 +1691,9 @@
         line-height: 17px;
         margin-top: 10px;
     }
+    .modal-lizing .modal-container, .modal-offer .modal-container, .modal-order .modal-container {
+        min-height: 100vh;
+    }
 
 
     .header-logo {
@@ -2317,6 +2320,9 @@
         -ms-flex-pack: justify;
         justify-content: space-between;
     }
+    .product__info-bottom a {
+        text-shadow: none;
+    }
     .product__info-bottom a:first-child {
         margin: 0;
     }
@@ -2454,6 +2460,9 @@
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
         flex-direction: column;
+    }
+    .product--one-slider .product__info-bottom > * {
+        text-shadow: none;
     }
     .product--one-slider .product__info-bottom > * span {
         display: block;
