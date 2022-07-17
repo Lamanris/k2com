@@ -3398,6 +3398,138 @@ body.catalogue .header__btn-catalogue__icon span {
 /*Branches List Section End*/
 
 
+/*Contacts Section Section Start*/
+.section-contacts__wrap {
+    display: flex;
+    background: #FFFFFF;
+    box-shadow: 4px 4px 20px rgba(143, 143, 143, 0.15);
+    padding: 50px 30px 50px 20px;
+}
+.section-contacts__info {
+    max-width: 740px;
+    margin-right: 40px;
+}
+.section-contacts__info h6 {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    text-transform: uppercase;
+    color: #08516B;
+}
+.section-contacts__info p {
+    font-size: 16px;
+    line-height: 19px;
+    color: #4A4A4A;
+    margin-top: 20px;
+}
+.section-contacts__info p a {
+    color: #08526C;
+    font-weight: 500;
+}
+.section-contacts__info-bottom {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.section-contacts__info-bottom__item {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 110%;
+    color: #181818;
+}
+.section-contacts__info-bottom__item--phones {
+    align-items: flex-start;
+    padding: 20px 0;
+}
+.section-contacts__info-bottom__item svg {
+    margin-right: 10px;
+}
+.section-contacts__info-bottom__item span {
+    flex: 1;
+}
+.section-contacts__info-bottom__item--phones a {
+    display: block;
+}
+.section-contacts__info-bottom__item--phones a:not(:first-of-type) {
+    margin-top: 10px;
+}
+.section-contacts__info-bottom__link {
+    transition: color .2s;
+}
+.section-contacts__info-bottom__link svg {
+    transition: fill .2s;
+}
+.section-contacts__info-bottom__link:hover {
+    color: #58BBDC;
+}
+.section-contacts__info-bottom__link:hover svg {
+    fill: #58BBDC;
+}
+.section-contacts__right {
+    flex: 1;
+    background: #FFFFFF;
+    box-shadow: 4px 4px 20px rgba(143, 143, 143, 0.15);
+    padding: 25px 25px 20px;
+    position: relative;
+}
+.section-contacts__right-wrap {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+}
+.section-contacts__right-text {
+    max-width: 170px;
+}
+.section-contacts__right-text h6 {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 33px;
+    text-transform: uppercase;
+    color: #08526C;
+    margin-bottom: 10px;
+}
+.section-contacts__right-text p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #57BADC;
+}
+.section-contacts__right-btn-more {
+    background: #24B37F;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.section-contacts__right-btn-offer {
+    background: #58BBDC;
+    width: 100%;
+}
+.section-contacts__right-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.section-contacts__right-bg--mobile {
+    display: none;
+}
+.section-contacts__text {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #181818;
+    margin-top: 50px;
+}
+/*Contacts Section Section End*/
+
+
 /*Footer Start*/
 .footer {
     background: #002E3F;
