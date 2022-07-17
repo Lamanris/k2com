@@ -1606,6 +1606,9 @@
 
     /*Contacts Section Section Start*/
     .section-contacts__wrap {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         padding: 30px 30px 50px;
     }
@@ -1629,6 +1632,7 @@
     }
     .section-contacts__right-bg--mobile {
         display: block;
+        -o-object-fit: contain;
         object-fit: contain;
         width: auto;
     }
@@ -2295,7 +2299,10 @@
         z-index: 1;
     }
     .special-offers .swiper-wrapper {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -ms-flex-wrap: initial;
         flex-wrap: initial;
         margin: 0;
 
@@ -2310,6 +2317,7 @@
         height: 100%;
     }
     .special-offers .swiper-slide .big-card, .special-offers .swiper-slide .small-card {
+        -webkit-box-shadow: none;
         box-shadow: none;
     }
 
@@ -2683,6 +2691,9 @@
 
     /*Contacts Section Section Start*/
     .section-contacts__wrap {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         padding: 30px 20px 50px;
     }
@@ -2699,6 +2710,7 @@
     }
     .section-contacts__right-bg {
         right: -5%;
+        -o-object-fit: cover;
         object-fit: cover;
     }
     /*Contacts Section Section End*/
