@@ -713,6 +713,13 @@
     .header-region {
         margin-right: 30px;
     }
+    .header-region__list {
+        padding: 12px 12px 12px 20px;
+    }
+    .header-region__list a {
+        font-size: 16px;
+        line-height: 19px;
+    }
     .header-bottom__wrap {
         height: 65px;
         margin: 0 -12px;
@@ -875,8 +882,8 @@
         margin-top: 45px;
     }
     .header-burger__wrap .header-phone {
-        display: none;
-        margin-left: 10px;
+        display: inline-block;
+        margin: 35px 0 38px;
     }
     body.burger .header-burger__wrap {
         right: 0;
@@ -1761,15 +1768,21 @@
         display: none;
     }
     .header-burger__wrap .header__btn-ask {
-        margin: 25px 0;
+        margin-top: 25px;
         max-width: 400px;
     }
     body.burger .header-phone--mobile {
         display: none;
     }
     .header-burger__wrap .header-phone {
-        display: inline-block;
+        margin: 25px 0 40px 10px;
     }
+    .header-burger__wrap .header-region {
+        margin: 0 0 0 10px;
+    }
+
+
+
     .header-catalogue .container {
         padding: 0;
     }
