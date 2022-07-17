@@ -195,7 +195,20 @@ a {
 .swiper-button-next, .swiper-button-prev {
     z-index: 1;
 }
-/*Default End*/
+.section-test__content  > * {
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: #181818;
+    margin-top: 20px;
+}
+.section-test__content h6 {
+    font-weight: 500;
+}
+.section-test__content h6:first-of-type {
+    margin: 0;
+}
+    /*Default End*/
 
 
 /*Dropdown Theme Start*/
