@@ -36,3 +36,29 @@ const productSwiperOneSlider = new Swiper(".product__slider-one-slider .swiper",
         prevEl: ".product__slider-one-slider .swiper-button-prev",
     },
 });
+
+const breakpoint = window.matchMedia( '(min-width:661px)' );
+let specialOffersSwiper;
+const breakpointChecker = function() {
+    // if larger viewport and multi-row layout needed
+    if ( breakpoint.matches === true ) {
+        // clean up old instances and inline styles when available
+        if ( specialOffersSwiper !== undefined ) specialOffersSwiper.destroy( true, true );
+        // or/and do nothing
+        return;
+        // else if a small viewport and single column layout needed
+    } else if ( breakpoint.matches === false ) {
+        // fire small viewport version of swiper
+        return enableSwiper();
+    }
+};
+const enableSwiper = function() {
+    specialOffersSwiper = new Swiper ('.section-spacing__swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+    });
+};
+// keep an eye on viewport size changes
+breakpoint.addListener(breakpointChecker);
+// kickstart
+breakpointChecker();

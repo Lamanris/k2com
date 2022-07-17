@@ -2259,6 +2259,13 @@ body.catalogue .header__btn-catalogue__icon span {
 /*Big Card End*/
 
 
+/*Special Offers Start*/
+.special-offers .swiper-slide {
+   height: auto;
+}
+/*Special Offers End*/
+
+
 /*About Company Start*/
 .about-company__bg {
     background: var(--color-bg-one);
