@@ -3,15 +3,16 @@
         max-width: 980px;
     }
     .icon-logo {
-        width: 79px;
+        width: 100px;
     }
     .icon-logo img {
-        width: 42px;
-        height: 44px;
+        width: 40px;
+        height: 42px;
+        margin-bottom: 7px;
     }
     .icon-logo p {
-        font-size: 8px;
-        line-height: 9px;
+        font-size: 10px;
+        line-height: 12px;
     }
     .phone-link {
         margin-bottom: 7px;
@@ -633,6 +634,7 @@
     .icon-logo img {
         width: 50px;
         height: 52px;
+        margin-bottom: 5px;
     }
 
     .section-row {
@@ -1527,6 +1529,16 @@
 
     .footer {
         padding: 30px 0 45px;
+    }
+    .footer-logo {
+        width: 80px;
+    }
+    .footer-logo img {
+        margin-bottom: 5px;
+    }
+    .footer-logo p {
+        font-size: 8px;
+        line-height: 9px;
     }
     .footer-left {
         -webkit-box-flex: 100%;

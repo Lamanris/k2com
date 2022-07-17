@@ -46,19 +46,19 @@ a {
     white-space: nowrap; /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
 }
 .icon-logo {
-    width: 99px;
+    width: 120px;
     text-align: center;
 }
 .icon-logo img {
-    width: 66px;
-    height: 62px;
-    margin-bottom: 5px;
+    width: 40px;
+    height: 44px;
+    margin-bottom: 10px;
 }
 .icon-logo p {
     font-family: 'Roboto', sans-serif!important;
     font-weight: 700;
-    font-size: 10px;
-    line-height: 12px;
+    font-size: 12px;
+    line-height: 14px;
     text-transform: uppercase;
     color: #00869D;
 }
